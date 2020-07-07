@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-next.4",
+    "@emotion/styled": "^10.0.27",
     "comma-number": "^2.0.1",
+    "date-fns": "^2.14.0",
     "firebase": "^7.15.5",
     "firebase-admin": "^8.13.0",
     "mdx-prism": "^0.3.1",

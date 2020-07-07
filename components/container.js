@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import { useColorModeValue, Button, Flex, Box, IconButton } from '@chakra-ui/core';
 import styled from '@emotion/styled';
 
-import useColorMode from '@lib/color-mode';
+import useColorMode from '../lib/color-mode';
 
 import { Sun, Moon } from './icons';
 import Footer from './footer';
@@ -62,7 +62,14 @@ const Container = ({ children }) => {
           </NextLink>
         </Box>
       </StickyNav>
-      <Flex as="main" justify="center" direction="column" bg={bgColor} color={primarytextColor} px={8}>
+      <Flex
+        as="main"
+        justify="center"
+        direction="column"
+        bg={bgColor}
+        color={primarytextColor}
+        px={8}
+      >
         {children}
         <Footer />
       </Flex>

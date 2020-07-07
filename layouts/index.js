@@ -2,9 +2,9 @@ import React from 'react';
 import { parseISO, format } from 'date-fns';
 import { useColorMode, Heading, Text, Flex, Stack, Avatar, Link, Box } from '@chakra-ui/core';
 
-import Container from '@components/container';
-import ViewCounter from '@components/ViewCounter';
-import BlogSeo from '@components/blog-seo';
+import Container from '../components/container';
+import ViewCounter from '../components/view-counter';
+import BlogSeo from '../components/blog-seo';
 
 const editUrl = (slug) =>
   `https://github.com/miraklasiaf/miraklasiaf.now.sh/edit/master/pages/blog/${slug}.mdx`;

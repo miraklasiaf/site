@@ -1,9 +1,9 @@
 import React from 'react';
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/core';
 
-import Container from '@components/container';
-import BlogPost from '@components/blog-post';
-import ProjectCard from '@components/project-card';
+import Container from '../components/container';
+import BlogPost from '../components/blog-post';
+import ProjectCard from '../components/project-card';
 
 import { frontMatter as styleGuides } from './blog/style-guides-component-libraries-design-systems.mdx';
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';

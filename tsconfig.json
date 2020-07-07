@@ -15,7 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "paths": {
-      "@design-system/*": ["components/design-system/*"],
       "@components/*": ["components/*"],
       "@lib/*": ["lib/*"]
     }
