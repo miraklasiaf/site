@@ -10,12 +10,12 @@ const SEO = {
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: PLATFORM_URL,
+    url: `${PLATFORM_URL}`,
     title,
     description,
     images: [
       {
-        url: `${PLATFORM_URL}/static/images/og.png`,
+        url: `${PLATFORM_URL}/static/images/og.jpg`,
         alt: title,
         width: 1280,
         height: 720
