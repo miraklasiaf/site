@@ -10,7 +10,7 @@ const BlogPost = (frontMatter) => {
   const { title, summary } = frontMatter;
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
 
-  const slug = frontMatter.__resourcePath.replace('blog\\', '').replace('.mdx', '');
+  const slug = frontMatter.__resourcePath.replace('blog/', '').replace('.mdx', '');
 
   const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher);
   const views = data?.total;
