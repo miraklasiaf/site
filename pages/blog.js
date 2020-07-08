@@ -8,9 +8,9 @@ import {
   Stack,
   Input,
   InputGroup,
-  InputRightElement,
-  Icon
+  InputRightElement
 } from '@chakra-ui/core';
+import { SearchIcon } from '@chakra-ui/icons';
 
 import Container from '../components/container';
 import BlogPost from '../components/blog-post';
@@ -22,7 +22,7 @@ import { frontMatter as styleGuides } from './blog/style-guides-component-librar
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';
 import { frontMatter as monorepo } from './blog/monorepo-lerna-yarn-workspaces.mdx';
 
-const url = `{${PLATFORM_URL}/blog}`;
+const url = `${PLATFORM_URL}/blog`;
 const title = 'Blog · Faisal Karim';
 const description =
   'Thoughts on the software industry, programming, tech, videography, music, and my personal life.';
@@ -71,8 +71,8 @@ const Blog = () => {
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search articles"
               />
-              <InputRightElement>
-                <Icon name="search" color="gray.300" />
+              <InputRightElement mt={3}>
+                <SearchIcon size="32px" color="gray.300" />
               </InputRightElement>
             </InputGroup>
           </Flex>

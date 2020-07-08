@@ -1,7 +1,5 @@
-import React from 'react';
 import { useColorModeValue, Text, Flex, Box, Link } from '@chakra-ui/core';
-
-import { ExternalLink } from '../icons';
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 
 const MetricCard = ({ header, link, metric }) => {
   const borderColor = useColorModeValue('gray.200', 'gray.700');
@@ -11,7 +9,7 @@ const MetricCard = ({ header, link, metric }) => {
       <Link href={link} isExternal>
         <Flex align="center">
           {header}
-          <Box as={ExternalLink} size="32px" mx={2} color="blue.300" />
+          <ExternalLinkIcon mx={2} />
         </Flex>
       </Link>
       <Text mt={2} fontSize="3xl" fontWeight="bold" lineHeight="short">

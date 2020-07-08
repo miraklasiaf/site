@@ -1,19 +1,21 @@
+import { PLATFORM_URL } from './lib/constants';
+
 const title = 'Faisal Karim · Developer';
 const description = 'Front-end developer and JavaScript enthusiast';
 
 const SEO = {
   title,
   description,
-  canonical: 'https://miraklasiaf.now.sh',
+  canonical: `${PLATFORM_URL}`,
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://miraklasiaf.now.sh',
+    url: PLATFORM_URL,
     title,
     description,
     images: [
       {
-        url: 'https://miraklasiaf.now.sh/static/images/og.jpg',
+        url: `${PLATFORM_URL}/static/images/og.png`,
         alt: title,
         width: 1280,
         height: 720

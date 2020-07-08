@@ -1,11 +1,11 @@
 import React from 'react';
 import NextLink from 'next/link';
 import { useColorModeValue, Button, Flex, Box, IconButton } from '@chakra-ui/core';
+import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import styled from '@emotion/styled';
 
 import useColorMode from '../lib/color-mode';
 
-import { Sun, Moon } from './icons';
 import Footer from './footer';
 
 const StickyNav = styled(Flex)`
@@ -22,7 +22,7 @@ const Container = ({ children }) => {
   const bgColor = useColorModeValue('white', 'rgba(23, 25, 35, 0.8)');
   const primarytextColor = useColorModeValue('black', 'white');
   const navBgColor = useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(23, 25, 35, 0.8)');
-  const Icon = useColorModeValue(<Moon />, <Sun />);
+  const Icon = useColorModeValue(<MoonIcon size="32px" />, <SunIcon size="32px" />);
 
   return (
     <>
@@ -45,9 +45,9 @@ const Container = ({ children }) => {
           onClick={toggleColorMode}
         />
         <Box>
-          <NextLink href="/" passHref>
+          <NextLink href="/dashboard" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
-              Home
+              Dashboard
             </Button>
           </NextLink>
           <NextLink href="/blog" passHref>
@@ -55,14 +55,14 @@ const Container = ({ children }) => {
               Blog
             </Button>
           </NextLink>
-          <NextLink href="/dashboard" passHref>
-            <Button as="a" variant="ghost" p={[1, 4]}>
-              Dashboard
-            </Button>
-          </NextLink>
           <NextLink href="/about" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>
               About
+            </Button>
+          </NextLink>
+          <NextLink href="/" passHref>
+            <Button as="a" variant="ghost" p={[1, 4]}>
+              Home
             </Button>
           </NextLink>
         </Box>

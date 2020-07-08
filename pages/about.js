@@ -5,7 +5,7 @@ import Container from '../components/container';
 import { CustomLink } from '../components/mdx';
 import { PLATFORM_URL } from '../lib/constants';
 
-const url = `{${PLATFORM_URL}/about}`;
+const url = `${PLATFORM_URL}/about`;
 const title = 'About · Faisal Karim';
 
 const About = () => {

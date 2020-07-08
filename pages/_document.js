@@ -19,7 +19,6 @@ class MyDocument extends Document {
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/static/favicons/site.webmanifest" rel="manifest" />
           <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
-          <link rel="preconnect" href="https://cdn.usefathom.com" crossOrigin="" />
           <link
             rel="preload"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"

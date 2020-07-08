@@ -5,9 +5,8 @@ import { PLATFORM_URL } from '../lib/constants';
 import Analytics from '../components/metrics/analytics';
 import Container from '../components/container';
 import GitHub from '../components/metrics/github';
-import { CustomLink } from '../components/mdx';
 
-const url = `{${PLATFORM_URL}/dashboard}`;
+const url = `${PLATFORM_URL}/dashboard`;
 const title = 'Dashboard · Faisal Karim';
 const description =
   'My personal dashboard, built with Next.js API routes deployed as serverless functions.';
@@ -27,7 +26,7 @@ const Dashboard = () => {
           description,
           images: [
             {
-              url: `{${PLATFORM_URL}/static/images/dashboard.jpg}`,
+              url: `${PLATFORM_URL}/static/images/dashboard.jpg`,
               alt: description,
               width: 1280,
               height: 720
@@ -50,9 +49,8 @@ const Dashboard = () => {
             </Heading>
             <Text color={secondaryTextColor}>
               This is my personal dashboard, built with Next.js API routes deployed as serverless
-              functions. I use this dashboard to track various metrics across platforms like
-              Unsplash, YouTube, GitHub, and more. Want to build your own? Check out my&nbsp;
-              <CustomLink href="/blog/fetching-data-with-swr">blog series.</CustomLink>
+              functions. I use this dashboard to track various metrics across platforms like GitHub,
+              and more.
             </Text>
           </Flex>
           <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px" mt={8}>
