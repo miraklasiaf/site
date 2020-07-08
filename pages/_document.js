@@ -1,5 +1,4 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import React from 'react';
 import { InitializeColorMode } from '@chakra-ui/core';
 
 class MyDocument extends Document {

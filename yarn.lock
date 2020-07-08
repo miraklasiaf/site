@@ -2030,7 +2030,16 @@
     lodash.camelcase "^4.3.0"
     protobufjs "^6.8.6"
 
-"@mdx-js/loader@^1.6.1":
+"@mapbox/rehype-prism@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@mapbox/rehype-prism/-/rehype-prism-0.5.0.tgz#b756308ebf3af8f92a6359cd78010a7770453e85"
+  integrity sha512-sE5EetmSR6At7AU2s3N2rFUUqm8BpvxUcGcesgfTZgqF7bQoekqsKxLX8gunIDjZs34acZJ6fgPFHepEWnYKCQ==
+  dependencies:
+    hast-util-to-string "^1.0.3"
+    refractor "^3.0.0"
+    unist-util-visit "^2.0.2"
+
+"@mdx-js/loader@^1.6.1", "@mdx-js/loader@^1.6.6":
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.6.6.tgz#de7438f3b18b097d66380f8698123a91c587a2f9"
   integrity sha512-9jTmXGf5DsVM3XFEX6eYuB8DzIRg2Qo13DHMS2uOBYjrU3w1AUa06Tzz/CnDYQcPSPxHCuRy+m0tMXmG2rQ4Xg==
@@ -2073,6 +2082,11 @@
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.6.tgz#9c70eb7e7e4abc1083c8edf7151d35a19e442c00"
   integrity sha512-PKTHVgMHnK5p+kcMWWNnZuoR7O19VmHiOujmVcyN50hya7qIdDb5vvsYC+dwLxApEXiABhLozq0dlIwFeS3yjg==
+
+"@next/mdx@^9.4.4":
+  version "9.4.4"
+  resolved "https://registry.yarnpkg.com/@next/mdx/-/mdx-9.4.4.tgz#ad1da5ecd2f3ee4b07fdf9a938441efffd58af6b"
+  integrity sha512-d1WPPxube7kgQo5JjfiFxPoK+set0OBCNeIJnF8TN176v4SsFNngfB4I5RIxsdXqD7aPzWeFcxCGGGvbzjKa8A==
 
 "@next/react-dev-overlay@9.4.4":
   version "9.4.4"
@@ -2898,6 +2912,14 @@ babel-plugin-extract-import-names@^1.6.6:
   integrity sha512-UtMuiQJnhVPAGE2+pDe7Nc9NVEmDdqGTN74BtRALgH+7oag88RpxFLOSiA+u5mFkFg741wW9Ut5KiyJpksEj/g==
   dependencies:
     "@babel/helper-plugin-utils" "7.8.3"
+
+babel-plugin-import-glob-array@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-import-glob-array/-/babel-plugin-import-glob-array-0.2.0.tgz#522d0ad9e0b0c09f9ae87d6b9644bbf6d053285b"
+  integrity sha512-z7JhHOQ2hq4MBaNL9aAtDsilS12V01QNbhlZzPBIAkTymXmJhvkZVQIDvb6CJrfFN7wy9ScOTpwhv9RsvGSEWg==
+  dependencies:
+    glob "^7.1.3"
+    is-glob "^4.0.0"
 
 babel-plugin-macros@^2.0.0:
   version "2.8.0"
@@ -5602,7 +5624,7 @@ hast-util-to-parse5@^5.0.0:
     xtend "^4.0.0"
     zwitch "^1.0.0"
 
-hast-util-to-string@^1.0.0:
+hast-util-to-string@^1.0.0, hast-util-to-string@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/hast-util-to-string/-/hast-util-to-string-1.0.4.tgz#9b24c114866bdb9478927d7e9c36a485ac728378"
   integrity sha512-eK0MxRX47AV2eZ+Lyr18DCpQgodvaS3fAQO2+b9Two9F5HEoRPhiUMNzoXArMJfZi2yieFzUBMRl3HNJ3Jus3w==
@@ -8045,6 +8067,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.16, postcss@^7.0.2
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
+postinstall-postinstall@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/postinstall-postinstall/-/postinstall-postinstall-2.1.0.tgz#4f7f77441ef539d1512c40bd04c71b06a4704ca3"
+  integrity sha512-7hQX6ZlZXIoRiWNrbMQaLzUUfH+sSx39u8EJ9HYuDc1kLo9IXKWjM5RSquZN1ad5GnH8CGFM78fsAAQi3OKEEQ==
+
 prebuild-webpack-plugin@1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/prebuild-webpack-plugin/-/prebuild-webpack-plugin-1.1.0.tgz#6f6c75b5fdaf9a57f598a3a39c29c80a255d84ec"
@@ -8073,6 +8100,13 @@ prismjs@~1.17.0:
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.17.1.tgz#e669fcbd4cdd873c35102881c33b14d0d68519be"
   integrity sha512-PrEDJAFdUGbOP6xK/UsfkC5ghJsPJviKgnQOoxaDbBjwc8op68Quupwt1DeAFoG8GImPhiKXAvvsH7wDSLsu1Q==
+  optionalDependencies:
+    clipboard "^2.0.0"
+
+prismjs@~1.20.0:
+  version "1.20.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.20.0.tgz#9b685fc480a3514ee7198eac6a3bf5024319ff03"
+  integrity sha512-AEDjSrVNkynnw6A+B1DsFkd6AVdTnp+/WoUixFRULlCLZVRZlVQMVWio/16jv7G1FscUxQxOQhWwApgbnxr6kQ==
   optionalDependencies:
     clipboard "^2.0.0"
 
@@ -8432,6 +8466,15 @@ refractor@^2.3.0:
     hastscript "^5.0.0"
     parse-entities "^1.1.2"
     prismjs "~1.17.0"
+
+refractor@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/refractor/-/refractor-3.0.0.tgz#7c8072eaf49dbc1b333e7acc64fb52a1c9b17c75"
+  integrity sha512-eCGK/oP4VuyW/ERqjMZRZHxl2QsztbkedkYy/SxqE/+Gh1gLaAF17tWIOcVJDiyGhar1NZy/0B9dFef7J0+FDw==
+  dependencies:
+    hastscript "^5.0.0"
+    parse-entities "^2.0.0"
+    prismjs "~1.20.0"
 
 regenerate-unicode-properties@^8.2.0:
   version "8.2.0"
@@ -9941,7 +9984,7 @@ unist-util-visit@1.3.1:
   dependencies:
     unist-util-is "^2.1.1"
 
-unist-util-visit@2.0.2, unist-util-visit@^2.0.0:
+unist-util-visit@2.0.2, unist-util-visit@^2.0.0, unist-util-visit@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/unist-util-visit/-/unist-util-visit-2.0.2.tgz#3843782a517de3d2357b4c193b24af2d9366afb7"
   integrity sha512-HoHNhGnKj6y+Sq+7ASo2zpVdfdRifhTgX2KTU3B/sO/TTlZchp7E3S4vjRzDJ7L60KmrCPsQkVK3lEF3cz36XQ==

@@ -1,8 +1,6 @@
 export default async (_, res) => {
   const userResponse = await fetch('https://api.github.com/users/miraklasiaf');
-  const userReposResponse = await fetch(
-    'https://api.github.com/users/miraklasiaf/repos'
-  );
+  const userReposResponse = await fetch('https://api.github.com/users/miraklasiaf/repos');
 
   const user = await userResponse.json();
   const repositories = await userReposResponse.json();

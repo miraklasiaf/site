@@ -1,20 +1,30 @@
 import React from 'react';
-import { Flex, Link, IconButton } from '@chakra-ui/core';
+import { Stack, Link, Box, useColorModeValue } from '@chakra-ui/core';
 
-import { Twitter } from './icons';
+import { links } from '../lib/constants';
 
-const Footer = () => (
-  <Flex as="footer" justify="center" mb={4}>
-    <Link href="https://twitter.com/miraklasiaf" title="Twitter" isExternal>
-      <IconButton aria-label="Twitter" icon={<Twitter />} />
-    </Link>
-    <Link href="https://github.com/miraklasiaf" title="GitHub" isExternal>
-      <IconButton aria-label="Github" icon={<Twitter />} />
-    </Link>
-    <Link href="mailto:faisalkarim96@gmail.com" title="Email" isExternal>
-      <IconButton aria-label="Main" icon={<Twitter />} />
-    </Link>
-  </Flex>
-);
+const Footer = () => {
+  const color = useColorModeValue('gray.500', 'gray.200');
+  const bgColor = useColorModeValue('gray.200', 'gray.500');
+
+  return (
+    <Stack direction="row" as="footer" mb={4} justify="center">
+      {links.map(([icon, route, title]) => (
+        <Link
+          href={route}
+          key={route}
+          isExternal
+          title={title}
+          color={color}
+          borderRadius="lg"
+          p={2}
+          _hover={{ bg: bgColor }}
+        >
+          <Box as={icon} />
+        </Link>
+      ))}
+    </Stack>
+  );
+};
 
 export default Footer;

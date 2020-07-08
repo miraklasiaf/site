@@ -2,6 +2,7 @@ module.exports = {
   extends: 'get-off-my-lawn',
   rules: {
     'react/prop-types': 0,
+    'react/react-in-jsx-scope': 0,
     'react/jsx-sort-props': 0,
     'react/jsx-no-literals': 0,
     'react/display-name': 0,

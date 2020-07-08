@@ -31,14 +31,19 @@ const Container = ({ children }) => {
         justify="space-between"
         align="center"
         maxWidth="900px"
-        width="full"
+        w="full"
         bg={navBgColor}
         p={8}
         mt={[0, 8]}
         mb={8}
         mx="auto"
       >
-        <IconButton aria-label="Toggle dark mode" icon={Icon} onClick={toggleColorMode} />
+        <IconButton
+          variant="ghost"
+          aria-label="Toggle dark mode"
+          icon={Icon}
+          onClick={toggleColorMode}
+        />
         <Box>
           <NextLink href="/" passHref>
             <Button as="a" variant="ghost" p={[1, 4]}>

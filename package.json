@@ -2,22 +2,36 @@
   "name": "miraklasiaf.now.sh",
   "description": "My personal website",
   "version": "1.0.0",
-  "main": "index.js",
+  "author": {
+    "name": "Faisal Karim",
+    "email": "faisalkarim96@gmail.com",
+    "url": "https://miraklasiaf.now.sh"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraklasiaf/miraklasiaf.now.sh.git"
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --ext .json --ext .js",
-    "prettier": "prettier --write \"**/*.{html,js,jsx, ts,tsx,json,md,mdx,yml}\"",
-    "test": "yarn lint"
+    "prettier": "prettier --write \"**/*.{html,js,json,md,mdx,yml}\"",
+    "test": "yarn lint",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-next.4",
+    "@chakra-ui/icon": "^1.0.0-next.3",
     "@chakra-ui/theme-tools": "^1.0.0-next.3",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
+    "@mapbox/rehype-prism": "^0.5.0",
+    "@mdx-js/loader": "^1.6.6",
     "@mdx-js/react": "^1.6.6",
+    "@next/mdx": "^9.4.4",
+    "babel-plugin-import-glob-array": "^0.2.0",
     "comma-number": "^2.0.1",
     "date-fns": "^2.14.0",
     "firebase": "^7.15.5",
@@ -28,6 +42,7 @@
     "next-seo": "^4.7.1",
     "nprogress": "^0.2.0",
     "patch-package": "^6.2.2",
+    "postinstall-postinstall": "^2.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reading-time": "^1.2.0",

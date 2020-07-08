@@ -1,31 +1,26 @@
 import React from 'react';
 import { parseISO, format } from 'date-fns';
-import { useColorMode, Heading, Text, Flex, Stack, Avatar, Link, Box } from '@chakra-ui/core';
+import { useColorModeValue, Heading, Text, Flex, Stack, Avatar, Link, Box } from '@chakra-ui/core';
 
 import Container from '../components/container';
 import ViewCounter from '../components/view-counter';
 import BlogSeo from '../components/blog-seo';
+import { PLATFORM_URL } from '../lib/constants';
 
 const editUrl = (slug) =>
   `https://github.com/miraklasiaf/miraklasiaf.now.sh/edit/master/pages/blog/${slug}.mdx`;
 const discussUrl = (slug) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://miraklasiaf.now.sh/blog/${slug}`
-  )}`;
+  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${PLATFORM_URL}/blog/${slug}`)}`;
 
 export default (frontMatter) => {
   const slug = frontMatter.__resourcePath.replace('blog/', '').replace('.mdx', '');
 
   return ({ children }) => {
-    const { colorMode } = useColorMode();
-    const textColor = {
-      light: 'gray.700',
-      dark: 'gray.400'
-    };
+    const textColor = useColorModeValue('gray.700', 'gray.400');
 
     return (
       <Container>
-        <BlogSeo url={`https://leerob.io/blog/${slug}`} {...frontMatter} />
+        <BlogSeo url={`${PLATFORM_URL}/blog/${slug}`} {...frontMatter} />
         <Stack
           as="article"
           spacing={8}
@@ -33,14 +28,14 @@ export default (frontMatter) => {
           alignItems="flex-start"
           m="0 auto 4rem auto"
           maxWidth="700px"
-          w="100%"
+          w="full"
         >
           <Flex
-            flexDirection="column"
-            justifyContent="flex-start"
-            alignItems="flex-start"
+            direction="column"
+            justify="flex-start"
+            align="flex-start"
             maxWidth="700px"
-            w="100%"
+            w="full"
           >
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               {frontMatter.title}
@@ -54,10 +49,10 @@ export default (frontMatter) => {
               mb={4}
             >
               <Flex align="center">
-                <Avatar size="xs" name="Lee Robinson" src="https://bit.ly/33vEjhB" mr={2} />
-                <Text fontSize="sm" color={textColor[colorMode]}>
+                <Avatar size="xs" name="Faisal Karim" src="https://bit.ly/33vEjhB" mr={2} />
+                <Text fontSize="sm" color={textColor}>
                   {frontMatter.by}
-                  {'Lee Robinson / '}
+                  {'Faisal Karim / '}
                   {format(parseISO(frontMatter.publishedAt), 'MMMM dd, yyyy')}
                 </Text>
               </Flex>
