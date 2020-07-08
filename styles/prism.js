@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-import theme from '../design-system';
+import theme from '../components/design-system';
 
 const prismBaseTheme = css`
   code {

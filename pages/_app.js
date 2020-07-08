@@ -8,7 +8,7 @@ import { prismLightTheme, prismDarkTheme } from '../styles/prism';
 import MDXComponents from '../components/mdx';
 import Nprogress from '../components/nprogress';
 import SEO from '../next-seo.config';
-import theme from '../design-system';
+import theme from '../components/design-system';
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme);

@@ -62,8 +62,6 @@ const Index = () => {
             icon="jamstackfns"
           />
         </Flex>
-        {/* <Timeline />
-        <Subscribe /> */}
       </Stack>
     </Container>
   );

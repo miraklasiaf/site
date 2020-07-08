@@ -1526,6 +1526,15 @@
     "@chakra-ui/form-control" "^1.0.0-next.4"
     "@chakra-ui/utils" "^1.0.0-next.4"
 
+"@chakra-ui/theme-tools@^1.0.0-next.3":
+  version "1.0.0-next.3"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.0.0-next.3.tgz#604b03a616d3703a94e2bbaf764547c9f69c5657"
+  integrity sha512-5W8MH1L+3Q4dcCb4urjtcCQXtUUxCPTwvbJmlw6OhypiUj+4AvgYBhCjSGPSvF/eK23CH2cBg8SddweE31VfHw==
+  dependencies:
+    "@chakra-ui/utils" "^1.0.0-next.3"
+    "@types/tinycolor2" "1.4.2"
+    tinycolor2 "1.4.1"
+
 "@chakra-ui/theme-tools@^1.0.0-next.4":
   version "1.0.0-next.4"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme-tools/-/theme-tools-1.0.0-next.4.tgz#ea83e7f97835cd277a35d193a85c179059cb4cc6"
