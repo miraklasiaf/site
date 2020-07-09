@@ -1,35 +1,25 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { InitializeColorMode } from '@chakra-ui/core';
+import GoogleFonts from 'next-google-fonts';
 
 class MyDocument extends Document {
   render() {
     return (
       <html lang="en">
+        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
         <Head>
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta content="#ffffff" name="theme-color" />
           <meta content="#ffffff" name="msapplication-TileColor" />
           <meta content="/static/favicons/browserconfig.xml" name="msapplication-config" />
-          <meta content="14d2e73487fa6c71" name="yandex-verification" />
           <meta
-            content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
             name="google-site-verification"
+            content="KfTyzAKabwlabC29C3S23xuqg6nq_fG94IRlnpFSNtI"
           />
           <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
           <link href="/static/favicons/site.webmanifest" rel="manifest" />
           <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
-          <link
-            rel="preload"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            as="style"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-            rel="stylesheet"
-            media="print"
-            onLoad="this.media='all'"
-          />
           <link
             href="/static/favicons/apple-touch-icon.png"
             rel="apple-touch-icon"
