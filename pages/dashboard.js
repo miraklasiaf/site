@@ -35,15 +35,8 @@ const Dashboard = () => {
         }}
       />
       <Container>
-        <Stack
-          as="main"
-          spacing={8}
-          justifyContent="center"
-          alignItems="flex-start"
-          m="0 auto 4rem auto"
-          maxWidth="700px"
-        >
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px">
+        <Stack spacing={8} m="0 auto 4rem auto" maxWidth="700px">
+          <Flex direction="column" maxWidth="700px">
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Dashboard
             </Heading>
@@ -53,7 +46,7 @@ const Dashboard = () => {
               and more.
             </Text>
           </Flex>
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px" mt={8}>
+          <Flex direction="column" align="flex-start" maxWidth="700px">
             <SimpleGrid columns={[1, 1, 2]} spacing={4} mb={4}>
               <Analytics />
               <GitHub />

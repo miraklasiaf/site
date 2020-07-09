@@ -19,7 +19,7 @@ const BlogPost = (frontMatter) => {
     <NextLink href={`blog/${slug}`} passHref>
       <Link w="full" _hover={{ textDecoration: 'none' }}>
         <Box mb={8} width="full">
-          <Flex w="full" align="flex-start" justify="space-between" direction={['column', 'row']}>
+          <Flex w="full" justify="space-between" direction={['column', 'row']}>
             <Heading size="md" as="h3" mb={2} fontWeight="medium">
               {title}
             </Heading>

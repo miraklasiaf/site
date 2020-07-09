@@ -49,7 +49,6 @@ const Blog = () => {
       />
       <Container>
         <Stack
-          as="main"
           spacing={8}
           justifyContent="center"
           alignItems="flex-start"

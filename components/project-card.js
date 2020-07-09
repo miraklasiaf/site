@@ -19,7 +19,7 @@ const ProjectCard = ({ title, description, href, icon }) => {
       <Flex align="center" border="1px" borderColor={borderColor} borderRadius={4} p={4}>
         <Icon aria-label="LinkedIn" name={icon} color={iconColor} size="32px" ml={2} mr={4} />
         <Stack>
-          <Heading as="h4" size="md" fontWeight="bold" mb={4} letterSpacing="tighter">
+          <Heading as="h3" size="md" fontWeight="bold" mb={4} letterSpacing="tighter">
             {title}
           </Heading>
           <Text lineHeight="1.3">{description}</Text>

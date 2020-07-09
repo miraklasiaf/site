@@ -8,7 +8,7 @@ const Footer = () => {
   const bgColor = useColorModeValue('gray.200', 'gray.500');
 
   return (
-    <Stack direction="row" as="footer" mb={4} justify="center">
+    <Stack direction="row" as="footer" my={4} justify="center">
       {links.map(([icon, route, title]) => (
         <Link
           href={route}

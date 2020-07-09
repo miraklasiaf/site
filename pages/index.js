@@ -14,14 +14,8 @@ const Index = () => {
 
   return (
     <Container>
-      <Stack
-        spacing={8}
-        justifyContent="center"
-        alignItems="flex-start"
-        m="0 auto 4rem auto"
-        maxWidth="700px"
-      >
-        <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px">
+      <Stack spacing={8} mx="auto" maxWidth="700px">
+        <Flex direction="column" maxWidth="700px">
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
             Hey, I’m Faisal Karim
           </Heading>
@@ -30,16 +24,16 @@ const Index = () => {
             internet – everything you want to know and more is here.
           </Text>
         </Flex>
-        <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px" mt={8}>
-          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
+        <Flex direction="column" maxWidth="700px">
+          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight="bold">
             Most Popular
           </Heading>
           <BlogPost {...styleGuides} />
           <BlogPost {...stripeDesign} />
           <BlogPost {...monorepo} />
         </Flex>
-        <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px">
-          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
+        <Flex direction="column" maxWidth="700px">
+          <Heading letterSpacing="tight" mb={4} size="xl" fontWeight="bold">
             Projects
           </Heading>
           <ProjectCard
