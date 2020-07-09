@@ -49,7 +49,7 @@ export default (frontMatter) => {
               mb={4}
             >
               <Flex align="center">
-                <Avatar size="xs" name="Faisal Karim" src="https://bit.ly/3falWUH" mr={2} />
+                <Avatar size="xs" name="Faisal Karim" src="/static/images/faisal.png" mr={2} />
                 <Text fontSize="sm" color={textColor}>
                   {frontMatter.by}
                   {'Faisal Karim / '}

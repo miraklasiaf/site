@@ -15,7 +15,6 @@ const Index = () => {
   return (
     <Container>
       <Stack
-        as="main"
         spacing={8}
         justifyContent="center"
         alignItems="flex-start"
