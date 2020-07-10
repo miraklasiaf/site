@@ -2,8 +2,6 @@
 
 This is based on Lee Robinson's https://github.com/leerob/leerob.io
 
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/miraklasiaf/miraklasiaf.now.sh)
-
 ## Overview
 
 - `pages/api/*` - [API routes](https://nextjs.org/docs/api-routes/introduction) powering [`/dashboard`](https://miraklasiaf.now.sh/dashboard), newsletter subscription, and post views.
