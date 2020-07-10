@@ -1,6 +1,8 @@
 # miraklasiaf.now.sh
 
-My personal slice of the internet provides a platform for my writing and to showcase my latest work.
+This is based on Lee Robinson's https://github.com/leerob/leerob.io
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/miraklasiaf/miraklasiaf.now.sh)
 
 ## Overview
 
