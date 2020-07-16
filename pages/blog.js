@@ -19,7 +19,6 @@ import { PLATFORM_URL } from '@lib/constants';
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';
-import { frontMatter as monorepo } from './blog/monorepo-lerna-yarn-workspaces.mdx';
 
 const url = `${PLATFORM_URL}/blog`;
 const title = 'Blog · Faisal Karim';
@@ -83,7 +82,6 @@ const Blog = () => {
                 Most Popular
               </Heading>
               <BlogPost {...stripeDesign} />
-              <BlogPost {...monorepo} />
             </Flex>
           )}
           <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px" mt={8}>

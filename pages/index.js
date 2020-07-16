@@ -5,7 +5,7 @@ import Container from '@components/container';
 import BlogPost from '@components/blog-post';
 import ProjectCard from '@components/project-card';
 
-import { frontMatter as styleGuides } from './blog/style-guides-component-libraries-design-systems.mdx';
+import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';
 
 const Index = () => {
   const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
@@ -26,7 +26,7 @@ const Index = () => {
           <Heading letterSpacing="tight" mb={4} size="xl" fontWeight="bold">
             Most Popular
           </Heading>
-          <BlogPost {...styleGuides} />
+          <BlogPost {...stripeDesign} />
         </Flex>
         <Flex direction="column" maxWidth="700px">
           <Heading letterSpacing="tight" mb={4} size="xl" fontWeight="bold">
