@@ -1,20 +1,11 @@
+import chakraTheme from '@chakra-ui/theme';
 import foundations from './foundations';
-import components from './components';
 import styles from './styles';
 
-/*
- * Color mode config
- */
-const config = {
-  useSystemColorMode: false,
-  initialColorMode: 'light'
-};
-
 const theme = {
+  ...chakraTheme,
   ...foundations,
-  components,
-  styles,
-  config
+  styles
 };
 
 export default theme;
