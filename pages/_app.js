@@ -4,11 +4,11 @@ import { Global, css } from '@emotion/core';
 import { DefaultSeo } from 'next-seo';
 import { ChakraProvider, CSSReset, useColorModeValue } from '@chakra-ui/core';
 
-import { prismLightTheme, prismDarkTheme } from '../styles/prism';
-import MDXComponents from '../components/mdx';
-import Nprogress from '../components/nprogress';
+import { prismLightTheme, prismDarkTheme } from '@styles/prism';
+import MDXComponents from '@components/mdx';
+import Nprogress from '@components/nprogress';
 import SEO from '../next-seo.config';
-import theme from '../components/design-system';
+import theme from '@components/design-system';
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme);
@@ -46,9 +46,9 @@ const GlobalStyle = ({ children }) => {
 const App = ({ Component, pageProps }) => {
   return (
     <ChakraProvider theme={theme}>
-      <CSSReset />
       <MDXProvider components={MDXComponents}>
         <GlobalStyle>
+          <CSSReset />
           <Nprogress />
           <DefaultSeo {...SEO} />
           <Component {...pageProps} />

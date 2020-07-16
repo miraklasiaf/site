@@ -46,7 +46,7 @@ const Quote = (props) => {
   return (
     <Box
       mt={4}
-      w="98%"
+      w="full"
       bg={bgColor}
       variant="left-accent"
       status="info"

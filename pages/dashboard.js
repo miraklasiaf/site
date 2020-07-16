@@ -1,10 +1,10 @@
 import { NextSeo } from 'next-seo';
 import { useColorModeValue, Heading, Text, Flex, Stack, SimpleGrid } from '@chakra-ui/core';
 
-import { PLATFORM_URL } from '../lib/constants';
-import Analytics from '../components/metrics/analytics';
-import Container from '../components/container';
-import GitHub from '../components/metrics/github';
+import { PLATFORM_URL } from '@lib/constants';
+import Analytics from '@components/metrics/analytics';
+import Container from '@components/container';
+import GitHub from '@components/metrics/github';
 
 const url = `${PLATFORM_URL}/dashboard`;
 const title = 'Dashboard · Faisal Karim';

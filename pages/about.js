@@ -1,9 +1,9 @@
 import { NextSeo } from 'next-seo';
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/core';
 
-import Container from '../components/container';
-import { CustomLink } from '../components/mdx';
-import { PLATFORM_URL } from '../lib/constants';
+import Container from '@components/container';
+import { CustomLink } from '@components/mdx';
+import { PLATFORM_URL } from '@lib/constants';
 
 const url = `${PLATFORM_URL}/about`;
 const title = 'About · Faisal Karim';
@@ -34,15 +34,10 @@ const About = () => {
               About Me
             </Heading>
             <Text color={secondaryTextColor} mb={4}>
-              Hey, Faisal Karim. I live in Batam, Indonesia and I’m a Senior Software Engineer
-              at&nbsp;
-              <CustomLink href="https://innovate.hy-vee.com">Hy-Vee</CustomLink>, a $10B grocery
-              tech company in the Midwest. As a tech lead, my primary focus is developing Aisles
-              Online, Hy-Vee’s e-commerce grocery shopping platform – which serves millions of
-              customers every year. I also help maintain our internal component library.
+              Hey, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
             </Text>
             <Text color={secondaryTextColor} mb={4}>
-              I grew up in small-town Iowa and went to school at Iowa State, graduating with a
+              I grew up in small-town Batam and went to university at Pekanbaru, graduating with a
               degree in Computer Science. I spend my free time listening music, playing games, and
               enjoying time with friends and family.
             </Text>

@@ -12,20 +12,18 @@ import {
 } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
 
-import Container from '../components/container';
-import BlogPost from '../components/blog-post';
-import { PLATFORM_URL } from '../lib/constants';
+import Container from '@components/container';
+import BlogPost from '@components/blog-post';
+import { PLATFORM_URL } from '@lib/constants';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
-import { frontMatter as styleGuides } from './blog/style-guides-component-libraries-design-systems.mdx';
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';
 import { frontMatter as monorepo } from './blog/monorepo-lerna-yarn-workspaces.mdx';
 
 const url = `${PLATFORM_URL}/blog`;
 const title = 'Blog · Faisal Karim';
-const description =
-  'Thoughts on the software industry, programming, tech, videography, music, and my personal life.';
+const description = 'Thoughts on the programming, tech, and my personal life.';
 
 const Blog = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -60,7 +58,7 @@ const Blog = () => {
               Blog
             </Heading>
             <Text color={secondaryTextColor}>
-              {`I've been writing online since 2014, mostly about web development and tech careers.
+              {`I've been writing online since 2020, mostly about web development.
                 In total, I've written ${blogPosts.length} articles on this site.
                 Use the search below to filter by title.`}
             </Text>
@@ -70,9 +68,7 @@ const Blog = () => {
                 onChange={(e) => setSearchValue(e.target.value)}
                 placeholder="Search articles"
               />
-              <InputRightElement mt={3}>
-                <SearchIcon size="32px" color="gray.300" />
-              </InputRightElement>
+              <InputRightElement children={<SearchIcon size="32px" color="gray.300" />} />
             </InputGroup>
           </Flex>
           {!searchValue && (
@@ -86,7 +82,6 @@ const Blog = () => {
               <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
                 Most Popular
               </Heading>
-              <BlogPost {...styleGuides} />
               <BlogPost {...stripeDesign} />
               <BlogPost {...monorepo} />
             </Flex>

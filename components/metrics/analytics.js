@@ -1,8 +1,8 @@
 import useSWR from 'swr';
 import format from 'comma-number';
 
-import fetcher from '../../lib/fetcher';
-import { PLATFORM_URL } from '../../lib/constants';
+import fetcher from '@lib/fetcher';
+import { PLATFORM_URL } from '@lib/constants';
 
 import MetricCard from './card';
 

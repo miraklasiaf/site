@@ -1,20 +1,22 @@
-import NProgress from 'nprogress';
 import Router from 'next/router';
+import nprogress from 'nprogress';
+import debounce from 'lodash.debounce';
 
-let timeout;
-
-const start = () => {
-  timeout = setTimeout(NProgress.start, 100);
-};
-
-const done = () => {
-  clearTimeout(timeout);
-  NProgress.done();
-};
+// Only show nprogress after 500ms (slow loading)
+const start = debounce(nprogress.start, 500);
 
 Router.events.on('routeChangeStart', start);
-Router.events.on('routeChangeComplete', done);
-Router.events.on('routeChangeError', done);
+
+Router.events.on('routeChangeComplete', () => {
+  start.cancel();
+  nprogress.done();
+  window.scrollTo(0, 0);
+});
+
+Router.events.on('routeChangeError', () => {
+  start.cancel();
+  nprogress.done();
+});
 
 export default () => (
   <style jsx global>
@@ -25,8 +27,8 @@ export default () => (
       }
 
       #nprogress .bar {
-        background: #0070f3;
         position: fixed;
+        background: #0070f3;
         z-index: 1031;
         top: 0;
         left: 0;
