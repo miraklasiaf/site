@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { NextSeo } from 'next-seo';
+import { useState } from 'react';
 import {
   useColorModeValue,
   Heading,
@@ -11,10 +10,10 @@ import {
   InputRightElement
 } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
-
 import Container from '@components/container';
-import BlogPost from '@components/blog-post';
-import { PLATFORM_URL } from '@lib/constants';
+import { Post } from '@components/blog';
+import { PLATFORM_URL } from '@utils/constants';
+import { NextSeo } from 'next-seo';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { frontMatter as blogPosts } from './blog/**/*.mdx';
@@ -24,9 +23,9 @@ const url = `${PLATFORM_URL}/blog`;
 const title = 'Blog · Faisal Karim';
 const description = 'Thoughts on the programming, tech, and my personal life.';
 
-const Blog = () => {
+export default function BlogPage() {
   const [searchValue, setSearchValue] = useState('');
-  const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
+  const color = useColorModeValue('gray.700', 'gray.400');
 
   const filteredBlogPosts = blogPosts
     .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)))
@@ -49,14 +48,15 @@ const Blog = () => {
           spacing={8}
           justifyContent="center"
           alignItems="flex-start"
-          m="0 auto 4rem auto"
-          maxWidth="700px"
+          mx="auto"
+          mb={16}
+          maxWidth="3xl"
         >
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px">
+          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="3xl">
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Blog
             </Heading>
-            <Text color={secondaryTextColor}>
+            <Text color={color}>
               {`I've been writing online since 2020, mostly about web development.
                 In total, I've written ${blogPosts.length} articles on this site.
                 Use the search below to filter by title.`}
@@ -71,32 +71,24 @@ const Blog = () => {
             </InputGroup>
           </Flex>
           {!searchValue && (
-            <Flex
-              direction="column"
-              justify="flex-start"
-              align="flex-start"
-              maxWidth="700px"
-              mt={8}
-            >
+            <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="3xl" mt={8}>
               <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
                 Most Popular
               </Heading>
-              <BlogPost {...stripeDesign} />
+              <Post {...stripeDesign} />
             </Flex>
           )}
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="700px" mt={8}>
+          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="3xl" mt={8}>
             <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
               All Posts
             </Heading>
             {!filteredBlogPosts.length && 'No posts found.'}
             {filteredBlogPosts.map((frontMatter) => (
-              <BlogPost key={frontMatter.title} {...frontMatter} />
+              <Post key={frontMatter.title} {...frontMatter} />
             ))}
           </Flex>
         </Stack>
       </Container>
     </>
   );
-};
-
-export default Blog;
+}

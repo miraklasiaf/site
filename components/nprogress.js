@@ -18,7 +18,7 @@ Router.events.on('routeChangeError', () => {
   nprogress.done();
 });
 
-export default () => (
+const Nprogress = () => (
   <style jsx global>
     {`
       /* Make clicks pass-through */
@@ -53,3 +53,5 @@ export default () => (
     `}
   </style>
 );
+
+export default Nprogress;

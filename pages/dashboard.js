@@ -1,18 +1,17 @@
 import { NextSeo } from 'next-seo';
 import { useColorModeValue, Heading, Text, Flex, Stack, SimpleGrid } from '@chakra-ui/core';
 
-import { PLATFORM_URL } from '@lib/constants';
+import { PLATFORM_URL } from '@utils/constants';
 import Analytics from '@components/metrics/analytics';
 import Container from '@components/container';
 import GitHub from '@components/metrics/github';
 
 const url = `${PLATFORM_URL}/dashboard`;
 const title = 'Dashboard · Faisal Karim';
-const description =
-  'My personal dashboard, built with Next.js API routes deployed as serverless functions.';
+const description = 'My personal dashboard, built with Next.js API routes';
 
-const Dashboard = () => {
-  const secondaryTextColor = useColorModeValue('gray.700', 'gray.400');
+export default function DashboardPage() {
+  const color = useColorModeValue('gray.700', 'gray.400');
 
   return (
     <>
@@ -35,18 +34,18 @@ const Dashboard = () => {
         }}
       />
       <Container>
-        <Stack spacing={8} m="0 auto 4rem auto" maxWidth="700px">
-          <Flex direction="column" maxWidth="700px">
+        <Stack spacing={8} m="0 auto 4rem auto" maxWidth="3xl">
+          <Flex direction="column" maxWidth="3xl">
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Dashboard
             </Heading>
-            <Text color={secondaryTextColor}>
+            <Text color={color}>
               This is my personal dashboard, built with Next.js API routes deployed as serverless
               functions. I use this dashboard to track various metrics across platforms like GitHub,
               and more.
             </Text>
           </Flex>
-          <Flex direction="column" align="flex-start" maxWidth="700px">
+          <Flex direction="column" align="flex-start" maxWidth="3xl">
             <SimpleGrid columns={[1, 1, 2]} spacing={4} mb={4}>
               <Analytics />
               <GitHub />
@@ -56,6 +55,4 @@ const Dashboard = () => {
       </Container>
     </>
   );
-};
-
-export default Dashboard;
+}

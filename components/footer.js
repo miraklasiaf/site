@@ -1,10 +1,8 @@
-import React from 'react';
 import { Stack, Link, Box, useColorModeValue } from '@chakra-ui/core';
-
-import { links } from '@lib/constants';
+import { links } from '@utils/constants';
 
 const Footer = () => {
-  const color = useColorModeValue('gray.500', 'gray.200');
+  const color = useColorModeValue('gray.600', 'gray.200');
   const bgColor = useColorModeValue('gray.200', 'gray.500');
 
   return (
@@ -20,7 +18,7 @@ const Footer = () => {
           p={2}
           _hover={{ bg: bgColor }}
         >
-          <Box as={icon} />
+          <Box as={icon} boxSize={6} />
         </Link>
       ))}
     </Stack>

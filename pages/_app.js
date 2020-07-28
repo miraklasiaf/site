@@ -1,4 +1,4 @@
-import React from 'react';
+import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
 import { Global, css } from '@emotion/core';
 import { DefaultSeo } from 'next-seo';
@@ -51,6 +51,9 @@ const App = ({ Component, pageProps }) => {
           <CSSReset />
           <Nprogress />
           <DefaultSeo {...SEO} />
+          <Head>
+            <meta content="width=device-width, initial-scale=1" name="viewport" />
+          </Head>
           <Component {...pageProps} />
         </GlobalStyle>
       </MDXProvider>

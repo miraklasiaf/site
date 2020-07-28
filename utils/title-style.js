@@ -1,4 +1,4 @@
-const remarkCapitalize = require('remark-capitalize')
+const remarkCapitalize = require('remark-capitalize');
 
 const excludedWords = [
   '1Password',
@@ -21,9 +21,9 @@ const excludedWords = [
   'USB',
   'UX',
   'VSCode',
-  'w_flux',
-]
+  'w_flux'
+];
 
 module.exports = remarkCapitalize({
-  special: excludedWords,
-})
+  special: excludedWords
+});

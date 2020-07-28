@@ -1,5 +1,5 @@
-const readingTime = require('reading-time');
 const mdxPrism = require('mdx-prism');
+const readingTime = require('reading-time');
 const withMdxEnhanced = require('next-mdx-enhanced');
 
 module.exports = withMdxEnhanced({

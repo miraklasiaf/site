@@ -1,11 +1,9 @@
 import { useColorModeValue, Text, Flex, Box, Link } from '@chakra-ui/core';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 
-const MetricCard = ({ header, link, metric }) => {
-  const borderColor = useColorModeValue('gray.200', 'gray.700');
-
+export default function MetricCard({ header, link, metric }) {
   return (
-    <Box p={4} border="1px" borderColor={borderColor} borderRadius="lg" minWidth="300px">
+    <Box p={4} borderWidth="1px" borderRadius="lg" minWidth="xs">
       <Link href={link} isExternal>
         <Flex align="center">
           {header}
@@ -17,6 +15,4 @@ const MetricCard = ({ header, link, metric }) => {
       </Text>
     </Box>
   );
-};
-
-export default MetricCard;
+}

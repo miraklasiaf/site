@@ -1,4 +1,4 @@
-import { PLATFORM_URL } from './lib/constants';
+import { PLATFORM_URL } from './utils/constants';
 
 const title = 'Faisal Karim · Developer';
 const description = 'Front-end developer and JavaScript enthusiast';

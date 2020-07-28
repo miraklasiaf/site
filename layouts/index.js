@@ -4,8 +4,8 @@ import { useColorModeValue, Heading, Text, Flex, Stack, Avatar, Link, Box } from
 
 import Container from '@components/container';
 import ViewCounter from '@components/view-counter';
-import BlogSeo from '@components/blog-seo';
-import { PLATFORM_URL } from '@lib/constants';
+import { Seo } from '@components/blog';
+import { PLATFORM_URL } from '@utils/constants';
 
 const editUrl = (slug) =>
   `https://github.com/miraklasiaf/miraklasiaf.now.sh/edit/master/pages/blog/${slug}.mdx`;

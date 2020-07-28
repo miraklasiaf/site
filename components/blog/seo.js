@@ -3,7 +3,7 @@ import { NextSeo, ArticleJsonLd } from 'next-seo';
 
 import { PLATFORM_URL, MY_NAME } from '@lib/constants';
 
-const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
+export default function Seo({ title, summary, publishedAt, url, image }) {
   const date = new Date(publishedAt).toISOString();
   const featuredImage = {
     url: `${PLATFORM_URL}${image}`,
@@ -13,7 +13,7 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
   return (
     <>
       <NextSeo
-        title={`${title} – ${MY_NAME}`}
+        title={`${title} · ${MY_NAME}`}
         description={summary}
         canonical={url}
         openGraph={{
@@ -40,6 +40,4 @@ const BlogSeo = ({ title, summary, publishedAt, url, image }) => {
       />
     </>
   );
-};
-
-export default BlogSeo;
+}

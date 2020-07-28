@@ -1,7 +1,6 @@
-import React from 'react';
 import { Flex, Link, Heading, Text, Stack, Icon, useColorModeValue } from '@chakra-ui/core';
 
-const ProjectCard = ({ title, description, href, icon }) => {
+export default function ProjectCard({ title, description, href, icon }) {
   const borderColor = useColorModeValue('gray.200', 'gray.600');
   const iconColor = useColorModeValue('gray.1000', 'white');
 
@@ -27,6 +26,4 @@ const ProjectCard = ({ title, description, href, icon }) => {
       </Flex>
     </Link>
   );
-};
-
-export default ProjectCard;
+}

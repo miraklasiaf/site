@@ -5,7 +5,7 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons';
 import styled from '@emotion/styled';
 
 import useColorMode from '@lib/color-mode';
-import { routes } from '@lib/constants';
+import { routes } from '@utils/constants';
 
 const StickyNav = styled(Flex)`
   position: sticky;
