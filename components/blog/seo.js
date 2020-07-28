@@ -1,7 +1,5 @@
-import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
-
-import { PLATFORM_URL, MY_NAME } from '@lib/constants';
+import { PLATFORM_URL, MY_NAME } from '@utils/constants';
 
 export default function Seo({ title, summary, publishedAt, url, image }) {
   const date = new Date(publishedAt).toISOString();
