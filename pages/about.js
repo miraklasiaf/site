@@ -25,9 +25,9 @@ export default function AboutPage() {
           justifyContent="center"
           alignItems="flex-start"
           m="0 auto 4rem auto"
-          maxWidth="3xl"
+          maxWidth="2xl"
         >
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="3xl">
+          <Flex direction="column" justify="flex-start" align="flex-start">
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               About Me
             </Heading>
@@ -35,9 +35,9 @@ export default function AboutPage() {
               Hey, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
             </Text>
             <Text color={secondaryColor} mb={4}>
-              I grew up in small-town Batam and went to university at Pekanbaru, graduating with a
-              degree in Computer Science. I spend my free time listening music, playing games, and
-              enjoying time with friends and family.
+              I grew up in small-town Batam and went to Riau University at Pekanbaru, graduating
+              with a degree in Computer Science. I spend my free time listening music, playing
+              games, and enjoying time with friends and family.
             </Text>
           </Flex>
         </Stack>
