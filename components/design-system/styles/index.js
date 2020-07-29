@@ -4,7 +4,7 @@ const styles = {
   global: (props) => ({
     fontFamily: 'body',
     color: mode('cool-gray.900', 'white')(props),
-    bg: mode('white', 'cool-gray.900')(props),
+    bg: mode('white', 'rgb(23, 25, 35)')(props),
     '*::placeholder': {
       color: mode('gray.400', 'whiteAlpha.400')(props)
     },

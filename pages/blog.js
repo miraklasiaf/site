@@ -50,16 +50,16 @@ export default function BlogPage() {
           alignItems="flex-start"
           mx="auto"
           mb={16}
-          maxWidth="3xl"
+          maxWidth="2xl"
         >
-          <Flex direction="column" justify="flex-start" align="flex-start" maxWidth="3xl">
+          <Flex direction="column" justify="flex-start" align="flex-start">
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               Blog
             </Heading>
             <Text color={color}>
-              {`I've been writing online since 2020, mostly about web development.
-                In total, I've written ${blogPosts.length} articles on this site.
-                Use the search below to filter by title.`}
+              {`I've been writing online since 2020, mostly about web development. In total, I've
+              written ${blogPosts.length} articles on this site. Use the search below to filter by
+              title.`}
             </Text>
             <InputGroup my={4} mr={4} w="full">
               <Input

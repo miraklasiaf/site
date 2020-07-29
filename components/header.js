@@ -1,7 +1,7 @@
 import React from 'react';
 import NextLink from 'next/link';
 import styled from '@emotion/styled';
-import { Button, Flex, Box, IconButton } from '@chakra-ui/core';
+import { Button, Flex, Box, useColorModeValue } from '@chakra-ui/core';
 
 import { routes } from '@utils/constants';
 import ThemeToggle from './theme-toggle';
@@ -14,7 +14,9 @@ const StickyNav = styled(Flex)`
   transition: background-color 0.1 ease-in-out;
 `;
 
-const Header = () => {
+export default function Header() {
+  const bgColor = useColorModeValue('rgba(255, 255, 255, 0.8)', 'rgba(23, 25, 35, 0.8)');
+
   return (
     <StickyNav
       as="header"
@@ -22,10 +24,11 @@ const Header = () => {
       align="center"
       w="full"
       maxWidth="4xl"
-      py={4}
+      p={8}
       mt={[0, 8]}
       mb={8}
       mx="auto"
+      bg={bgColor}
     >
       <Box>
         {routes.map(([children, route]) => (
@@ -39,6 +42,4 @@ const Header = () => {
       <ThemeToggle />
     </StickyNav>
   );
-};
-
-export default Header;
+}

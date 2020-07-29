@@ -2,8 +2,8 @@ import { Stack, Link, Box, useColorModeValue } from '@chakra-ui/core';
 import { links } from '@utils/constants';
 
 const Footer = () => {
-  const color = useColorModeValue('gray.600', 'gray.200');
-  const bgColor = useColorModeValue('gray.200', 'gray.500');
+  const color = useColorModeValue('gray.500', 'gray.400');
+  const bgColor = useColorModeValue('gray.200', 'gray.800');
 
   return (
     <Stack direction="row" as="footer" my={4} justify="center">
@@ -14,7 +14,7 @@ const Footer = () => {
           isExternal
           title={title}
           color={color}
-          borderRadius="lg"
+          borderRadius="default"
           p={2}
           _hover={{ bg: bgColor }}
         >

@@ -7,7 +7,7 @@ const url = `${PLATFORM_URL}/about`;
 const title = 'About · Faisal Karim';
 
 export default function AboutPage() {
-  const color = useColorModeValue('gray.700', 'gray.400');
+  const secondaryColor = useColorModeValue('gray.700', 'gray.400');
 
   return (
     <>
@@ -31,10 +31,10 @@ export default function AboutPage() {
             <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
               About Me
             </Heading>
-            <Text color={color} mb={4}>
+            <Text color={secondaryColor} mb={4}>
               Hey, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
             </Text>
-            <Text color={color} mb={4}>
+            <Text color={secondaryColor} mb={4}>
               I grew up in small-town Batam and went to university at Pekanbaru, graduating with a
               degree in Computer Science. I spend my free time listening music, playing games, and
               enjoying time with friends and family.
