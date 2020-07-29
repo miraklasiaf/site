@@ -1,4 +1,5 @@
 import Router from 'next/router';
+import * as gtag from '@lib/gtag';
 import nprogress from 'nprogress';
 import debounce from 'lodash.debounce';
 
@@ -7,10 +8,11 @@ const start = debounce(nprogress.start, 500);
 
 Router.events.on('routeChangeStart', start);
 
-Router.events.on('routeChangeComplete', () => {
+Router.events.on('routeChangeComplete', (url) => {
   start.cancel();
   nprogress.done();
   window.scrollTo(0, 0);
+  gtag.pageview(url);
 });
 
 Router.events.on('routeChangeError', () => {

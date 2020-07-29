@@ -1,6 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { InitializeColorMode } from '@chakra-ui/core';
 import GoogleFonts from 'next-google-fonts';
+import { GA_TRACKING_ID } from '@lib/gtag';
 
 class MyDocument extends Document {
   render() {
@@ -39,6 +40,19 @@ class MyDocument extends Document {
           <link color="#4a9885" href="/static/favicon/safari-pinned-tab.svg" rel="mask-icon" />
         </Head>
         <body>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `
+            }}
+          />
           <InitializeColorMode />
           <Main />
           <NextScript />

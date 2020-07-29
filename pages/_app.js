@@ -12,7 +12,6 @@ import theme from '@components/design-system';
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme);
-  const bg = useColorModeValue('white', '#171923');
 
   return (
     <>
@@ -33,8 +32,8 @@ const GlobalStyle = ({ children }) => {
           #__next {
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
-            background: ${bg};
           }
         `}
       />

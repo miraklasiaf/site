@@ -16,7 +16,8 @@ const useColorMode = () => {
     colorMode,
     toggleColorMode: toggle,
     isDarkMode,
-    isLightMode
+    isLightMode,
+    newColorMode
   };
 };
 
