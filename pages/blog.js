@@ -83,9 +83,11 @@ export default function BlogPage() {
               All Posts
             </Heading>
             {!filteredBlogPosts.length && 'No posts found.'}
-            {filteredBlogPosts.map((frontMatter) => (
-              <Post key={frontMatter.title} {...frontMatter} />
-            ))}
+            <Stack>
+              {filteredBlogPosts.map((frontMatter) => (
+                <Post key={frontMatter.title} {...frontMatter} />
+              ))}
+            </Stack>
           </Flex>
         </Stack>
       </Container>

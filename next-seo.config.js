@@ -1,7 +1,7 @@
 import { PLATFORM_URL } from './utils/constants';
 
-const title = 'Faisal Karim · Developer';
-const description = 'Front-end developer and JavaScript enthusiast';
+const title = 'Faisal Karim';
+const description = 'Front-end Developer and JavaScript enthusiast';
 
 const SEO = {
   title,

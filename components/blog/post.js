@@ -14,10 +14,19 @@ export default function Post(frontMatter) {
 
   return (
     <NextLink href={`blog/${slug}`} passHref>
-      <Link w="full" _hover={{ textDecoration: 'none' }}>
-        <Box mb={8} w="full">
+      <Link
+        w="full"
+        borderWidth="1px"
+        borderRadius="default"
+        p={5}
+        _hover={{
+          boxShadow: 'lg',
+          textDecoration: 'none'
+        }}
+      >
+        <Box w="full">
           <Flex w="full" justify="space-between" direction={['column', 'row']}>
-            <Heading size="md" as="h3" mb={2} fontWeight="medium">
+            <Heading size="md" as="h3" mb={2} fontWeight="semibold">
               {title}
             </Heading>
             <Text color="gray.500" minWidth="105px" textAlign={['left', 'right']} mb={[4, 0]}>
