@@ -1,7 +1,7 @@
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/core';
-import Container from '@components/container';
-import ProjectCard from '@components/project-card';
-import { Post } from '@components/blog';
+import Container from '@/components/container';
+import ProjectCard from '@/components/project-card';
+import { Post } from '@/components/blog';
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx';
 
 export default function IndexPage() {

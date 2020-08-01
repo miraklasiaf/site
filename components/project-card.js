@@ -1,5 +1,5 @@
 import { Flex, Link, Heading, Text, Stack, Box, useColorModeValue } from '@chakra-ui/core';
-import { Folder } from '@components/icons';
+import { Folder } from '@/components/icons';
 
 export default function ProjectCard({ title, description, href, icon }) {
   const iconColor = useColorModeValue('gray.900', 'white');

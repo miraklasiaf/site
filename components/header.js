@@ -3,7 +3,7 @@ import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { Button, Flex, Box, useColorModeValue } from '@chakra-ui/core';
 
-import { routes } from '@utils/constants';
+import { routes } from '@/utils/constants';
 import ThemeToggle from './theme-toggle';
 
 const StickyNav = styled(Flex)`

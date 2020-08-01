@@ -1,6 +1,6 @@
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/core';
-import Container from '@components/container';
-import { PLATFORM_URL } from '@utils/constants';
+import Container from '@/components/container';
+import { PLATFORM_URL } from '@/utils/constants';
 import { NextSeo } from 'next-seo';
 
 const url = `${PLATFORM_URL}/about`;

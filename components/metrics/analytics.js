@@ -1,7 +1,7 @@
 import useSWR from 'swr';
 import format from 'comma-number';
-import fetcher from '@lib/fetcher';
-import { PLATFORM_URL } from '@utils/constants';
+import fetcher from '@/lib/fetcher';
+import { PLATFORM_URL } from '@/utils/constants';
 import MetricCard from './card';
 
 export default function Analytics() {

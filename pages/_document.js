@@ -1,7 +1,7 @@
 import Document, { Head, Main, NextScript } from 'next/document';
 import { InitializeColorMode } from '@chakra-ui/core';
 import GoogleFonts from 'next-google-fonts';
-import { GA_TRACKING_ID } from '@lib/gtag';
+import { GA_TRACKING_ID } from '@/lib/gtag';
 
 class MyDocument extends Document {
   render() {

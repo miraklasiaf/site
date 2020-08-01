@@ -1,5 +1,5 @@
 import Router from 'next/router';
-import * as gtag from '@lib/gtag';
+import * as gtag from '@/lib/gtag';
 import nprogress from 'nprogress';
 import debounce from 'lodash.debounce';
 

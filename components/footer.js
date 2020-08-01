@@ -1,5 +1,5 @@
 import { Stack, Link, Box, useColorModeValue } from '@chakra-ui/core';
-import { links } from '@utils/constants';
+import { links } from '@/utils/constants';
 
 const Footer = () => {
   const color = useColorModeValue('gray.500', 'gray.400');

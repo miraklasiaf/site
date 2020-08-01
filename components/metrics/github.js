@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import format from 'comma-number';
-import fetcher from '@lib/fetcher';
+import fetcher from '@/lib/fetcher';
 import MetricCard from './card';
 
 export default function GitHub() {

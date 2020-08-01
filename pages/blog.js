@@ -10,9 +10,9 @@ import {
   InputRightElement
 } from '@chakra-ui/core';
 import { SearchIcon } from '@chakra-ui/icons';
-import Container from '@components/container';
-import { Post } from '@components/blog';
-import { PLATFORM_URL } from '@utils/constants';
+import Container from '@/components/container';
+import { Post } from '@/components/blog';
+import { PLATFORM_URL } from '@/utils/constants';
 import { NextSeo } from 'next-seo';
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
