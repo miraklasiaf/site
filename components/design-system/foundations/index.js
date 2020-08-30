@@ -6,6 +6,7 @@ import sizes, { baseSizes } from './sizes';
 import typography from './typography';
 import zIndices from './z-index';
 import borders from './borders';
+import transition from './transition';
 
 const space = baseSizes;
 
