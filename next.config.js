@@ -1,15 +1,29 @@
-const mdxPrism = require('mdx-prism');
-const readingTime = require('reading-time');
-const withMdxEnhanced = require('next-mdx-enhanced');
+const mdxPrism = require('mdx-prism')
+const readingTime = require('reading-time')
+const withMdxEnhanced = require('next-mdx-enhanced')
+const withPlugins = require('next-compose-plugins')
 
-module.exports = withMdxEnhanced({
+const defaultConfig = {
+  experimental: {
+    modern: true
+  },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap')
+    }
+
+    return config
+  }
+}
+
+const mdxConfig = {
   layoutPath: 'layouts',
   defaultLayout: true,
   remarkPlugins: [
     require('remark-autolink-headings'),
     require('remark-slug'),
     require('remark-code-titles'),
-    require('./utils/title-style')
+    require('./src/utils/title-style')
   ],
   rehypePlugins: [mdxPrism],
   extendFrontMatter: {
@@ -18,15 +32,6 @@ module.exports = withMdxEnhanced({
       readingTime: readingTime(mdxContent)
     })
   }
-})({
-  experimental: {
-    modern: true
-  },
-  webpack: (config, { isServer }) => {
-    if (isServer) {
-      require('./scripts/generate-sitemap');
-    }
+}
 
-    return config;
-  }
-});
+module.exports = withPlugins([withMdxEnhanced(mdxConfig)], defaultConfig)

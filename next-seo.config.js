@@ -1,7 +1,7 @@
-import { PLATFORM_URL } from './utils/constants';
+import { PLATFORM_URL } from '@/utils/constants'
 
-const title = 'Faisal Karim';
-const description = 'Front-end Developer and JavaScript enthusiast';
+const title = 'Faisal Karim'
+const description = 'Front-end Developer and JavaScript enthusiast'
 
 const SEO = {
   title,
@@ -27,6 +27,6 @@ const SEO = {
     site: '@miraklasiaf',
     cardType: 'summary_large_image'
   }
-};
+}
 
-export default SEO;
+export default SEO
