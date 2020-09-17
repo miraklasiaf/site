@@ -1,8 +1,7 @@
-import NextLink from 'next/link'
-import { Heading, Flex, Stack, Button } from '@chakra-ui/core'
 import Head from 'next/head'
-
+import NextLink from 'next/link'
 import Container from '@/components/container'
+import { Heading, Flex, Stack, Button } from '@chakra-ui/core'
 
 export default function Error() {
   return (

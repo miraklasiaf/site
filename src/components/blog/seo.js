@@ -11,7 +11,7 @@ export default function Seo({ title, summary, publishedAt, url, image }) {
   return (
     <>
       <NextSeo
-        title={`${title} · ${MY_NAME}`}
+        title={title}
         description={summary}
         canonical={url}
         openGraph={{

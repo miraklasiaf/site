@@ -1,14 +1,11 @@
 import Head from 'next/head'
-import { MDXProvider } from '@mdx-js/react'
-import { Global, css } from '@emotion/core'
 import { DefaultSeo } from 'next-seo'
+import { Global, css } from '@emotion/core'
 import { ChakraProvider, useColorModeValue } from '@chakra-ui/core'
-import MDXComponents from '@/components/mdx'
 import Nprogress from '@/components/nprogress'
 import theme from '@/design-system'
 import { prismLightTheme, prismDarkTheme } from '@/styles/prism'
-
-import SEO from '../../next-seo.config'
+import siteConfig from '@/configs/site-config'
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme)
@@ -44,18 +41,18 @@ const GlobalStyle = ({ children }) => {
 
 const App = ({ Component, pageProps }) => {
   return (
-    <ChakraProvider resetCSS theme={theme} portalZIndex={40}>
-      <MDXProvider components={MDXComponents}>
+    <>
+      <Head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+      </Head>
+      <ChakraProvider resetCSS theme={theme} portalZIndex={40}>
         <GlobalStyle>
           <Nprogress />
-          <DefaultSeo {...SEO} />
-          <Head>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
-          </Head>
+          <DefaultSeo {...siteConfig.seo} />
           <Component {...pageProps} />
         </GlobalStyle>
-      </MDXProvider>
-    </ChakraProvider>
+      </ChakraProvider>
+    </>
   )
 }
 

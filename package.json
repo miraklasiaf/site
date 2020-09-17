@@ -5,7 +5,7 @@
   "author": {
     "name": "Faisal Karim",
     "email": "faisalkarim96@gmail.com",
-    "url": "https://miraklasiaf.now.sh"
+    "url": "https://miraklasiaf.com"
   },
   "license": "MIT",
   "repository": {
@@ -20,22 +20,12 @@
     "test": "yarn lint",
     "postinstall": "patch-package"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{html,js,json,md,mdx,yml}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
   "dependencies": {
     "@chakra-ui/core": "^1.0.0-rc.3",
     "@chakra-ui/icons": "^1.0.0-rc.3",
     "@chakra-ui/theme": "^1.0.0-rc.3",
     "@chakra-ui/theme-tools": "^1.0.0-rc.3",
+    "@docusaurus/utils": "^2.0.0-alpha.64",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@mapbox/rehype-prism": "^0.5.0",

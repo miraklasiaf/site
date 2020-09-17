@@ -1,13 +1,10 @@
-import { NextSeo } from 'next-seo'
 import { useColorModeValue, Heading, Text, Flex, Stack, SimpleGrid } from '@chakra-ui/core'
-
+import SEO from '@/components/seo'
 import { PLATFORM_URL } from '@/utils/constants'
 import Analytics from '@/components/metrics/analytics'
 import Container from '@/components/container'
 import GitHub from '@/components/metrics/github'
 
-const url = `${PLATFORM_URL}/dashboard`
-const title = 'Dashboard · Faisal Karim'
 const description = 'My personal dashboard, built with Next.js API routes'
 
 export default function DashboardPage() {
@@ -15,13 +12,12 @@ export default function DashboardPage() {
 
   return (
     <>
-      <NextSeo
-        title={title}
+      <SEO
+        title="Dashboard"
         description={description}
-        canonical={url}
         openGraph={{
-          url,
-          title,
+          url: `${PLATFORM_URL}/dashboard`,
+          title: 'Dashboard',
           description,
           images: [
             {

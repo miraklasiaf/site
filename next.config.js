@@ -1,7 +1,15 @@
 const mdxPrism = require('mdx-prism')
-const readingTime = require('reading-time')
+const getReadingTime = require('reading-time')
 const withMdxEnhanced = require('next-mdx-enhanced')
 const withPlugins = require('next-compose-plugins')
+const { getEditUrl, addLeadingSlash } = require('@docusaurus/utils')
+const path = require('path')
+
+const EDIT_URL = 'https://github.com/miraklasiaf/miraklasiaf.now.sh/edit/master/pages'
+
+function fileToPath(str) {
+  return addLeadingSlash(str.replace('.mdx', ''))
+}
 
 const defaultConfig = {
   experimental: {
@@ -17,8 +25,10 @@ const defaultConfig = {
 }
 
 const mdxConfig = {
-  layoutPath: 'layouts',
+  layoutPath: 'src/layouts',
   defaultLayout: true,
+  fileExtensions: ['mdx'],
+  usesSrc: true,
   remarkPlugins: [
     require('remark-autolink-headings'),
     require('remark-slug'),
@@ -27,10 +37,20 @@ const mdxConfig = {
   ],
   rehypePlugins: [mdxPrism],
   extendFrontMatter: {
-    process: (mdxContent) => ({
-      wordCount: mdxContent.split(/\s+/gu).length,
-      readingTime: readingTime(mdxContent)
-    })
+    process: async (mdxContent, frontmatter) => {
+      const { __resourcePath: mdxPath } = frontmatter
+      const wordCount = mdxContent.split(/\s+/gu).length
+      const readingTime = getReadingTime(mdxContent)
+      const slug = fileToPath(mdxPath)
+      const editUrl = getEditUrl(path.join(mdxPath), EDIT_URL)
+
+      return {
+        slug,
+        wordCount,
+        readingTime,
+        editUrl
+      }
+    }
   }
 }
 

@@ -5,15 +5,14 @@ import fetcher from '@/lib/fetcher'
 import { useColorModeValue, Heading, Text, Flex, Box, Link } from '@chakra-ui/core'
 
 export default function Post(frontMatter) {
-  const { title, summary } = frontMatter
-  const slug = frontMatter.__resourcePath.replace('blog/', '').replace('.mdx', '')
+  const { title, summary, slug } = frontMatter
+  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
   const color = useColorModeValue('gray.700', 'gray.400')
 
-  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
   const views = data?.total
 
   return (
-    <NextLink href={`blog/${slug}`} passHref>
+    <NextLink href={`${slug}`} passHref>
       <Link
         w="full"
         borderWidth="1px"

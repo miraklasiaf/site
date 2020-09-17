@@ -1,17 +1,17 @@
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/core'
 import Container from '@/components/container'
 import { PLATFORM_URL } from '@/utils/constants'
-import { NextSeo } from 'next-seo'
+import SEO from '@/components/seo'
 
 const url = `${PLATFORM_URL}/about`
-const title = 'About · Faisal Karim'
+const title = 'About'
 
 export default function AboutPage() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')
 
   return (
     <>
-      <NextSeo
+      <SEO
         title={title}
         canonical={url}
         openGraph={{

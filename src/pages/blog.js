@@ -13,14 +13,14 @@ import { SearchIcon } from '@chakra-ui/icons'
 import Container from '@/components/container'
 import { Post } from '@/components/blog'
 import { PLATFORM_URL } from '@/utils/constants'
-import { NextSeo } from 'next-seo'
+import SEO from '@/components/seo'
 
 // eslint-disable-next-line import/no-unresolved, import/extensions
 import { frontMatter as blogPosts } from './blog/**/*.mdx'
 import { frontMatter as stripeDesign } from './blog/how-stripe-designs-beautiful-websites.mdx'
 
 const url = `${PLATFORM_URL}/blog`
-const title = 'Blog · Faisal Karim'
+const title = 'Blog'
 const description = 'Thoughts on the programming, tech, and my personal life.'
 
 export default function BlogPage() {
@@ -33,7 +33,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <NextSeo
+      <SEO
         title={title}
         description={description}
         canonical={url}

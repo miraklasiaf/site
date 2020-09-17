@@ -1,4 +1,4 @@
-export default async () => {
+const db = async () => {
   const firebase = await import('firebase/app')
 
   await import('firebase/database')
@@ -20,3 +20,5 @@ export default async () => {
 
   return firebase.database().ref('views')
 }
+
+export default db
