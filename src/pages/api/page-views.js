@@ -6,8 +6,6 @@ export default (req, res) => {
       const { blog } = snapshot.val()
       const allViews = Object.values(blog).reduce((total, value) => total + value)
 
-      console.log(allViews)
-
       return res.status(200).json({
         total: allViews
       })
