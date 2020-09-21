@@ -1,6 +1,7 @@
 const mdxPrism = require('mdx-prism')
 const getReadingTime = require('reading-time')
 const withMdxEnhanced = require('next-mdx-enhanced')
+const withOffline = require('next-offline')
 const withPlugins = require('next-compose-plugins')
 const { getEditUrl, addLeadingSlash } = require('@docusaurus/utils')
 const path = require('path')
@@ -21,6 +22,26 @@ const defaultConfig = {
     }
 
     return config
+  },
+  workboxOpts: {
+    swDest: 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: 'NetworkFirst',
+        options: {
+          cacheName: 'https-calls',
+          networkTimeoutSeconds: 15,
+          expiration: {
+            maxEntries: 150,
+            maxAgeSeconds: 30 * 24 * 60 * 60
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      }
+    ]
   }
 }
 
@@ -54,4 +75,4 @@ const mdxConfig = {
   }
 }
 
-module.exports = withPlugins([withMdxEnhanced(mdxConfig)], defaultConfig)
+module.exports = withPlugins([withOffline, withMdxEnhanced(mdxConfig)], defaultConfig)
