@@ -48,14 +48,13 @@ export default function ProjectCard({ title, description, link, icon, techStack 
       }}
     >
       <Flex align="center" borderWidth="1px" borderRadius={4} p={4}>
+        <Box as={icon ? icon : Folder} boxSize={12} mr={4} color={iconColor} />
         <Stack w="full">
-          <Stack direction={['row', 'column']}>
-            <Box as={icon ? icon : Folder} w={8} h={8} mt={2} color={iconColor} />
-
-            <Flex direction={{ base: 'column', sm: 'row' }} justify={['center', 'space-between']}>
-              <Heading as="h3" size="md" fontWeight="bold" letterSpacing="tighter">
-                {title}
-              </Heading>
+          <Stack direction={{ base: 'column', md: 'row' }}>
+            <Heading as="h3" size="md" fontWeight="bold" letterSpacing="tighter">
+              {title}
+            </Heading>
+            <Flex w="full" justify={{ base: 'flex-start', md: 'flex-end' }}>
               <HStack>
                 {techStack.map((t, index) => (
                   <Badge key={index}>{t}</Badge>

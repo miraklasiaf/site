@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <Flex
       as="footer"
-      direction={['column', 'row']}
+      direction={{ base: 'column', md: 'row' }}
       align="center"
       justify="space-between"
       w="full"
@@ -16,13 +16,13 @@ const Footer = () => {
       my={8}
       mx="auto"
     >
-      <Flex order={[2, null, 1]} mt={{ base: 8, md: 0 }}>
+      <Flex align="center" order={{ base: 2, md: 1 }} mt={{ base: 8, md: 0 }}>
         <Text color={color} lineHeight={6} fontSize="sm">
           {' '}
           &copy; 2020 Faisal Karim
         </Text>
       </Flex>
-      <HStack order={[1, null, 2]}>
+      <HStack order={{ base: 1, md: 2 }}>
         {links.map(([icon, route, title]) => (
           <Link
             href={route}
