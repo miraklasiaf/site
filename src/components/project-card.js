@@ -50,7 +50,7 @@ export default function ProjectCard({ title, description, link, icon, techStack 
       <Flex align="center" borderWidth="1px" borderRadius={4} p={4}>
         <Stack w="full">
           <Stack direction={['row', 'column']}>
-            <Box as={icon ? icon : Folder} w={8} h={8} ml={2} mt={2} color={iconColor} />
+            <Box as={icon ? icon : Folder} w={8} h={8} mt={2} color={iconColor} />
 
             <Flex direction={{ base: 'column', sm: 'row' }} justify={['center', 'space-between']}>
               <Heading as="h3" size="md" fontWeight="bold" letterSpacing="tighter">
