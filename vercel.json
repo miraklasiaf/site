@@ -15,19 +15,6 @@
           "value": "public, max-age=120, stale-while-revalidate=60"
         }
       ]
-    },
-    {
-      "source": "/service-worker.js",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=43200, immutable"
-        },
-        {
-          "key": "Service-Worker-Allowed",
-          "value": "/"
-        }
-      ]
     }
   ]
 }
