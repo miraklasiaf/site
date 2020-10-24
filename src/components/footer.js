@@ -12,7 +12,7 @@ const Footer = () => {
       align="center"
       justify="space-between"
       w="full"
-      maxW="2xl"
+      maxW="700px"
       my={8}
       mx="auto"
     >
