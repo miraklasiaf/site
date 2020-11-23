@@ -25,7 +25,7 @@ const defaultConfig = {
 }
 
 const mdxConfig = {
-  layoutPath: 'src/layouts',
+  layoutPath: 'layouts',
   defaultLayout: true,
   fileExtensions: ['mdx'],
   usesSrc: true,
