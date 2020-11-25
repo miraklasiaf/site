@@ -1,33 +1,14 @@
 import * as React from 'react'
-import { chakra } from '@chakra-ui/core'
+import { chakra, BoxProps } from '@chakra-ui/react'
 
 export type ContainerVariant = 'narrow' | 'copy' | 'container' | 'wide'
 
-interface ContainerProps {
+interface ContainerProps extends BoxProps {
   variant?: ContainerVariant
 }
 
-export const Container: React.FC<ContainerProps> = ({
-  children,
-  variant = 'container',
-  ...delegated
-}) => {
-  return (
-    <chakra.div
-      apply={`layout.${
-        variant === 'narrow'
-          ? 'narrow'
-          : variant === 'copy'
-          ? 'copy'
-          : variant === 'container'
-          ? 'container'
-          : 'wide'
-      }`}
-      {...delegated}
-    >
-      {children}
-    </chakra.div>
-  )
+const Container: React.FC<ContainerProps> = ({ variant = 'container', ...delegated }) => {
+  return <chakra.div apply={`layout.${variant}`} {...delegated} />
 }
 
 export default Container

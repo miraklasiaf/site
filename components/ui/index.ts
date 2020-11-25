@@ -1,4 +1,5 @@
 export { default as Nprogress } from './nprogress'
 export { default as ThemeSwitcher } from './theme-switcher'
 export { default as ViewCounter } from './view-counter'
-export { default as Container} from './container'
+export { default as Container } from './container'
+export * from './card'

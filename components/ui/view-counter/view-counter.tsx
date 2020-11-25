@@ -30,5 +30,5 @@ export default function ViewCounter({ id }) {
     registerView()
   }, [id])
 
-  return <chakra.span>`${views ? format(views) : '–––'} views`</chakra.span>
+  return <chakra.span>{`${views ? format(views) : '–––'} views`}</chakra.span>
 }
