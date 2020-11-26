@@ -4,7 +4,7 @@ export default (req, res) => {
   if (!req.query.id) {
     return db.ref('views').once('value', (snapshot) => {
       const { blog } = snapshot.val()
-      const allViews = Object.values(blog).reduce((total, value) => total + value)
+      const allViews = Object.values(blog).reduce((total: number, value: number) => total + value)
 
       return res.status(200).json({
         total: allViews

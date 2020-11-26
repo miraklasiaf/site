@@ -14,7 +14,7 @@ const Footer = () => {
           direction={{ base: 'column', md: 'row' }}
           align="center"
           justify="space-between"
-          py={4}
+          py={8}
         >
           <Flex align="center" order={{ base: 2, md: 1 }} mt={{ base: 4, md: 0 }}>
             <Text color={color} lineHeight={6} fontSize="sm">

@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
-import Layout from '@/components/layout'
-import { Heading, Flex, Stack, Button } from '@chakra-ui/core'
+import { Heading, Flex, Stack, Button } from '@chakra-ui/react'
+import { Container } from '@/components/ui'
 
 export default function Error() {
   return (
-    <Layout>
+    <Container>
       <Head>
         <title>404</title>
       </Head>
@@ -27,6 +27,6 @@ export default function Error() {
           </NextLink>
         </Flex>
       </Stack>
-    </Layout>
+    </Container>
   )
 }

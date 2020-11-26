@@ -1,23 +1,17 @@
 import { NextSeo, ArticleJsonLd } from 'next-seo'
-import * as React from 'react'
+import { siteMetadata } from '@/config'
 
 interface BlogSEOProps {
-  title?: string
-  description?: string
-  url?: string
-  date?: string
-  author?: string
-  featuredImage?: any
+  author: string
+  date: string
+  title: string
+  slug: string
+  description: string
 }
 
-const BlogSEO: React.FC<BlogSEOProps> = ({
-  title,
-  description,
-  url,
-  date,
-  featuredImage,
-  author
-}) => {
+const BlogSEO = ({ title, description, slug, author, date }: BlogSEOProps) => {
+  const url = `${siteMetadata.seo.openGraph.url}/blog/${slug}`
+
   return (
     <>
       <NextSeo
@@ -30,21 +24,25 @@ const BlogSEO: React.FC<BlogSEOProps> = ({
             publishedTime: date
           },
           url,
-          title,
-          description: description,
-          images: [featuredImage]
+          title: title,
+          description,
+          images: [
+            {
+              url: `${siteMetadata.seo.openGraph.url}/api/og?title=${title}`
+            }
+          ]
         }}
       />
       <ArticleJsonLd
-        authorName={author}
-        dateModified={date}
-        datePublished={date}
+        url={url}
+        title={title}
         description={description}
-        images={[featuredImage]}
+        images={[`${siteMetadata.seo.openGraph.url}/api/og?title=${title}`]}
+        datePublished={date}
+        dateModified={date}
+        authorName={author}
         publisherLogo="/static/favicons/android-chrome-192x192.png"
         publisherName={author}
-        title={title}
-        url={url}
       />
     </>
   )

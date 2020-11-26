@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import { Global, css } from '@emotion/core'
+import { Global, css } from '@emotion/react'
 import { ChakraProvider, useColorModeValue } from '@chakra-ui/react'
 import { Nprogress } from '@/components/ui'
 import { theme, prismLightTheme, prismDarkTheme } from '@/components/common'
@@ -14,23 +14,6 @@ const GlobalStyle = ({ children }) => {
       <Global
         styles={css`
           ${color};
-
-          ::selection {
-            background-color: #47a3f3;
-            color: #fefefe;
-          }
-
-          html {
-            min-width: 360px;
-            scroll-behavior: smooth;
-          }
-
-          #__next {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-          }
         `}
       />
       {children}
@@ -49,7 +32,7 @@ const App = ({ Component, pageProps }) => {
 
       <DefaultSeo {...siteMetadata.seo} />
 
-      <ChakraProvider resetCSS theme={theme} portalZIndex={40}>
+      <ChakraProvider theme={theme}>
         <GlobalStyle>
           <Component {...pageProps} />
         </GlobalStyle>

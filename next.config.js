@@ -28,27 +28,29 @@ const mdxConfig = {
   layoutPath: 'layouts',
   defaultLayout: true,
   fileExtensions: ['mdx'],
-  usesSrc: true,
   remarkPlugins: [
     require('remark-autolink-headings'),
     require('remark-slug'),
     require('remark-code-titles'),
-    require('./src/utils/title-style')
+    require('./utils/title-style')
   ],
   rehypePlugins: [mdxPrism],
   extendFrontMatter: {
     process: async (mdxContent, frontmatter) => {
       const { __resourcePath: mdxPath } = frontmatter
+
+      const slug = fileToPath(mdxPath)
       const wordCount = mdxContent.split(/\s+/gu).length
       const readingTime = getReadingTime(mdxContent)
-      const slug = fileToPath(mdxPath)
       const editUrl = getEditUrl(path.join(mdxPath), EDIT_URL)
+      const author = 'Faisal Karim'
 
       return {
         slug,
         wordCount,
         readingTime,
-        editUrl
+        editUrl,
+        author
       }
     }
   }
