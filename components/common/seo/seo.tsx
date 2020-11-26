@@ -1,7 +1,12 @@
 import { NextSeo } from 'next-seo'
 import { siteMetadata } from '@/config'
 
-const SEO = ({ title, description }) => (
+interface SEOProps {
+  title: string
+  description: string
+}
+
+const SEO = ({ title, description }: SEOProps) => (
   <NextSeo
     title={`${title} | Faisal Karim`}
     description={description}

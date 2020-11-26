@@ -1,18 +1,35 @@
-import { Header, SEO } from '@/components/common'
+import { Header, Footer, SEO, BlogSEO } from '@/components/common'
+import { Container } from '@/components/ui'
+import { Box } from '@chakra-ui/react'
 import * as React from 'react'
 
+export type SEOVariant = 'non-blog' | 'blog'
+
 interface PageProps {
-  title?: string
+  title: string
   description?: string
+  variant?: SEOVariant
 }
 
-const Page: React.FC<PageProps> = ({ title, description, children }) => {
+export const Page: React.FC<PageProps> = ({
+  title,
+  description,
+  variant = 'non-blog',
+  children
+}) => {
   return (
     <>
-      <SEO title={title || ''} description={description || ''} />
+      {variant === 'non-blog' ? (
+        <SEO title={title || ''} description={description || ''} />
+      ) : (
+        <BlogSEO title={title} description={description} />
+      )}
+
       <Header />
-      {children}
-      {/* <Footer /> */}
+      <Box as="main">
+        <Container variant="copy">{children}</Container>
+      </Box>
+      <Footer />
     </>
   )
 }

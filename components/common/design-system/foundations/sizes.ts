@@ -93,7 +93,7 @@ const sizes = {
   ...space,
   ...largeSizes,
   ...percentageSizes,
-  layouting,
+  ...layouting,
   container
 }
 
