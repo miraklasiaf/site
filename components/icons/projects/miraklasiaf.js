@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 
 const Miraklasiaf = (props) => (
   <Box as="svg" width="500" height="500" viewBox="0 0 500 500" fill="none" {...props}>

@@ -1,6 +1,6 @@
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 
-const Mail = (props) => (
+const Email = (props) => (
   <Box
     as="svg"
     fill="none"
@@ -15,4 +15,4 @@ const Mail = (props) => (
   </Box>
 )
 
-export default Mail
+export default Email

@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/core'
+import { Box } from '@chakra-ui/react'
 
 const Github = (props) => (
   <Box as="svg" fill="currentColor" viewBox="0 0 24 24" {...props}>
