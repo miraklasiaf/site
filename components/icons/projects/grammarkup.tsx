@@ -19,8 +19,8 @@ const Grammarkup = (props) => (
         y2="250"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#02AAB0" />
-        <stop offset="1" stop-color="#00CDAC" />
+        <stop stopColor="#02AAB0" />
+        <stop offset="1" stopColor="#00CDAC" />
       </linearGradient>
     </defs>
   </Box>

@@ -26,11 +26,11 @@ export default function Header() {
       mt={[0, 8]}
       mb={8}
       py={8}
-      px={{ base: 4, md: 0 }}
+      px={{ base: 4, lg: 0 }}
       mx="auto"
       bg={bgColor}
     >
-      <Box ml={{ base: -1, md: 0 }}>
+      <Box ml={{ base: -1, sm: -4, lg: 0 }}>
         {routes.map(([children, route]) => (
           <NextLink href={route} key={route} passHref>
             <Button as="a" variant="ghost" p={[1, 4]} fontWeight="medium">
