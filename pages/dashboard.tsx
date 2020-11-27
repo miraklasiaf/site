@@ -7,8 +7,8 @@ export default function DashboardPage() {
   return (
     <Page title="Dashboard" description="My personal dashboard, build with Next.js API routes">
       <Stack spacing={8}>
-        <Flex direction="column">
-          <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+        <Stack direction="column" spacing={4}>
+          <Heading letterSpacing="tight" as="h1" size="2xl">
             Dashboard
           </Heading>
           <Text color={color}>
@@ -16,7 +16,7 @@ export default function DashboardPage() {
             functions. I use this dashboard to track various metrics across platforms like GitHub,
             Blog views, and more.
           </Text>
-        </Flex>
+        </Stack>
         <Flex direction="column" align="flex-start" maxWidth="3xl">
           <SimpleGrid columns={[1, 1, 2]} spacing={4}>
             <Analytics />
