@@ -15,30 +15,30 @@ class MyDocument extends NextDocument {
         <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
         <Head>
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
-          <meta content="#ffffff" name="theme-color" />
-          <meta content="#ffffff" name="msapplication-TileColor" />
-          <meta content="/static/favicon/browserconfig.xml" name="msapplication-config" />
-          <link href="/static/favicon/favicon.ico" rel="shortcut icon" />
-          <link href="/static/favicon/site.webmanifest" rel="manifest" />
+          <meta name="msapplication-TileColor" content="#da532c" />
+          <meta name="theme-color" content="#ffffff" />
+          <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
+          <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
+          <link rel="manifest" href="/static/favicon/site.webmanifest" />
+          <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5" />
           <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
           <link
-            href="/static/favicon/apple-touch-icon.png"
             rel="apple-touch-icon"
+            href="/static/favicon/apple-touch-icon.png"
             sizes="180x180"
           />
           <link
-            href="/static/favicon/favicon-32x32.png"
             rel="icon"
-            sizes="32x32"
             type="image/png"
+            sizes="32x32"
+            href="/static/favicon/favicon-32x32.png"
           />
           <link
-            href="/static/favicon/favicon-16x16.png"
             rel="icon"
-            sizes="16x16"
             type="image/png"
+            sizes="16x16"
+            href="/static/favicon/favicon-16x16.png"
           />
-          <link color="#4a9885" href="/static/favicon/safari-pinned-tab.svg" rel="mask-icon" />
           <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
           <meta name="monetization" content={process.env.ILP_URL} />
         </Head>
