@@ -39,7 +39,7 @@
     "chrome-aws-lambda": "^5.5.0",
     "comma-number": "^2.0.1",
     "date-fns": "^2.14.0",
-    "firebase": "^7.15.5",
+    "firebase": "^8.1.1",
     "firebase-admin": "^8.13.0",
     "framer-motion": "^2.9.4",
     "lodash.debounce": "^4.0.8",
