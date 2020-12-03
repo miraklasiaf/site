@@ -7,7 +7,7 @@ export default function Index() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')
 
   return (
-    <Page title="Home">
+    <Page title="Faisal Karim">
       <Stack as="section" direction="column" spacing={4}>
         <Heading letterSpacing="tight" as="h1" size="2xl">
           Hi, I'm Faisal Karim

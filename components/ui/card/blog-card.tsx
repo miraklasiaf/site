@@ -1,7 +1,7 @@
 import NextLink from 'next/link'
 import useSWR from 'swr'
 import format from 'comma-number'
-import fetcher from '@/lib/fetcher'
+import { fetcher } from '@/lib/fetcher'
 import { useColorModeValue, Heading, Text, Flex, Link } from '@chakra-ui/react'
 
 export default function BlogCard(frontMatter) {

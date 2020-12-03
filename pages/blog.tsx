@@ -27,7 +27,10 @@ export default function BlogPage() {
     .filter((frontMatter) => frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()))
 
   return (
-    <Page title="Blog" description="Thoughts on the programming, tech, and my personal life">
+    <Page
+      title="Blog | Faisal Karim"
+      description="Thoughts on the programming, tech, and my personal life"
+    >
       <Stack spacing={8} justifyContent="center" alignItems="flex-start" mx="auto" mb={16}>
         <Stack direction="column" spacing={3}>
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">

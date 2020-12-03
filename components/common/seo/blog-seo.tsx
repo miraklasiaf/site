@@ -15,7 +15,7 @@ const BlogSEO = ({ title, description, slug, author, date }: BlogSEOProps) => {
   return (
     <>
       <NextSeo
-        title={title}
+        title={`${title} | Faisal Karim`}
         description={description}
         canonical={url}
         openGraph={{

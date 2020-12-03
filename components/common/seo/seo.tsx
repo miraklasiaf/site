@@ -8,7 +8,7 @@ interface SEOProps {
 
 const SEO = ({ title, description }: SEOProps) => (
   <NextSeo
-    title={`${title} | Faisal Karim`}
+    title={title}
     description={description}
     canonical={siteMetadata.seo.openGraph.url}
     openGraph={{

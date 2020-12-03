@@ -42,8 +42,6 @@ export default function Blog({ frontmatter, children }) {
   const { title, description, author, publishedAt, editUrl, slug } = frontmatter
   const date = new Date(publishedAt).toISOString()
 
-  console.log(slug)
-
   return (
     <>
       <BlogSEO title={title} description={description} author={author} date={date} slug={slug} />

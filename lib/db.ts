@@ -1,8 +1,7 @@
-const db = async () => {
-  const firebase = await import('firebase/app')
+import firebase from 'firebase/app'
+import 'firebase/database'
 
-  await import('firebase/database')
-
+const db = () => {
   try {
     firebase.initializeApp({
       databaseURL: 'https://miraklasiaf-now-sh.firebaseio.com'

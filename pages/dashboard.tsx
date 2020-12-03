@@ -5,7 +5,10 @@ export default function DashboardPage() {
   const color = useColorModeValue('gray.700', 'gray.400')
 
   return (
-    <Page title="Dashboard" description="My personal dashboard, build with Next.js API routes">
+    <Page
+      title="Dashboard | Faisal Karim"
+      description="My personal dashboard, build with Next.js API routes"
+    >
       <Stack spacing={8}>
         <Stack direction="column" spacing={4}>
           <Heading letterSpacing="tight" as="h1" size="2xl">
