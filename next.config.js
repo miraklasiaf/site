@@ -5,7 +5,7 @@ const withPlugins = require('next-compose-plugins')
 const withMdxEnhanced = require('next-mdx-enhanced')
 const { getEditUrl, addLeadingSlash } = require('@docusaurus/utils')
 
-const EDIT_URL = 'https://github.com/miraklasiaf/miraklasiaf.com/edit/develop/src/pages'
+const EDIT_URL = 'https://github.com/miraklasiaf/miraklasiaf.com/blob/develop/pages'
 
 function fileToPath(str) {
   return addLeadingSlash(str.replace('.mdx', ''))
