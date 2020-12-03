@@ -847,10 +847,17 @@
     "@types/tinycolor2" "1.4.2"
     tinycolor2 "1.4.2"
 
-"@chakra-ui/theme@1.1.0", "@chakra-ui/theme@^1.1.0":
+"@chakra-ui/theme@1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@chakra-ui/theme/-/theme-1.1.0.tgz#c279cd3c252b448a0e6a191975c8200921a56cd0"
   integrity sha512-Za/2uNM+3SugRlEhyYK01d6sy96TrkeyDXNnNZ9ENo6BiVlijQKuve2BIgS7f0ktcaA8qPci6v4uBDKR9WMPOQ==
+  dependencies:
+    "@chakra-ui/theme-tools" "1.0.1"
+
+"@chakra-ui/theme@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@chakra-ui/theme/-/theme-1.2.0.tgz#4cf3337fc9389fd76ed23a8027196efe2d48a4cf"
+  integrity sha512-IcSfQPpBK9tkUmeBUF2eu5AVa3bH4DkbPlmaPwggDoQmWgcRJxyaPP1zvqJ++XAgeqXxdEKkOJuSirrmSPPbfg==
   dependencies:
     "@chakra-ui/theme-tools" "1.0.1"
 
