@@ -12,7 +12,7 @@ export default function BlogCard(frontMatter) {
   const views = data?.total
 
   return (
-    <NextLink href={slug} passHref>
+    <NextLink href={`blog/${slug}`} passHref>
       <Link
         w="full"
         borderWidth="1px"

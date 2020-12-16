@@ -3,8 +3,8 @@ import db from '@/lib/db-admin'
 export default (req, res) => {
   if (!req.query.id) {
     return db.ref('views').once('value', (snapshot) => {
-      const { blog } = snapshot.val()
-      const allViews = Object.values(blog).reduce((total: number, value: number) => total + value)
+      const views = snapshot.val()
+      const allViews = Object.values(views).reduce((total: number, value: number) => total + value)
 
       return res.status(200).json({
         total: allViews

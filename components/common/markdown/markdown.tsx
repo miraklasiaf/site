@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Kbd, Code } from '@chakra-ui/react'
 import { P, UL, OL, LI, Blockquote, Hr } from './body'
 import { H1, H2, H3 } from './heading'
@@ -5,6 +6,7 @@ import { Table, THead, TData } from './table'
 import { CustomLink } from './link'
 
 const Markdown = {
+  Image,
   h1: H1,
   h2: H2,
   h3: H3,

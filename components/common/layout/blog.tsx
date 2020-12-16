@@ -33,13 +33,16 @@ const BlogHeader = ({ title, author, banner, publishedAt, slug, readingTime }) =
   )
 }
 
+const editUrl = (slug) =>
+  `https://github.com/miraklasiaf/miraklasiaf.com/edit/develop/data/blog/${slug}.mdx`
+
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${siteMetadata.seo.openGraph.url}${slug}`
   )}`
 
 export default function Blog({ frontmatter, children }) {
-  const { title, description, author, publishedAt, editUrl, slug } = frontmatter
+  const { title, description, author, publishedAt, slug } = frontmatter
   const date = new Date(publishedAt).toISOString()
 
   return (
@@ -60,7 +63,7 @@ export default function Blog({ frontmatter, children }) {
                 Discuss on Twitter
               </Link>
               {` • `}
-              <Link href={editUrl} isExternal>
+              <Link href={editUrl(slug)} isExternal>
                 Edit on GitHub
               </Link>
             </Box>
