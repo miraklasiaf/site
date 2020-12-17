@@ -28,12 +28,11 @@ const App = ({ Component, pageProps }) => {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
 
-      <Nprogress />
-
       <DefaultSeo {...siteMetadata.seo} />
 
       <ChakraProvider theme={theme}>
         <GlobalStyle>
+          <Nprogress />
           <Component {...pageProps} />
         </GlobalStyle>
       </ChakraProvider>
