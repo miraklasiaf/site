@@ -5,7 +5,7 @@ import { MetricCard } from '@/components/ui'
 import { siteMetadata } from '@/config'
 
 export default function Analytics() {
-  const { data } = useSWR('/api/page-views', fetcher)
+  const { data } = useSWR('/api/views', fetcher)
   const pageViews = format(data?.total)
   const link = siteMetadata.seo.openGraph.url
 

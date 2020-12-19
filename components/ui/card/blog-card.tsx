@@ -6,7 +6,7 @@ import { useColorModeValue, Heading, Text, Flex, Link } from '@chakra-ui/react'
 
 export default function BlogCard(frontMatter) {
   const { title, description, slug } = frontMatter
-  const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
+  const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const color = useColorModeValue('gray.700', 'gray.400')
 
   const views = data?.total

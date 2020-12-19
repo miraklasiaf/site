@@ -24,7 +24,7 @@ const BlogHeader = ({ title, author, banner, publishedAt, slug, readingTime }) =
         <Text fontSize="sm" color="gray.500" minWidth="100px" mt={[2, 0]}>
           {readingTime.text}
           {` • `}
-          <ViewCounter id={slug} />
+          <ViewCounter slug={slug} />
         </Text>
       </Flex>
 
