@@ -42,6 +42,7 @@ export default function ProjectCard({ title, description, link, icon, techStack 
       href={link}
       title={title}
       isExternal
+      transition="transform .125s ease-in-out, box-shadow .125s ease-in-out"
       boxShadow="sm"
       _hover={{
         transform: 'scale(1.02)',
