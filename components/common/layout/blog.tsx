@@ -59,11 +59,11 @@ export default function Blog({ frontmatter, children }) {
             {children}
 
             <Box my={4}>
-              <Link href={discussUrl(slug)} isExternal>
+              <Link href={discussUrl(slug)} fontSize="sm" isExternal>
                 Discuss on Twitter
               </Link>
               {` • `}
-              <Link href={editUrl(slug)} isExternal>
+              <Link href={editUrl(slug)} fontSize="sm" isExternal>
                 Edit on GitHub
               </Link>
             </Box>

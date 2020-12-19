@@ -22,7 +22,7 @@ Router.events.on('routeChangeError', () => {
 })
 
 const Nprogress = () => {
-  const color = useColorModeValue('#000000', '#ffffff')
+  const color = useColorModeValue('gray.500', 'gray.400')
 
   return (
     <style jsx global>
