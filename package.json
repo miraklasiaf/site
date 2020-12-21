@@ -24,8 +24,7 @@
   },
   "dependencies": {
     "@chakra-ui/icons": "^1.0.1",
-    "@chakra-ui/react": "^1.0.3",
-    "@chakra-ui/theme": "^1.2.1",
+    "@chakra-ui/react": "^1.0.4",
     "@chakra-ui/theme-tools": "^1.0.1",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
@@ -34,7 +33,7 @@
     "comma-number": "^2.0.1",
     "date-fns": "^2.16.1",
     "firebase-admin": "^9.4.2",
-    "framer-motion": "^2.9.5",
+    "framer-motion": "^3.1.1",
     "gray-matter": "^4.0.2",
     "lodash.debounce": "^4.0.8",
     "mdx-prism": "^0.3.1",
