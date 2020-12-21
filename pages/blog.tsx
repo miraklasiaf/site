@@ -12,7 +12,7 @@ import {
 import { SearchIcon } from '@chakra-ui/icons'
 import { Page } from '@/components/common'
 import { BlogCard } from '@/components/ui'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
+import { getAllFilesFrontMatter } from '@/lib/blog'
 
 export default function BlogPage({ posts }) {
   const color = useColorModeValue('gray.700', 'gray.400')

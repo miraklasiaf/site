@@ -6,13 +6,14 @@ import {
   Text,
   Stack,
   Box,
-  HStack,
+  Wrap,
+  WrapItem,
   useColorModeValue
 } from '@chakra-ui/react'
 import { Folder } from '@/components/icons'
 
 export const Badge = ({ children }) => {
-  const color = useColorModeValue('gray.500', 'gray.300')
+  const color = useColorModeValue('gray.600', 'gray.300')
   const bgColor = useColorModeValue('gray.100', 'gray.800')
 
   return (
@@ -24,7 +25,7 @@ export const Badge = ({ children }) => {
       borderRadius={8}
       lineHeight={4}
       fontSize={['0.5rem', 'xs']}
-      fontWeight="medium"
+      fontWeight="semibold"
       color={color}
       bg={bgColor}
     >
@@ -35,6 +36,11 @@ export const Badge = ({ children }) => {
 
 export default function ProjectCard({ title, description, link, icon, techStack }) {
   const iconColor = useColorModeValue('gray.900', 'white')
+  const sx = {
+    transform: 'scale(1.02)',
+    boxShadow: 'md',
+    textDecoration: 'none'
+  }
 
   return (
     <Link
@@ -44,11 +50,8 @@ export default function ProjectCard({ title, description, link, icon, techStack 
       isExternal
       transition="transform .125s ease-in-out, box-shadow .125s ease-in-out"
       boxShadow="sm"
-      _hover={{
-        transform: 'scale(1.02)',
-        boxShadow: 'md',
-        textDecoration: 'none'
-      }}
+      _hover={sx}
+      _focus={sx}
     >
       <Flex align="center" borderWidth="1px" borderRadius={4} p={4}>
         <Box as={icon ? icon : Folder} boxSize={12} mr={4} color={iconColor} />
@@ -58,11 +61,13 @@ export default function ProjectCard({ title, description, link, icon, techStack 
               {title}
             </Heading>
             <Flex w="full" justify={{ base: 'flex-start', md: 'flex-end' }}>
-              <HStack>
+              <Wrap>
                 {techStack.map((t, index) => (
-                  <Badge key={index}>{t}</Badge>
+                  <WrapItem key={index}>
+                    <Badge>{t}</Badge>
+                  </WrapItem>
                 ))}
-              </HStack>
+              </Wrap>
             </Flex>
           </Stack>
 

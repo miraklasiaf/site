@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo'
 import { Global, css } from '@emotion/react'
 import { ChakraProvider, useColorModeValue } from '@chakra-ui/react'
 import { Nprogress } from '@/components/ui'
-import { theme, prismLightTheme, prismDarkTheme } from '@/components/common'
+import { theme, prismLightTheme, prismDarkTheme } from '@/components/design-system'
 import { siteMetadata } from '@/config'
 
 const GlobalStyle = ({ children }) => {

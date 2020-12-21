@@ -1,4 +1,3 @@
-export * from './design-system'
 export * from './layout'
 export * from './metrics'
 export * from './seo'

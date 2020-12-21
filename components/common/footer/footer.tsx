@@ -1,10 +1,10 @@
 import { Flex, Text, HStack, chakra, useColorModeValue, Link, IconButton } from '@chakra-ui/react'
 import { Container } from '@/components/ui'
-import { useSocials } from '@/utils'
+import { useSocials } from '@/lib/hooks'
 import { siteMetadata } from '@/config'
 
 const Footer = () => {
-  const socials = useSocials()
+  const { socials } = useSocials()
   const color = useColorModeValue('gray.500', 'gray.400')
 
   return (

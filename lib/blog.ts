@@ -6,16 +6,16 @@ import readingTime from 'reading-time'
 import renderToString from 'next-mdx-remote/render-to-string'
 import { Markdown } from '@/components/common'
 
-const root = process.cwd()
+const dataDirectory = path.join(process.cwd(), 'data')
 
 export async function getFiles(type) {
-  return fs.readdirSync(path.join(root, 'data', type))
+  return fs.readdirSync(path.join(dataDirectory, type))
 }
 
 export async function getFileBySlug(type, slug) {
   const source = slug
-    ? fs.readFileSync(path.join(root, 'data', type, `${slug}.mdx`), 'utf8')
-    : fs.readFileSync(path.join(root, 'data', `${type}.mdx`), 'utf8')
+    ? fs.readFileSync(path.join(dataDirectory, type, `${slug}.mdx`), 'utf8')
+    : fs.readFileSync(path.join(dataDirectory, `${type}.mdx`), 'utf8')
 
   const { data, content } = matter(source)
   const mdxSource = await renderToString(content, {
@@ -44,10 +44,10 @@ export async function getFileBySlug(type, slug) {
 }
 
 export async function getAllFilesFrontMatter(type) {
-  const files = fs.readdirSync(path.join(root, 'data', type))
+  const files = fs.readdirSync(path.join(dataDirectory, type))
 
   return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(path.join(root, 'data', type, postSlug), 'utf8')
+    const source = fs.readFileSync(path.join(dataDirectory, type, postSlug), 'utf8')
     const { data } = matter(source)
 
     return [
