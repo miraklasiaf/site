@@ -19,7 +19,13 @@ class MyDocument extends NextDocument {
           <link rel="shortcut icon" href="/static/favicon/favicon.ico" />
           <link rel="manifest" href="/static/favicon/site.webmanifest" />
           <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5" />
-          <link rel="preconnect" href="https://fonts.gstatic.com/" crossOrigin="" />
+          <link
+            rel="preload"
+            href="/static/fonts/inter-var-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <link
             rel="apple-touch-icon"
             href="/static/favicon/apple-touch-icon.png"
