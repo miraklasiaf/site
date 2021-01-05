@@ -1,7 +1,6 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { ColorModeScript } from '@chakra-ui/react'
-import GoogleFonts from 'next-google-fonts'
-import { GAScript } from '@/lib/gtag'
+import { GAScript } from '@/lib/analytics'
 
 class MyDocument extends NextDocument {
   static async getInitialProps(ctx) {
@@ -12,7 +11,6 @@ class MyDocument extends NextDocument {
   render() {
     return (
       <Html lang="en">
-        <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
         <Head>
           <meta content="IE=edge" httpEquiv="X-UA-Compatible" />
           <meta name="msapplication-TileColor" content="#da532c" />

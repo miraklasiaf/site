@@ -1,64 +1,32 @@
-import Router from 'next/router'
-import { pageview } from '@/lib/gtag'
-import nprogress from 'nprogress'
-import debounce from 'lodash.debounce'
-import { useColorModeValue } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
+import NProgress from 'nprogress'
 
-// Only show nprogress after 500ms (slow loading)
-const start = debounce(nprogress.start, 500)
+export default function Progress() {
+  const router = useRouter()
 
-Router.events.on('routeChangeStart', start)
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
 
-Router.events.on('routeChangeComplete', (url: string) => {
-  start.cancel()
-  nprogress.done()
-  window.scrollTo(0, 0)
-  pageview(url)
-})
+    const start = () => {
+      timeout = setTimeout(NProgress.start, 100)
+    }
 
-Router.events.on('routeChangeError', () => {
-  start.cancel()
-  nprogress.done()
-})
+    const done = () => {
+      clearTimeout(timeout)
+      NProgress.done()
+    }
 
-const Nprogress = () => {
-  const color = useColorModeValue('gray.500', 'gray.400')
+    router.events.on('routeChangeStart', start)
+    router.events.on('routeChangeComplete', done)
+    router.events.on('routeChangeError', done)
 
-  return (
-    <style jsx global>
-      {`
-        /* Make clicks pass-through */
-        #nprogress {
-          pointer-events: none;
-        }
+    return () => {
+      router.events.off('routeChangeStart', start)
+      router.events.off('routeChangeComplete', done)
+      router.events.off('routeChangeError', done)
+    }
+  }, [])
 
-        #nprogress .bar {
-          position: fixed;
-          background: ${color};
-          z-index: 1031;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 2px;
-        }
-
-        /* Fancy blur effect */
-        #nprogress .peg {
-          display: block;
-          position: absolute;
-          right: 0px;
-          width: 100px;
-          height: 100%;
-          box-shadow: 0 0 10px #0070f3, 0 0 5px #0070f3;
-          opacity: 1;
-
-          -webkit-transform: rotate(3deg) translate(0px, -4px);
-          -ms-transform: rotate(3deg) translate(0px, -4px);
-          transform: rotate(3deg) translate(0px, -4px);
-        }
-      `}
-    </style>
-  )
+  return <></>
 }
-
-export default Nprogress

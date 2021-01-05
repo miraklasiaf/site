@@ -3,8 +3,10 @@ import { DefaultSeo } from 'next-seo'
 import { Global, css } from '@emotion/react'
 import { ChakraProvider, useColorModeValue } from '@chakra-ui/react'
 import { Nprogress } from '@/components/ui'
-import { theme, prismLightTheme, prismDarkTheme } from '@/components/design-system'
+import { theme, prismLightTheme, prismDarkTheme, FontFace } from '@/components/design-system'
 import { siteMetadata } from '@/config'
+import { useAnalytics } from '@/lib/hooks'
+import '@/styles/nprogress.css'
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme)
@@ -22,6 +24,8 @@ const GlobalStyle = ({ children }) => {
 }
 
 const App = ({ Component, pageProps }) => {
+  useAnalytics()
+
   return (
     <>
       <Head>
@@ -29,6 +33,7 @@ const App = ({ Component, pageProps }) => {
       </Head>
 
       <DefaultSeo {...siteMetadata.seo} />
+      <FontFace />
 
       <ChakraProvider theme={theme}>
         <GlobalStyle>
