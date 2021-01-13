@@ -26,7 +26,7 @@ export default function Header() {
       mt={[0, 8]}
       mb={8}
       py={8}
-      px={{ base: 4, lg: 0 }}
+      px={{ base: 8, lg: 0 }}
       mx="auto"
       bg={bgColor}
     >

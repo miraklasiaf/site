@@ -21,7 +21,7 @@ export default function DashboardPage() {
           </Text>
         </Stack>
         <Flex direction="column" align="flex-start" maxWidth="3xl">
-          <SimpleGrid columns={[1, 1, 2]} spacing={4}>
+          <SimpleGrid columns={{ base: 1, sm: 2, lg: 3 }} spacing={4} w="full">
             <Analytics />
             <Github />
           </SimpleGrid>

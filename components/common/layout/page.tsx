@@ -12,7 +12,6 @@ export const Page: React.FC<PageProps> = ({ title, description, children }) => {
   return (
     <>
       <SEO title={title || ''} description={description || ''} />
-
       <Header />
       <Box as="main">
         <Container variant="copy">{children}</Container>

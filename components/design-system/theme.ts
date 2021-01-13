@@ -13,24 +13,24 @@ const theme = {
       maxWidth: ['layout', null, 'layoutPlus'],
       width: '100%',
       mx: 'auto',
-      px: 4
+      px: 8
     },
     wide: {
       width: '100%',
       mx: 'auto',
-      px: 4,
+      px: 8,
       maxWidth: ['layout', null, 'wide']
     },
     copy: {
       width: '100%',
       mx: 'auto',
-      px: 4,
+      px: 8,
       maxWidth: ['copy', null, 'copyPlus']
     },
     narrow: {
       width: '100%',
       mx: 'auto',
-      px: 4,
+      px: 8,
       maxWidth: ['narrow', null, 'narrowPlus']
     }
   }
