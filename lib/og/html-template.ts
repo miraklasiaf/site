@@ -29,7 +29,7 @@ export function getHtml(title: string) {
               justify-content: center;
               align-items: center;
               padding: 48px;
-              background-image: url('https://miraklasiaf.com/static/images/og.png');
+              background-image: url('https://miraklasiaf.com/static/images/blog-og.png');
             }
 
             .title {
