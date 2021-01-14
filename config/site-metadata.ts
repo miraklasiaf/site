@@ -25,7 +25,7 @@ export const siteMetadata = {
       type: 'website',
       locale: 'en_US',
       url: `${PLATFORM_URL}`,
-      site_name: 'Faisal Karim'
+      site_name: `${PLATFORM_NAME}.com`
     },
     twitter: {
       handle: '@miraklasiaf',

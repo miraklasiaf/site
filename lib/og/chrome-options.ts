@@ -1,6 +1,6 @@
 import chrome from 'chrome-aws-lambda'
 
-const WindowsChromePath = 'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe'
+const WindowsChromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
 const LinuxChromePath = '/usr/bin/google-chrome'
 const MacOSChromePath = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
