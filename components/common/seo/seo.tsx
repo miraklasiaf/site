@@ -17,7 +17,10 @@ const SEO = ({ title, description }: SEOProps) => (
       description: description,
       images: [
         {
-          url: `${siteMetadata.seo.openGraph.url}/api/og?title=${title}&category=${description}`
+          url: `${siteMetadata.seo.openGraph.url}/static/images/og.jpg`,
+          alt: title,
+          width: 1280,
+          height: 720
         }
       ],
       site_name: title

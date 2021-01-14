@@ -5,7 +5,7 @@ export const PLATFORM_NAME = 'miraklasiaf'
 export const PLATFORM_LOWERCASE = 'miraklasiaf'
 export const PLATFORM_URL = 'https://miraklasiaf.com'
 
-const siteMetadata = {
+export const siteMetadata = {
   copyright: `© ${new Date().getFullYear()} Faisal Karim`,
   author: {
     name: 'Faisal Karim',
@@ -24,7 +24,7 @@ const siteMetadata = {
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: 'https://miraklasiaf.com',
+      url: `${PLATFORM_URL}`,
       site_name: 'Faisal Karim'
     },
     twitter: {
@@ -41,5 +41,3 @@ export const routes = [
   ['Dashboard', '/dashboard'],
   ['About', '/about']
 ]
-
-export default siteMetadata
