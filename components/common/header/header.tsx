@@ -14,7 +14,7 @@ const StickyNav = styled(Flex)`
 `
 
 export default function Header() {
-  const bgColor = useColorModeValue('rgba(255, 255, 255, 0.8)', 'bg.dark')
+  const bgColor = useColorModeValue('rgba(255, 255, 255, 0.6)', 'black')
 
   return (
     <StickyNav

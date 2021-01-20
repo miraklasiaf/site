@@ -1,21 +1,21 @@
-import { Header, Footer, SEO } from '@/components/common'
-import { Container } from '@/components/ui'
-import { Box } from '@chakra-ui/react'
 import * as React from 'react'
+import { Container } from '@/components/ui'
+import { Header, Footer, SEO } from '@/components/common'
 
 interface PageProps {
   title: string
   description?: string
+  canonical?: string
 }
 
-export const Page: React.FC<PageProps> = ({ title, description, children }) => {
+export const Page: React.FC<PageProps> = ({ title, description, canonical, children }) => {
   return (
     <>
-      <SEO title={title || ''} description={description || ''} />
+      <SEO title={title || ''} description={description || ''} canonical={canonical || ''} />
       <Header />
-      <Box as="main">
-        <Container variant="copy">{children}</Container>
-      </Box>
+      <Container as="main" variant="copy">
+        {children}
+      </Container>
       <Footer />
     </>
   )

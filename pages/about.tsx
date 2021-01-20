@@ -5,8 +5,8 @@ export default function AboutPage() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')
 
   return (
-    <Page title="About | Faisal Karim">
-      <Stack spacing={8} justifyContent="center" alignItems="flex-start">
+    <Page title="About | Faisal Karim" canonical="/about">
+      <Stack spacing={8} justifyContent="center" alignItems="flex-start" mb={16}>
         <Stack direction="column" justify="flex-start" align="flex-start" spacing={4}>
           <Heading letterSpacing="tight" as="h1" size="2xl">
             About Me

@@ -12,7 +12,6 @@ const BlogHeader = ({ title, author, banner, publishedAt, slug, readingTime }) =
       <Heading letterSpacing="tight" as="h1" size="2xl">
         {title}
       </Heading>
-
       <Flex justify="space-between" align={['initial', 'center']} direction={['column', 'row']}>
         <Flex align="center">
           <Avatar size="xs" name="Faisal Karim" src="/static/images/faisal.png" mr={2} />
@@ -27,7 +26,6 @@ const BlogHeader = ({ title, author, banner, publishedAt, slug, readingTime }) =
           <ViewCounter slug={slug} />
         </Text>
       </Flex>
-
       <img src={banner} />
     </Stack>
   )
@@ -48,29 +46,24 @@ export default function Blog({ frontmatter, children }) {
   return (
     <>
       <BlogSEO title={title} description={description} author={author} date={date} slug={slug} />
-
       <Header />
+      <Container as="main" variant="copy">
+        <Stack as="article" spacing={8} justifyContent="center" alignItems="flex-start" w="full">
+          <BlogHeader {...frontmatter} />
 
-      <Box as="main">
-        <Container variant="copy">
-          <Stack as="article" spacing={8} justifyContent="center" alignItems="flex-start" w="full">
-            <BlogHeader {...frontmatter} />
+          {children}
 
-            {children}
-
-            <Box my={4}>
-              <Link href={discussUrl(slug)} fontSize="sm" isExternal>
-                Discuss on Twitter
-              </Link>
-              {` • `}
-              <Link href={editUrl(slug)} fontSize="sm" isExternal>
-                Edit on GitHub
-              </Link>
-            </Box>
-          </Stack>
-        </Container>
-      </Box>
-
+          <Box my={4}>
+            <Link href={discussUrl(slug)} fontSize="sm" isExternal>
+              Discuss on Twitter
+            </Link>
+            {` • `}
+            <Link href={editUrl(slug)} fontSize="sm" isExternal>
+              Edit on GitHub
+            </Link>
+          </Box>
+        </Stack>
+      </Container>
       <Footer />
     </>
   )

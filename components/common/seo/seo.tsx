@@ -4,15 +4,16 @@ import { siteMetadata } from '@/config'
 interface SEOProps {
   title: string
   description: string
+  canonical?: string
 }
 
-const SEO = ({ title, description }: SEOProps) => (
+const SEO = ({ title, description, canonical }: SEOProps) => (
   <NextSeo
     title={title}
     description={description}
-    canonical={siteMetadata.seo.openGraph.url}
+    canonical={`${siteMetadata.seo.openGraph.url}${canonical}`}
     openGraph={{
-      url: siteMetadata.seo.openGraph.url,
+      url: `${siteMetadata.seo.openGraph.url}${canonical}`,
       title: title,
       description: description,
       images: [
