@@ -23,7 +23,7 @@
     "validate": "yarn lint && yarn type-check"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.0.2",
+    "@chakra-ui/icons": "^1.0.3",
     "@chakra-ui/react": "^1.1.4",
     "@chakra-ui/theme-tools": "^1.0.3",
     "@emotion/react": "^11.1.1",
@@ -72,6 +72,7 @@
     "remark-frontmatter": "^3.0.0",
     "remark-parse": "^9.0.0",
     "remark-stringify": "^9.0.1",
+    "rss": "^1.2.2",
     "typescript": "^4.1.2",
     "unified": "^9.2.0",
     "unist-util-visit": "^2.0.3"
@@ -86,5 +87,13 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "printWidth": 100,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
   }
 }
