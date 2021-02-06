@@ -1,5 +1,5 @@
 import { Heading, Flex, Stack } from '@chakra-ui/react'
-import { Page, Header, Footer } from '@/components/common'
+import { Page } from '@/components/common'
 import { Container } from '@/components/ui'
 
 const BlogHeader = ({ title }) => {
