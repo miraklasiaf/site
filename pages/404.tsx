@@ -10,7 +10,7 @@ export default function Error() {
           404 – Not Found
         </Heading>
         <NextLink href="/" passHref>
-          <Button as="a" p={[1, 4]} w={48} fontWeight="bold" m="3rem auto 0">
+          <Button as="a" p={[1, 4]} w={48} m="3rem auto 0">
             Return Home
           </Button>
         </NextLink>

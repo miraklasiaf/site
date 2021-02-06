@@ -6,8 +6,8 @@ import { Nprogress } from '@/components/ui'
 import { theme, prismLightTheme, prismDarkTheme } from '@/components/design-system'
 import { siteMetadata } from '@/config'
 import { useAnalytics } from '@/lib/hooks'
-import '@/styles/nprogress.css'
-import '@/styles/font.css'
+import '@/assets/nprogress.css'
+import '@/assets/font.css'
 
 const GlobalStyle = ({ children }) => {
   const color = useColorModeValue(prismLightTheme, prismDarkTheme)

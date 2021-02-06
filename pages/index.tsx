@@ -1,7 +1,7 @@
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/react'
 import { Page } from '@/components/common'
 import { ProjectCard } from '@/components/ui'
-import { projects } from '@/data'
+import { projects } from '@/data/projects'
 
 export default function Index() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')

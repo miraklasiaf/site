@@ -3,7 +3,7 @@ import { PLATFORM_URL } from '@/config'
 
 interface BlogSEOProps {
   author: string
-  date: string
+  date?: string
   title: string
   slug: string
   description: string
