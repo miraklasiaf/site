@@ -23,8 +23,7 @@ const SEO = ({ title, description, canonical }: SEOProps) => (
           width: 1280,
           height: 720
         }
-      ],
-      site_name: title
+      ]
     }}
   />
 )
