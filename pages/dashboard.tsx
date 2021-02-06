@@ -10,7 +10,7 @@ export default function DashboardPage() {
       description="My personal dashboard, build with Next.js API routes"
       canonical="/dashboard"
     >
-      <Stack spacing={8} mb={16}>
+      <Stack spacing={8}>
         <Stack direction="column" spacing={4}>
           <Heading letterSpacing="tight" as="h1" size="2xl">
             Dashboard

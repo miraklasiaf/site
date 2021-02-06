@@ -1,6 +1,5 @@
 import { Heading, Flex, Stack } from '@chakra-ui/react'
 import { Page } from '@/components/common'
-import { Container } from '@/components/ui'
 
 const BlogHeader = ({ title }) => {
   return (
@@ -22,12 +21,10 @@ export default function Uses({ frontmatter, children }) {
       description="Here's what tech I'm currently using for coding."
       canonical="/uses"
     >
-      <Container as="main" variant="copy">
-        <Stack as="article" spacing={8} justifyContent="center" alignItems="flex-start" w="full">
-          <BlogHeader {...frontmatter} />
-          {children}
-        </Stack>
-      </Container>
+      <Stack as="article" spacing={8} justifyContent="center" alignItems="flex-start" w="full">
+        <BlogHeader {...frontmatter} />
+        {children}
+      </Stack>
     </Page>
   )
 }

@@ -28,7 +28,7 @@ export default function BlogPage({ posts }) {
       description="Thoughts on the programming, tech, and my personal life"
       canonical="/blog"
     >
-      <Stack spacing={8} justifyContent="center" alignItems="flex-start" mx="auto" mb={16}>
+      <Stack spacing={8} justifyContent="center" alignItems="flex-start" mx="auto">
         <Stack direction="column" spacing={3}>
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
             Blog
