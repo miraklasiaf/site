@@ -13,7 +13,7 @@ export default function Index() {
           Hi, I'm Faisal Karim
         </Heading>
         <Text color={secondaryColor}>
-          I'm a software developer living in Batam, Indonesia. You’ve found my personal slice of the
+          I'm a software engineer living in Batam, Indonesia. You’ve found my personal slice of the
           internet – everything you want to know and more is here.
         </Text>
       </Stack>
