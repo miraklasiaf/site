@@ -1,4 +1,4 @@
-import hydrate from 'next-mdx-remote/hydrate'
+import { MDXRemote } from 'next-mdx-remote'
 import { getFiles, getFileBySlug } from '@/lib/blog'
 import { Blog, Markdown } from '@/components/common'
 
@@ -22,9 +22,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function BlogPage({ mdxSource, frontMatter }) {
-  const content = hydrate(mdxSource, {
-    components: Markdown
-  })
-
-  return <Blog frontmatter={frontMatter}>{content}</Blog>
+  return (
+    <Blog frontmatter={frontMatter}>
+      <MDXRemote
+        {...mdxSource}
+        components={{
+          ...Markdown
+        }}
+      />
+    </Blog>
+  )
 }
