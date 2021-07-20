@@ -3,27 +3,32 @@ import matter from 'gray-matter'
 import mdxPrism from 'mdx-prism'
 import path from 'path'
 import readingTime from 'reading-time'
-import renderToString from 'next-mdx-remote/render-to-string'
-import { Markdown } from '@/components/common'
+import { serialize } from 'next-mdx-remote/serialize'
 
 const dataDirectory = path.join(process.cwd(), 'data')
 
-export async function getFiles(type) {
+export async function getFiles(type: string) {
   return fs.readdirSync(path.join(dataDirectory, type))
 }
 
-export async function getFileBySlug(type, slug) {
+export async function getFileBySlug(type: string, slug: string) {
   const source = slug
     ? fs.readFileSync(path.join(dataDirectory, type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(dataDirectory, `${type}.mdx`), 'utf8')
 
   const { data, content } = matter(source)
-  const mdxSource = await renderToString(content, {
-    components: Markdown,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require('remark-autolink-headings'),
         require('remark-slug'),
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['anchor']
+            }
+          }
+        ],
         require('remark-code-titles')
       ],
       rehypePlugins: [mdxPrism]
@@ -43,10 +48,10 @@ export async function getFileBySlug(type, slug) {
   }
 }
 
-export async function getAllFilesFrontMatter(type) {
+export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(dataDirectory, type))
 
-  return files.reduce((allPosts, postSlug) => {
+  return files.reduce((allPosts: any, postSlug: any) => {
     const source = fs.readFileSync(path.join(dataDirectory, type, postSlug), 'utf8')
     const { data } = matter(source)
 

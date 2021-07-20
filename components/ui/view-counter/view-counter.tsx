@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import format from 'comma-number'
 import { fetcher } from '@/lib/fetcher'
 import { chakra } from '@chakra-ui/react'
 import useSWR from 'swr'
@@ -17,5 +16,5 @@ export default function ViewCounter({ slug }) {
     registerView()
   }, [slug])
 
-  return <chakra.span>{`${views ? format(views) : '–––'} views`}</chakra.span>
+  return <chakra.span>{`${views ? new Number(views).toLocaleString() : '–––'} views`}</chakra.span>
 }
