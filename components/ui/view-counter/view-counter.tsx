@@ -1,34 +1,20 @@
-import { useState, useEffect } from 'react'
-import format from 'comma-number'
-import loadDb from '@/lib/db'
+import { useEffect } from 'react'
+import { fetcher } from '@/lib/fetcher'
 import { chakra } from '@chakra-ui/react'
+import useSWR from 'swr'
 
-export default function ViewCounter({ id }) {
-  const [views, setViews] = useState('')
-
-  useEffect(() => {
-    const onViews = (newViews) => setViews(newViews.val())
-    let db
-
-    const fetchData = async () => {
-      db = await loadDb()
-      db.child(id).on('value', onViews)
-    }
-
-    fetchData()
-
-    return () => {
-      if (db) {
-        db.child(id).off('value', onViews)
-      }
-    }
-  }, [id])
+export default function ViewCounter({ slug }) {
+  const { data } = useSWR(`/api/views/${slug}`, fetcher)
+  const views = data?.total
 
   useEffect(() => {
-    const registerView = () => fetch(`/api/increment-views?id=${encodeURIComponent(id)}`)
+    const registerView = () =>
+      fetch(`/api/views/${slug}`, {
+        method: 'POST'
+      })
 
     registerView()
-  }, [id])
+  }, [slug])
 
-  return <chakra.span>{`${views ? format(views) : '–––'} views`}</chakra.span>
+  return <chakra.span>{`${views ? new Number(views).toLocaleString() : '–––'} views`}</chakra.span>
 }

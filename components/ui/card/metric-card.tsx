@@ -3,7 +3,7 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 export default function MetricCard({ header, link, metric }) {
   return (
-    <Box p={4} borderWidth="1px" borderRadius="lg" minWidth="xs">
+    <Box p={4} borderWidth="1px" borderRadius="lg">
       <Link href={link} isExternal>
         <Flex align="center">
           {header}

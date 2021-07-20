@@ -1,1 +1,1 @@
-export { default as siteMetadata } from './site-metadata'
+export * from './site-metadata'

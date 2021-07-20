@@ -12,7 +12,7 @@ export const projects = [
     title: 'miraklasiaf.com',
     icon: Miraklasiaf,
     techStack: ['Next.js', 'Chakra UI', 'MDX', '▲Vercel'],
-    description: 'Personal website / blog / portfolio',
+    description: 'Personal website / portfolio / blog',
     link: 'https://github.com/miraklasiaf/miraklasiaf.com'
   }
 ]

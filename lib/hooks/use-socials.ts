@@ -8,7 +8,7 @@ export function useSocials() {
     [siteMetadata.author.mailto, Email, 'Email']
   ]
 
-  return socials
+  return { socials }
 }
 
 export default useSocials

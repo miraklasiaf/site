@@ -5,14 +5,14 @@ export default function AboutPage() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')
 
   return (
-    <Page title="About | Faisal Karim">
+    <Page title="About | Faisal Karim" canonical="/about">
       <Stack spacing={8} justifyContent="center" alignItems="flex-start">
         <Stack direction="column" justify="flex-start" align="flex-start" spacing={4}>
           <Heading letterSpacing="tight" as="h1" size="2xl">
             About Me
           </Heading>
           <Text color={secondaryColor}>
-            Hey, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
+            Hi, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
           </Text>
           <Text color={secondaryColor}>
             I grew up in small-town Batam and went to Riau University at Pekanbaru, graduating with
