@@ -3,8 +3,7 @@ import matter from 'gray-matter'
 import mdxPrism from 'mdx-prism'
 import path from 'path'
 import readingTime from 'reading-time'
-import renderToString from 'next-mdx-remote/render-to-string'
-import { Markdown } from '@/components/common'
+import { serialize } from 'next-mdx-remote/serialize'
 
 const dataDirectory = path.join(process.cwd(), 'data')
 
@@ -18,12 +17,18 @@ export async function getFileBySlug(type, slug) {
     : fs.readFileSync(path.join(dataDirectory, `${type}.mdx`), 'utf8')
 
   const { data, content } = matter(source)
-  const mdxSource = await renderToString(content, {
-    components: Markdown,
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
-        require('remark-autolink-headings'),
         require('remark-slug'),
+        [
+          require('remark-autolink-headings'),
+          {
+            linkProperties: {
+              className: ['anchor']
+            }
+          }
+        ],
         require('remark-code-titles')
       ],
       rehypePlugins: [mdxPrism]
