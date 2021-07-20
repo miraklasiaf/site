@@ -1,7 +1,7 @@
 import { useColorModeValue, Heading, Text, Flex, Stack } from '@chakra-ui/react'
 import { Page } from '@/components/common'
 import { ProjectCard } from '@/components/ui'
-import { projects } from '@/constants/projects'
+import { projects } from '@/data/projects'
 
 export default function Index() {
   const secondaryColor = useColorModeValue('gray.700', 'gray.400')
@@ -13,7 +13,7 @@ export default function Index() {
           Hi, I'm Faisal Karim
         </Heading>
         <Text color={secondaryColor}>
-          I'm a software developer living in Batam, Indonesia. You’ve found my personal slice of the
+          I'm a software engineer living in Batam, Indonesia. You’ve found my personal slice of the
           internet – everything you want to know and more is here.
         </Text>
       </Stack>

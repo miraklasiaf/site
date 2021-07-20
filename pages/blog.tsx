@@ -12,17 +12,13 @@ import {
 import { SearchIcon } from '@chakra-ui/icons'
 import { Page } from '@/components/common'
 import { BlogCard } from '@/components/ui'
+import { getAllFilesFrontMatter } from '@/lib/blog'
 
-// @ts-expect-error
-import { frontMatter as blogPosts } from './blog/**/*.mdx'
-// @ts-expect-error
-import { frontMatter as helloWorld } from './blog/hello-world.mdx'
-
-export default function BlogPage() {
-  const [searchValue, setSearchValue] = React.useState('')
+export default function BlogPage({ posts }) {
   const color = useColorModeValue('gray.700', 'gray.400')
+  const [searchValue, setSearchValue] = React.useState('')
 
-  const filteredBlogPosts = blogPosts
+  const filteredBlogPosts = posts
     .sort((a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt)))
     .filter((frontMatter) => frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()))
 
@@ -30,15 +26,16 @@ export default function BlogPage() {
     <Page
       title="Blog | Faisal Karim"
       description="Thoughts on the programming, tech, and my personal life"
+      canonical="/blog"
     >
-      <Stack spacing={8} justifyContent="center" alignItems="flex-start" mx="auto" mb={16}>
+      <Stack spacing={8} justifyContent="center" alignItems="flex-start" mx="auto">
         <Stack direction="column" spacing={3}>
           <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
             Blog
           </Heading>
           <Text color={color}>
             {`I've been writing online since 2020, mostly about web development. In total, I've
-              written ${blogPosts.length} articles on this site. Use the search below to filter by
+              written ${posts.length} articles on this site. Use the search below to filter by
               title.`}
           </Text>
           <InputGroup>
@@ -63,7 +60,11 @@ export default function BlogPage() {
             <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
               Most Popular
             </Heading>
-            <BlogCard {...helloWorld} />
+            <BlogCard
+              title="Hello World!"
+              slug="hello-world"
+              description="Finally, I was able to create my own blog"
+            />
           </Flex>
         )}
         <Flex
@@ -87,4 +88,10 @@ export default function BlogPage() {
       </Stack>
     </Page>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('blog')
+
+  return { props: { posts } }
 }

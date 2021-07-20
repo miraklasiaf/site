@@ -1,45 +1,46 @@
-import { Flex, Text, HStack, chakra, useColorModeValue, Link, IconButton } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import { Divider, Link, useColorModeValue, SimpleGrid, VStack } from '@chakra-ui/react'
 import { Container } from '@/components/ui'
-import { useSocials } from '@/utils'
-import { siteMetadata } from '@/config'
 
-const Footer = () => {
-  const socials = useSocials()
-  const color = useColorModeValue('gray.500', 'gray.400')
+const NavLink = ({ href, ...rest }) => (
+  <NextLink href={href} passHref>
+    <Link
+      fontWeight="light"
+      _hover={{ color: useColorModeValue('gray.900', 'whiteAlpha.100') }}
+      {...rest}
+    />
+  </NextLink>
+)
 
+export default function Footer() {
   return (
-    <chakra.footer>
-      <Container variant="copy">
-        <Flex
-          direction={{ base: 'column', md: 'row' }}
-          align="center"
-          justify="space-between"
-          py={8}
-        >
-          <Flex align="center" order={{ base: 2, md: 1 }} mt={{ base: 4, md: 0 }}>
-            <Text color={color} lineHeight={6} fontSize="sm">
-              {siteMetadata.copyright}
-            </Text>
-          </Flex>
-
-          <HStack order={{ base: 1, md: 2 }}>
-            {socials.map(([href, Icon, label]) => (
-              <IconButton
-                as={Link}
-                key={href}
-                href={href}
-                aria-label={label}
-                title={label}
-                icon={<Icon w={6} />}
-                isExternal
-                variant="link"
-              />
-            ))}
-          </HStack>
-        </Flex>
-      </Container>
-    </chakra.footer>
+    <Container as="footer" apply="layout.copy" mt="8" pb="16">
+      <Divider mb="8" />
+      <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 4, md: 6 }}>
+        <VStack spacing="3" align="flex-start">
+          <NavLink href="/" children="Home" />
+          <NavLink href="/about" children="About" />
+        </VStack>
+        <VStack spacing="3" align="flex-start">
+          <Link
+            href="https://twitter.com/miraklasiaf"
+            isExternal
+            fontWeight="light"
+            _hover={{ color: useColorModeValue('gray.900', 'whiteAlpha.100') }}
+            children="Twitter"
+          />
+          <Link
+            href="https://github.com/miraklasiaf"
+            isExternal
+            fontWeight="light"
+            _hover={{ color: useColorModeValue('gray.900', 'whiteAlpha.100') }}
+            children="Github"
+          />
+        </VStack>
+        <VStack spacing="3" align="flex-start">
+          <NavLink href="/uses" children="Uses" />
+        </VStack>
+      </SimpleGrid>
+    </Container>
   )
 }
-
-export default Footer

@@ -1,59 +1,19 @@
-const path = require('path')
-const mdxPrism = require('mdx-prism')
-const getReadingTime = require('reading-time')
-const withPlugins = require('next-compose-plugins')
-const withMdxEnhanced = require('next-mdx-enhanced')
-const { getEditUrl, addLeadingSlash } = require('@docusaurus/utils')
-
-const EDIT_URL = 'https://github.com/miraklasiaf/miraklasiaf.com/edit/develop/pages'
-
-function fileToPath(str) {
-  return addLeadingSlash(str.replace('.mdx', ''))
-}
-
-const defaultConfig = {
-  experimental: {
-    modern: true
-  },
-  webpack: (config, { isServer }) => {
+module.exports = {
+  webpack: (config, { dev, isServer }) => {
     if (isServer) {
       require('./scripts/generate-sitemap')
+      require('./scripts/generate-rss')
+    }
+
+    // https://github.com/leerob/leerob.io/blob/9adc510cbfb3da88c3b0ad15632eb876ca91b607/next.config.js#L27-L33
+    if (!dev && !isServer) {
+      Object.assign(config.resolve.alias, {
+        react: 'preact/compat',
+        'react-dom/test-utils': 'preact/test-utils',
+        'react-dom': 'preact/compat'
+      })
     }
 
     return config
   }
 }
-
-const mdxConfig = {
-  layoutPath: 'layouts',
-  defaultLayout: true,
-  fileExtensions: ['mdx'],
-  remarkPlugins: [
-    require('remark-autolink-headings'),
-    require('remark-slug'),
-    require('remark-code-titles'),
-    require('./utils/title-style')
-  ],
-  rehypePlugins: [mdxPrism],
-  extendFrontMatter: {
-    process: async (mdxContent, frontmatter) => {
-      const { __resourcePath: mdxPath } = frontmatter
-
-      const slug = fileToPath(mdxPath)
-      const wordCount = mdxContent.split(/\s+/gu).length
-      const readingTime = getReadingTime(mdxContent)
-      const editUrl = getEditUrl(path.join(mdxPath), EDIT_URL)
-      const author = 'Faisal Karim'
-
-      return {
-        slug,
-        wordCount,
-        readingTime,
-        editUrl,
-        author
-      }
-    }
-  }
-}
-
-module.exports = withPlugins([withMdxEnhanced(mdxConfig)], defaultConfig)

@@ -1,16 +1,16 @@
 import { NextSeo, ArticleJsonLd } from 'next-seo'
-import { siteMetadata } from '@/config'
+import { PLATFORM_URL } from '@/config'
 
 interface BlogSEOProps {
   author: string
-  date: string
+  date?: string
   title: string
   slug: string
   description: string
 }
 
 const BlogSEO = ({ title, description, slug, author, date }: BlogSEOProps) => {
-  const url = `${siteMetadata.seo.openGraph.url}/blog/${slug}`
+  const url = `${PLATFORM_URL}/blog/${slug}`
 
   return (
     <>
@@ -28,7 +28,8 @@ const BlogSEO = ({ title, description, slug, author, date }: BlogSEOProps) => {
           description,
           images: [
             {
-              url: `${siteMetadata.seo.openGraph.url}/api/og?title=${title}`
+              url: `${PLATFORM_URL}/api/og?title=${title}`,
+              alt: title
             }
           ]
         }}
@@ -37,7 +38,7 @@ const BlogSEO = ({ title, description, slug, author, date }: BlogSEOProps) => {
         url={url}
         title={title}
         description={description}
-        images={[`${siteMetadata.seo.openGraph.url}/api/og?title=${title}`]}
+        images={[`${PLATFORM_URL}/api/og?title=${title}`]}
         datePublished={date}
         dateModified={date}
         authorName={author}
