@@ -7,6 +7,7 @@ import ViewCounter from '../view-counter'
 export interface Frontmatter {
   author: string
   title: string
+  description: string
   slug: string
   banner: string
   publishedAt: string
@@ -34,11 +35,11 @@ const discussUrl = (slug: string) =>
   )}`
 
 export default function BlogLayout({ frontMatter, children }: BlogLayoutProps) {
+  const { title, description, author, publishedAt, slug } = frontMatter
+  const date = new Date(publishedAt).toISOString()
+
   return (
-    <Page
-      title="Uses | Faisal Karim"
-      description="Here's what tech I'm currently using for coding."
-    >
+    <Page title={title} description={description} author={author} date={date} slug={slug}>
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {frontMatter.title}
