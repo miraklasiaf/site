@@ -7,11 +7,11 @@ import { serialize } from 'next-mdx-remote/serialize'
 
 const dataDirectory = path.join(process.cwd(), 'data')
 
-export async function getFiles(type) {
+export async function getFiles(type: string) {
   return fs.readdirSync(path.join(dataDirectory, type))
 }
 
-export async function getFileBySlug(type, slug) {
+export async function getFileBySlug(type: string, slug?: string) {
   const source = slug
     ? fs.readFileSync(path.join(dataDirectory, type, `${slug}.mdx`), 'utf8')
     : fs.readFileSync(path.join(dataDirectory, `${type}.mdx`), 'utf8')
@@ -48,7 +48,7 @@ export async function getFileBySlug(type, slug) {
   }
 }
 
-export async function getAllFilesFrontMatter(type) {
+export async function getAllFilesFrontMatter(type: string) {
   const files = fs.readdirSync(path.join(dataDirectory, type))
 
   return files.reduce((allPosts, postSlug) => {

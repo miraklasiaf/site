@@ -1,26 +1,21 @@
-import { useColorModeValue, Heading, Text, Stack } from '@chakra-ui/react'
-import { Page } from '@/components/common'
+import { Page } from '@/components/page'
 
 export default function AboutPage() {
-  const secondaryColor = useColorModeValue('gray.700', 'gray.400')
-
   return (
-    <Page title="About | Faisal Karim" canonical="/about">
-      <Stack spacing={8} justifyContent="center" alignItems="flex-start">
-        <Stack direction="column" justify="flex-start" align="flex-start" spacing={4}>
-          <Heading letterSpacing="tight" as="h1" size="2xl">
-            About Me
-          </Heading>
-          <Text color={secondaryColor}>
-            Hi, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.
-          </Text>
-          <Text color={secondaryColor}>
+    <Page title="About | Faisal Karim">
+      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+          About Me
+        </h1>
+        <div className="mb-8 mr-6 prose leading-6 text-gray-600 dark:text-gray-400">
+          <p>Hi, I'm Faisal. I live in Batam, Indonesia and I’m a Software Engineer.</p>
+          <p>
             I grew up in small-town Batam and went to Riau University at Pekanbaru, graduating with
             a degree in Computer Science. I spend my free time listening music, playing games, and
             enjoying time with friends and family.
-          </Text>
-        </Stack>
-      </Stack>
+          </p>
+        </div>
+      </div>
     </Page>
   )
 }

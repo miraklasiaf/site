@@ -1,13 +1,7 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from '@chakra-ui/react'
 import { GAScript } from '@/lib/analytics'
 
 class MyDocument extends NextDocument {
-  static async getInitialProps(ctx) {
-    const initialProps = await NextDocument.getInitialProps(ctx)
-    return { ...initialProps }
-  }
-
   render() {
     return (
       <Html lang="en">
@@ -46,9 +40,8 @@ class MyDocument extends NextDocument {
           <meta name="google-site-verification" content={process.env.GOOGLE_SITE_VERIFICATION} />
           <meta name="monetization" content={process.env.ILP_URL} />
         </Head>
-        <body>
+        <body className="bg-white dark:bg-black text-white dark:text-black">
           <GAScript />
-          <ColorModeScript />
           <Main />
           <NextScript />
         </body>
