@@ -27,7 +27,7 @@ interface BlogLayoutProps {
 }
 
 const editUrl = (slug: string) =>
-  `https://github.com/miraklasiaf/miraklasiaf.com/edit/develop/data/blog/${slug}.mdx`
+  `https://github.com/miraklasiaf/miraklasiaf.com/edit/main/data/blog/${slug}.mdx`
 
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
