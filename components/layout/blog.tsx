@@ -31,7 +31,7 @@ const editUrl = (slug: string) =>
 
 const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.seo.openGraph.url}${slug}`
+    `${siteMetadata.seo.openGraph.url}/blog/${slug}`
   )}`
 
 export default function BlogLayout({ frontMatter, children }: BlogLayoutProps) {
