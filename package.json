@@ -27,7 +27,6 @@
     "@mdx-js/react": "^1.6.22",
     "@tailwindcss/typography": "^0.4.1",
     "chrome-aws-lambda": "^5.5.0",
-    "comma-number": "^2.0.1",
     "date-fns": "^2.16.1",
     "firebase-admin": "^9.4.2",
     "gray-matter": "^4.0.3",
