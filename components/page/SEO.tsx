@@ -14,17 +14,18 @@ export default function SEO({ title, description, author, date }: SEOProps) {
   const url = `${siteMetadata.seo.openGraph.url}${router.asPath}`
   const defaultOgUrl = `${siteMetadata.seo.openGraph.url}/static/images/og.jpg`
   const generateOgUrl = `${siteMetadata.seo.openGraph.url}/api/og?title=${title}`
+  const isBlogPage = !!date
 
   return (
     <>
       <NextSeo
-        title={title}
+        title={isBlogPage ? `${title} | Faisal Karim` : title}
         description={description}
         canonical={url}
         openGraph={{
           // blog page seo
-          type: date && 'article',
-          article: date && {
+          type: isBlogPage && 'article',
+          article: isBlogPage && {
             publishedTime: date
           },
           url: url,
@@ -32,7 +33,7 @@ export default function SEO({ title, description, author, date }: SEOProps) {
           description: description,
           images: [
             {
-              url: date ? generateOgUrl : defaultOgUrl,
+              url: isBlogPage ? generateOgUrl : defaultOgUrl,
               alt: title,
               width: 1280,
               height: 720
@@ -41,7 +42,7 @@ export default function SEO({ title, description, author, date }: SEOProps) {
         }}
       />
       // blog page seo
-      {date && (
+      {isBlogPage && (
         <ArticleJsonLd
           url={url}
           title={title}
