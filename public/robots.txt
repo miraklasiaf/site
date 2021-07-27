@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://miraklasiaf.now.sh/sitemap.xml
+Sitemap: https://miraklasiaf.com/sitemap.xml
