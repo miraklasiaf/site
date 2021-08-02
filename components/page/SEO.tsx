@@ -23,7 +23,6 @@ export default function SEO({ title, description, author, date }: SEOProps) {
         description={description}
         canonical={url}
         openGraph={{
-          // blog page seo
           type: isBlogPage && 'article',
           article: isBlogPage && {
             publishedTime: date
@@ -41,7 +40,6 @@ export default function SEO({ title, description, author, date }: SEOProps) {
           ]
         }}
       />
-      // blog page seo
       {isBlogPage && (
         <ArticleJsonLd
           url={url}
