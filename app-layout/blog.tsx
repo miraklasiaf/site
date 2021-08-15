@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { parseISO, format } from 'date-fns'
-import { Page } from '@/components/page'
-import { siteMetadata } from '@/config'
-import ViewCounter from '../view-counter'
+import { Page } from '~/components/page'
+import { appConfig } from '~/app-config'
+import ViewCounter from '~/components/view-counter'
 
 export interface Frontmatter {
   author: string
@@ -26,20 +26,24 @@ interface BlogLayoutProps {
   children: React.ReactNode
 }
 
-const editUrl = (slug: string) =>
-  `https://github.com/miraklasiaf/miraklasiaf.com/edit/main/data/blog/${slug}.mdx`
-
+const editUrl = (slug: string) => `${appConfig.githubRepositoryUrl}/edit/main/data/blog/${slug}.mdx`
 const discussUrl = (slug: string) =>
-  `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `${siteMetadata.seo.openGraph.url}/blog/${slug}`
-  )}`
+  `https://mobile.twitter.com/search?q=${encodeURIComponent(`${appConfig.siteUrl}/blog/${slug}`)}`
 
 export default function BlogLayout({ frontMatter, children }: BlogLayoutProps) {
-  const { title, description, author, publishedAt, slug } = frontMatter
+  console.log(frontMatter)
+  const { title, description, author, publishedAt, slug, banner } = frontMatter
   const date = new Date(publishedAt).toISOString()
 
   return (
-    <Page title={title} description={description} author={author} date={date} slug={slug}>
+    <Page
+      title={title}
+      description={description}
+      author={author}
+      date={date}
+      slug={slug}
+      image={banner}
+    >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           {frontMatter.title}

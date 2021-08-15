@@ -1,10 +1,10 @@
-export const GA_TRACKING_ID = 'UA-156247328-1'
+import { appConfig } from '~/app-config'
 
 export const trackPageview = (url: string) => {
   const _window = window as typeof window & { gtag: any }
 
   try {
-    _window.gtag('config', GA_TRACKING_ID, {
+    _window.gtag('config', appConfig.gaTrackingId, {
       page_location: url,
       page_title: document.title
     })
@@ -37,14 +37,14 @@ export const trackEvent = (options: TrackEventOptions) => {
 
 export const GAScript = () => (
   <>
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${appConfig.gaTrackingId}`} />
     <script
       dangerouslySetInnerHTML={{
         __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
+            gtag('config', '${appConfig.gaTrackingId}', {
               page_path: window.location.pathname,
             });
           `

@@ -16,7 +16,7 @@
     "noUnusedParameters": true,
     "jsx": "preserve",
     "baseUrl": "node_modules",
-    "paths": { "@/*": ["../*"] }
+    "paths": { "~/*": ["../*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/docs/utils.js", "utils/title-style.js"],
   "exclude": ["node_modules"]

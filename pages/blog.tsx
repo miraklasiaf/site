@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Page } from '@/components/page'
-import { BlogCard } from '@/components/blog'
-import { getAllFilesFrontMatter } from '@/lib/mdx'
-import { Frontmatter } from '@/components/layout/blog'
+import { Page } from '~/components/page'
+import BlogCard from '~/components/blog-card'
+import { getAllFilesFrontMatter } from '~/lib/mdx'
+import { Frontmatter } from '~/app-layout/blog'
 
 export default function BlogPage({ posts }) {
   const [searchValue, setSearchValue] = React.useState('')

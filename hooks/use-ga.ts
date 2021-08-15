@@ -1,8 +1,8 @@
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
-import { trackPageview } from '../analytics'
+import { trackPageview } from '../lib/ga'
 
-const useAnalytics = () => {
+const useGa = () => {
   const router = useRouter()
 
   useEffect(() => {
@@ -19,4 +19,4 @@ const useAnalytics = () => {
   }, [])
 }
 
-export default useAnalytics
+export default useGa

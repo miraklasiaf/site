@@ -5,16 +5,16 @@ import path from 'path'
 import readingTime from 'reading-time'
 import { serialize } from 'next-mdx-remote/serialize'
 
-const dataDirectory = path.join(process.cwd(), 'data')
+const contentDirectory = path.join(process.cwd(), '@content')
 
 export async function getFiles(type: string) {
-  return fs.readdirSync(path.join(dataDirectory, type))
+  return fs.readdirSync(path.join(contentDirectory, type))
 }
 
 export async function getFileBySlug(type: string, slug?: string) {
   const source = slug
-    ? fs.readFileSync(path.join(dataDirectory, type, `${slug}.mdx`), 'utf8')
-    : fs.readFileSync(path.join(dataDirectory, `${type}.mdx`), 'utf8')
+    ? fs.readFileSync(path.join(contentDirectory, type, `${slug}.mdx`), 'utf8')
+    : fs.readFileSync(path.join(contentDirectory, `${type}.mdx`), 'utf8')
 
   const { data, content } = matter(source)
   const mdxSource = await serialize(content, {
@@ -49,10 +49,10 @@ export async function getFileBySlug(type: string, slug?: string) {
 }
 
 export async function getAllFilesFrontMatter(type: string) {
-  const files = fs.readdirSync(path.join(dataDirectory, type))
+  const files = fs.readdirSync(path.join(contentDirectory, type))
 
   return files.reduce((allPosts, postSlug) => {
-    const source = fs.readFileSync(path.join(dataDirectory, type, postSlug), 'utf8')
+    const source = fs.readFileSync(path.join(contentDirectory, type, postSlug), 'utf8')
     const { data } = matter(source)
 
     return [

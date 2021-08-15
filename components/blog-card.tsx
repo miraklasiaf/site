@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import useSWR from 'swr'
-import { fetcher } from '@/lib/fetcher'
+import { fetcher } from '~/lib/fetcher'
 
 interface BlogCardProps {
   title: string

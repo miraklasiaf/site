@@ -1,2 +1,2 @@
-export { default as Analytics } from './analytics'
-export { default as Github } from './github'
+export { default as WebsiteViews } from './website-views'
+export { default as GithubStars } from './github-stars'

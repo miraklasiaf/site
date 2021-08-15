@@ -1,5 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { GAScript } from '@/lib/analytics'
+import { GAScript } from '~/lib/ga'
 
 class MyDocument extends NextDocument {
   render() {

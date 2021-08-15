@@ -1,8 +1,8 @@
 import useSWR from 'swr'
-import { fetcher } from '@/lib/fetcher'
 import MetricCard from './card'
+import { fetcher } from '~/lib/fetcher'
 
-export default function GitHub() {
+export default function GithubStars() {
   const { data } = useSWR('/api/github', fetcher)
 
   const stars = new Number(data?.stars)

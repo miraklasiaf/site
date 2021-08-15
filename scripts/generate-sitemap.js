@@ -1,5 +1,4 @@
 const fs = require('fs')
-
 const globby = require('globby')
 const prettier = require('prettier')
 
@@ -8,8 +7,8 @@ const prettier = require('prettier')
   const pages = await globby([
     'pages/*.js',
     'pages/*.tsx',
-    'data/**/*.mdx',
-    '!data/*.mdx',
+    '@content/**/*.mdx',
+    '!@content/*.mdx',
     '!pages/_*.js',
     '!pages/_*.tsx',
     '!pages/api',
@@ -24,7 +23,7 @@ const prettier = require('prettier')
               .map((page) => {
                 const path = page
                   .replace('pages', '')
-                  .replace('data', '')
+                  .replace('@content', '')
                   .replace('.js', '')
                   .replace('.tsx', '')
                   .replace('.mdx', '')

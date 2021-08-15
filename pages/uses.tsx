@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote'
-import { getFileBySlug } from '@/lib/mdx'
-import { UsesLayout } from '@/components/layout'
+import { getFileBySlug } from '~/lib/mdx'
+import { UsesLayout } from '~/app-layout'
 
 export default function UsesPage({ mdxSource }) {
   return (

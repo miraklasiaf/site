@@ -1,4 +1,4 @@
-import { Page } from '@/components/page'
+import { Page } from '~/components/page'
 
 function ProjectCard({ title, description, href, icon }) {
   return (
@@ -82,7 +82,7 @@ function ProjectCard({ title, description, href, icon }) {
 
 export default function HomePage() {
   return (
-    <Page title="Faisal Karim" description="Front-end developer and JavaScript enthusiast.">
+    <Page title="Faisal Karim" description="Fullstack web developer">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           Hey, I’m Faisal Karim
