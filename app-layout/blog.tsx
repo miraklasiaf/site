@@ -31,7 +31,6 @@ const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(`${appConfig.siteUrl}/blog/${slug}`)}`
 
 export default function BlogLayout({ frontMatter, children }: BlogLayoutProps) {
-  console.log(frontMatter)
   const { title, description, author, publishedAt, slug, banner } = frontMatter
   const date = new Date(publishedAt).toISOString()
 
@@ -42,7 +41,7 @@ export default function BlogLayout({ frontMatter, children }: BlogLayoutProps) {
       author={author}
       date={date}
       slug={slug}
-      image={banner}
+      image={`${appConfig.siteUrl}${banner}`}
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
