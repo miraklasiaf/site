@@ -8,11 +8,11 @@
   },
   "headers": [
     {
-      "source": "/api/github",
+      "source": "/fonts/inter-var-latin.woff2",
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=120, stale-while-revalidate=60"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
