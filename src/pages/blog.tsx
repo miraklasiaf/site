@@ -1,5 +1,5 @@
 import * as React from 'react'
-import BlogCard from '@mira/core/AppBlogCard'
+import { AppBlogCard } from '@mira/core'
 import { getAllFilesFrontMatter } from '@mira/lib/mdx'
 import { AppPage } from '@mira/core'
 import { Default } from 'layouts'
@@ -56,7 +56,7 @@ export default function BlogPage({ posts }) {
             <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
               Most Popular
             </h3>
-            <BlogCard
+            <AppBlogCard
               title="Hello World!"
               slug="hello-world"
               description="Finally, I was able to create my own blog"
@@ -70,7 +70,7 @@ export default function BlogPage({ posts }) {
           <p className="text-gray-600 dark:text-gray-400 mb-4">No posts found.</p>
         )}
         {filteredBlogPosts.map((frontMatter) => (
-          <BlogCard key={frontMatter.title} {...frontMatter} />
+          <AppBlogCard key={frontMatter.title} {...frontMatter} />
         ))}
       </div>
     </AppPage>
