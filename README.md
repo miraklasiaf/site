@@ -17,17 +17,10 @@ $ cd miraklasiaf.com
 $ yarn && yarn dev
 ```
 
-Create a `.env.local` file similar to `.env`.
-
-```
-FIREBASE_PRIVATE_KEY=
-FIREBASE_CLIENT_EMAIL=
-IS_PRODUCTION=true
-```
-
 ## Built Using
 
 - [Next.js](https://nextjs.org/)
 - [Vercel](https://vercel.com)
 - [MDX](https://github.com/mdx-js/mdx)
 - [TailwindCSS](https://tailwindcss.com/)
+- [PlanetScale](https://planetscale.com/)

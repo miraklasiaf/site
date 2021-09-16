@@ -1,11 +1,6 @@
 {
-  "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "env": {
-    "FIREBASE_PRIVATE_KEY": "@firebase-private-key",
-    "FIREBASE_CLIENT_EMAIL": "@firebase-client-email"
-  },
   "headers": [
     {
       "source": "/fonts/inter-var-latin.woff2",
