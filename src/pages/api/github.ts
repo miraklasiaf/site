@@ -1,4 +1,6 @@
-export default async (_, res) => {
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+export default async (_: NextApiRequest, res: NextApiResponse) => {
   const userResponse = await fetch('https://api.github.com/users/miraklasiaf')
   const userReposResponse = await fetch('https://api.github.com/users/miraklasiaf/repos')
 
