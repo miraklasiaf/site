@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import { AppPage } from '@mira/core'
-import { Default } from 'layouts'
 
 export default function Error() {
   return (
-    <AppPage title="404 | Faisal Karim" layout={Default}>
+    <AppPage title="404 | Faisal Karim">
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           404 - Not Found

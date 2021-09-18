@@ -2,13 +2,13 @@ import Link from 'next/link'
 import useSWR from 'swr'
 import { fetcher } from '@mira/lib/fetcher'
 
-interface BlogCardProps {
+interface AppBlogCardProps {
   title: string
   description: string
   slug: string
 }
 
-const BlogCard = ({ title, description, slug }: BlogCardProps) => {
+const AppBlogCard = ({ title, description, slug }: AppBlogCardProps) => {
   const { data } = useSWR(`/api/views/${slug}`, fetcher)
   const views = data?.total
 
@@ -31,4 +31,4 @@ const BlogCard = ({ title, description, slug }: BlogCardProps) => {
   )
 }
 
-export default BlogCard
+export default AppBlogCard

@@ -1,13 +1,10 @@
-import { AppPage } from '@mira/core'
-import { AppGithubStars, AppWebsiteViews } from '@mira/core'
-import { Default } from 'layouts'
+import { AppPage, AppGithubStars, AppWebsiteViews } from '@mira/core'
 
 export default function DashboardPage() {
   return (
     <AppPage
       title="Dashboard | Faisal Karim"
       description="My personal dashboard, build with Next.js API routes"
-      layout={Default}
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">

@@ -2,6 +2,7 @@ import * as React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import config from '@mira/config'
+import { Default } from 'layouts'
 
 interface PageProps {
   title: string
@@ -10,11 +11,11 @@ interface PageProps {
   date?: string
   slug?: string
   image?: string
-  layout: any
+  layout?: any
   children: React.ReactNode
 }
 
-export default function AppPage({ layout: Layout, children, ...customMeta }: PageProps) {
+export default function AppPage({ layout: Layout = Default, children, ...customMeta }: PageProps) {
   const router = useRouter()
   const { siteName, siteUrl, twitterUsername } = config
   const meta = {

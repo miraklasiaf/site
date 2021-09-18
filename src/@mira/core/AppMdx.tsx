@@ -16,9 +16,9 @@ const CustomLink = (props) => {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-const MDXComponents = {
+const AppMdx = {
   Image,
   a: CustomLink
 }
 
-export default MDXComponents
+export default AppMdx

@@ -1,8 +1,6 @@
 import * as React from 'react'
-import { AppBlogCard } from '@mira/core'
+import { AppPage, AppBlogCard } from '@mira/core'
 import { getAllFilesFrontMatter } from '@mira/lib/mdx'
-import { AppPage } from '@mira/core'
-import { Default } from 'layouts'
 
 export default function BlogPage({ posts }) {
   const [searchValue, setSearchValue] = React.useState('')
@@ -17,7 +15,6 @@ export default function BlogPage({ posts }) {
     <AppPage
       title="Blog | Faisal Karim"
       description="Thoughts on the programming, tech, and my personal life"
-      layout={Default}
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
