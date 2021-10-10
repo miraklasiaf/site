@@ -20,7 +20,7 @@ export default function AppPage({ layout: Layout = Default, children, ...customM
   const { siteName, siteUrl, twitterUsername } = config
   const meta = {
     title: `${siteName}`,
-    description: `Full stack web eveloper.`,
+    description: `Full stack web developer.`,
     image: `${config.siteUrl}/static/images/og.jpg`,
     type: 'website',
     ...customMeta
@@ -42,7 +42,7 @@ export default function AppPage({ layout: Layout = Default, children, ...customM
         <meta property="og:url" content={`${siteUrl}${router.asPath}`} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:description" content={meta.description} />
-        <meta property="og:site_name" content={siteName} />
+        <meta property="og:site_name" content={`www.miraklasiaf.com`} />
         <meta property="og:image" content={meta.image} />
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
