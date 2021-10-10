@@ -1,17 +1,6 @@
 {
-  "name": "miraklasiaf",
-  "description": "My personal website",
-  "version": "1.0.0",
-  "author": {
-    "name": "Faisal Karim",
-    "email": "faisalkarim96@gmail.com",
-    "url": "https://miraklasiaf.com"
-  },
+  "private": true,
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/miraklasiaf/miraklasiaf.com.sh.git"
-  },
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -34,11 +23,11 @@
     "preact": "^10.5.14",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "swr": "^0.5.6"
+    "swr": "^0.5.6",
+    "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
     "@types/react": "^17.0.14",
-    "@typescript-eslint/eslint-plugin": "^4.28.4",
     "autoprefixer": "^10.3.1",
     "esbuild": "^0.12.20",
     "eslint": "^7.32.0",
@@ -49,8 +38,6 @@
     "eslint-plugin-react": "^7.24.0",
     "globby": "^12.0.1",
     "gray-matter": "^4.0.3",
-    "husky": "^7.0.1",
-    "lint-staged": "^11.0.1",
     "postcss": "^8.3.6",
     "prettier": "^2.3.2",
     "reading-time": "^1.4.0",
@@ -63,17 +50,6 @@
     "rimraf": "^3.0.2",
     "rss": "^1.2.2",
     "tailwindcss": "^2.2.7",
-    "typescript": "^4.3.5"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{html,js,json,md,mdx,yml}": [
-      "prettier --write",
-      "git add"
-    ]
+    "typescript": "^4.4.3"
   }
 }

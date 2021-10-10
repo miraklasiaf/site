@@ -20,14 +20,14 @@ export default function AppPage({ layout: Layout = Default, children, ...customM
   const { siteName, siteUrl, twitterUsername } = config
   const meta = {
     title: `${siteName}`,
-    description: `Fullstack web developer.`,
+    description: `Full stack web eveloper.`,
     image: `${config.siteUrl}/static/images/og.jpg`,
     type: 'website',
     ...customMeta
   }
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-gray-50 dark:bg-gray-900">
       <Head>
         <title>{meta.title}</title>
         <link rel="canonical" href={`${siteUrl}${router.asPath}`} />

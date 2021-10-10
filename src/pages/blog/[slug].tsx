@@ -25,7 +25,7 @@ export default function BlogPage({ code, frontMatter }) {
               alt="Faisal Karim"
               height={24}
               width={24}
-              src="/static/images/logo.png"
+              src="/static/images/logo.jpg"
               className="rounded-full"
             />
             <p className="text-sm text-gray-700 dark:text-gray-300 ml-2">
