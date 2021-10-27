@@ -1,5 +1,5 @@
 module.exports = {
-  experimental: { esmExternals: true },
+  swcMinify: true,
   reactStrictMode: true,
   webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
