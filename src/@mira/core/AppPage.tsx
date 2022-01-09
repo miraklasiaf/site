@@ -1,30 +1,34 @@
-import * as React from 'react'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
-import config from '@mira/config'
-import { Default } from 'layouts'
+import * as React from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import config from '@mira/config';
+import { Default } from 'layouts';
 
 interface PageProps {
-  title: string
-  description?: string
-  author?: string
-  date?: string
-  slug?: string
-  image?: string
-  layout?: any
-  children: React.ReactNode
+  title: string;
+  description?: string;
+  author?: string;
+  date?: string;
+  slug?: string;
+  image?: string;
+  layout?: any;
+  children: React.ReactNode;
 }
 
-export default function AppPage({ layout: Layout = Default, children, ...customMeta }: PageProps) {
-  const router = useRouter()
-  const { siteName, siteUrl, twitterUsername } = config
+export default function AppPage({
+  layout: Layout = Default,
+  children,
+  ...customMeta
+}: PageProps) {
+  const router = useRouter();
+  const { siteName, siteUrl, twitterUsername } = config;
   const meta = {
     title: `${siteName}`,
     description: `Full stack web developer.`,
     image: `${config.siteUrl}/static/images/og.jpg`,
     type: 'website',
     ...customMeta
-  }
+  };
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -44,9 +48,11 @@ export default function AppPage({ layout: Layout = Default, children, ...customM
         <meta property="og:description" content={meta.description} />
         <meta property="og:site_name" content={`www.miraklasiaf.com`} />
         <meta property="og:image" content={meta.image} />
-        {meta.date && <meta property="article:published_time" content={meta.date} />}
+        {meta.date && (
+          <meta property="article:published_time" content={meta.date} />
+        )}
       </Head>
       <Layout>{children}</Layout>
     </div>
-  )
+  );
 }

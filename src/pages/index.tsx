@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { AppPage, FeaturedBlogCard, FeaturedProjectCard } from '@mira/core'
+import Image from 'next/image';
+import Link from 'next/link';
+import { AppPage, FeaturedBlogCard, FeaturedProjectCard } from '@mira/core';
 
 export default function HomePage() {
   return (
@@ -15,8 +15,8 @@ export default function HomePage() {
               Full Stack Web Developer based in Batam, Indonesia
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-16">
-              You’ve found my personal slice of the internet – everything you want to know and more
-              is here.
+              You’ve found my personal slice of the internet – everything you
+              want to know and more is here.
             </p>
           </div>
           <div className="w-[80px] sm:w-[176px] relative mb-8 sm:mb-0 mr-auto">
@@ -72,10 +72,15 @@ export default function HomePage() {
           Featured Projects
         </h3>
         <p className="text-gray-600 dark:text-gray-400 mb-4">
-          Here are some of my past works from personal projects and open source ones.
+          Here are some of my past works from personal projects and open source
+          ones.
         </p>
-        <FeaturedProjectCard index="01" href="https://grammarkup.vercel.app/" title="Grammarkup" />
+        <FeaturedProjectCard
+          index="01"
+          href="https://grammarkup.vercel.app/"
+          title="Grammarkup"
+        />
       </div>
     </AppPage>
-  )
+  );
 }

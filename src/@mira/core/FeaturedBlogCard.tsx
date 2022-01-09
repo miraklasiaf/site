@@ -1,11 +1,11 @@
-import Link from 'next/link'
-import useSWR from 'swr'
-import cn from 'classnames'
-import { fetcher } from '@mira/lib/fetcher'
+import Link from 'next/link';
+import useSWR from 'swr';
+import cn from 'classnames';
+import { fetcher } from '@mira/lib/fetcher';
 
 export default function FeaturedBlogCard({ title, slug, gradient }) {
-  const { data } = useSWR(`/api/views/${slug}`, fetcher)
-  const views = data?.total
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -50,5 +50,5 @@ export default function FeaturedBlogCard({ title, slug, gradient }) {
         </div>
       </a>
     </Link>
-  )
+  );
 }

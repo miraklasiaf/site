@@ -1,4 +1,6 @@
-module.exports = {
+const { withContentlayer } = require('next-contentlayer');
+
+module.exports = withContentlayer()({
   swcMinify: true,
   reactStrictMode: true,
   webpack: (config, { dev, isServer }) => {
@@ -8,9 +10,9 @@ module.exports = {
         react: 'preact/compat',
         'react-dom/test-utils': 'preact/test-utils',
         'react-dom': 'preact/compat'
-      })
+      });
     }
 
-    return config
+    return config;
   }
-}
+});

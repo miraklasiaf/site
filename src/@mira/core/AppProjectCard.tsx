@@ -46,7 +46,12 @@ export default function AppProjectCard({ title, description, href, icon }) {
               className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
               viewBox="0 0 500 500"
             >
-              <rect width="500" height="500" rx="250" fill="url(#paint0_linear)"></rect>
+              <rect
+                width="500"
+                height="500"
+                rx="250"
+                fill="url(#paint0_linear)"
+              ></rect>
               <path
                 d="M311.659 184.364H268.335V169.733C268.335 154.96 274.301 146.295 292.057 146.295C299.301 146.295 306.688 147.858 311.517 149.42L322.17 103.966C314.642 101.693 298.023 98 279.415 98C238.364 98 207.824 121.153 207.824 168.597V184.364H177V229.818H207.824V402.545H268.335V229.818H311.659V184.364Z"
                 fill="white"
@@ -71,9 +76,11 @@ export default function AppProjectCard({ title, description, href, icon }) {
           <h4 className="text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100">
             {title}
           </h4>
-          <p className="leading-5 text-gray-700 dark:text-gray-300">{description}</p>
+          <p className="leading-5 text-gray-700 dark:text-gray-300">
+            {description}
+          </p>
         </div>
       </div>
     </a>
-  )
+  );
 }

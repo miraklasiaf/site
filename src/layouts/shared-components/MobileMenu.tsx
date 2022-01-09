@@ -1,31 +1,34 @@
-import cn from 'classnames'
-import Link from 'next/link'
-import useDelayedRender from 'use-delayed-render'
-import { useState, useEffect } from 'react'
-import styles from 'styles/mobile-menu.module.css'
+import cn from 'classnames';
+import Link from 'next/link';
+import useDelayedRender from 'use-delayed-render';
+import { useState, useEffect } from 'react';
+import styles from 'styles/mobile-menu.module.css';
 
 export default function MobileMenu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(isMenuOpen, {
-    enterDelay: 20,
-    exitDelay: 300
-  })
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
+    isMenuOpen,
+    {
+      enterDelay: 20,
+      exitDelay: 300
+    }
+  );
 
   function toggleMenu() {
     if (isMenuOpen) {
-      setIsMenuOpen(false)
-      document.body.style.overflow = ''
+      setIsMenuOpen(false);
+      document.body.style.overflow = '';
     } else {
-      setIsMenuOpen(true)
-      document.body.style.overflow = 'hidden'
+      setIsMenuOpen(true);
+      document.body.style.overflow = 'hidden';
     }
   }
 
   useEffect(() => {
     return function cleanup() {
-      document.body.style.overflow = ''
-    }
-  }, [])
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
     <>
@@ -81,7 +84,7 @@ export default function MobileMenu() {
         </ul>
       )}
     </>
-  )
+  );
 }
 
 function MenuIcon(props: JSX.IntrinsicElements['svg']) {
@@ -109,7 +112,7 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
         strokeLinejoin="round"
       />
     </svg>
-  )
+  );
 }
 
 function CrossIcon(props: JSX.IntrinsicElements['svg']) {
@@ -130,5 +133,5 @@ function CrossIcon(props: JSX.IntrinsicElements['svg']) {
       <path d="M18 6L6 18" />
       <path d="M6 6l12 12" />
     </svg>
-  )
+  );
 }

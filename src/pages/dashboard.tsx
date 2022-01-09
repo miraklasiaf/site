@@ -1,9 +1,9 @@
-import { AppPage, AppGithubStars, AppWebsiteViews } from '@mira/core'
+import { AppPage, AppGithubStars, AppWebsiteViews } from '@mira/core';
 
 export default function DashboardPage() {
   return (
     <AppPage
-      title="Dashboard | Faisal Karim"
+      title="Dashboard / Faisal Karim"
       description="My personal dashboard, build with Next.js API routes"
     >
       <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
@@ -12,9 +12,9 @@ export default function DashboardPage() {
         </h1>
         <div className="mb-8">
           <p className="text-gray-600 dark:text-gray-400 mb-4">
-            This is my personal dashboard, built with Next.js API routes deployed as serverless
-            functions. I use this dashboard to track various metrics across platforms like GitHub,
-            Blog views, and more.
+            This is my personal dashboard, built with Next.js API routes
+            deployed as serverless functions. I use this dashboard to track
+            various metrics across platforms like GitHub, Blog views, and more.
           </p>
         </div>
 
@@ -24,5 +24,5 @@ export default function DashboardPage() {
         </div>
       </div>
     </AppPage>
-  )
+  );
 }

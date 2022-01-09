@@ -6,7 +6,8 @@ const config = {
   twitterUsername: '@miraklasiaf',
   githubUrl: 'https://github.com/miraklasiaf',
   githubRepositoryUrl: 'https://github.com/miraklasiaf/miraklasiaf.com',
-  gaTrackingId: 'UA-156247328-1'
-}
+  gaTrackingId: 'UA-156247328-1',
+  mdxDirectory: 'src/@content'
+};
 
-export default config
+export default config;

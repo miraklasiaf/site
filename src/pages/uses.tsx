@@ -1,14 +1,14 @@
-import { useMemo } from 'react'
-import { getMDXComponent } from 'mdx-bundler/client'
-import { getFileBySlug } from '@mira/lib/mdx'
-import { AppPage, AppMdx } from '@mira/core'
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import { allOtherPages } from '.contentlayer/data';
+import type { OtherPage } from '.contentlayer/types';
+import { AppPage, AppMdx } from '@mira/core';
 
-export default function UsesPage({ code }) {
-  const Component = useMemo(() => getMDXComponent(code), [code])
+export default function UsesPage({ body: { code } }: OtherPage) {
+  const Component = useMDXComponent(code);
 
   return (
     <AppPage
-      title="Uses | Faisal Karim"
+      title="Uses / Faisal Karim"
       description="Here's what tech I'm currently using for coding."
     >
       <article className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
@@ -23,11 +23,11 @@ export default function UsesPage({ code }) {
         </div>
       </article>
     </AppPage>
-  )
+  );
 }
 
 export async function getStaticProps() {
-  const post = await getFileBySlug('uses')
+  const uses = allOtherPages.find((page) => page.slug === 'uses')!;
 
-  return { props: post }
+  return { props: uses };
 }

@@ -1,1 +1,1 @@
-export { default as useGa } from './useGa'
+export { default as useGa } from './useGa';

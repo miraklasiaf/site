@@ -1,13 +1,16 @@
-import db from '@mira/lib/planetscale'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
+import prisma from '@mira/lib/prisma';
 
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {
   try {
-    const [rows] = await db.query(`SELECT SUM(count) as total FROM views`, null)
+    const totalViews = await prisma.views.aggregate({
+      _sum: {
+        count: true
+      }
+    });
 
-    const total = rows[0]['total']
-    return res.status(200).json({ total })
+    return res.status(200).json({ total: totalViews._sum.count.toString() });
   } catch (e) {
-    return res.status(500).json({ message: e.message })
+    return res.status(500).json({ message: e.message });
   }
 }

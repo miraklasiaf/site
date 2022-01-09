@@ -35,7 +35,8 @@
 .menu li {
   transform: translateX(-16px);
   opacity: 0;
-  transition: opacity 300ms ease, transform 300ms ease, width 300ms ease, border-color 300ms ease;
+  transition: opacity 300ms ease, transform 300ms ease, width 300ms ease,
+    border-color 300ms ease;
   width: 0px;
   white-space: nowrap;
 }

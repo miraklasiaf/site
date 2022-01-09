@@ -1,13 +1,13 @@
-import * as React from 'react'
-import { useRouter } from 'next/router'
-import { useTheme } from 'next-themes'
-import NextLink from 'next/link'
-import cn from 'classnames'
-import { MobileMenu } from '../../shared-components'
+import * as React from 'react';
+import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
+import NextLink from 'next/link';
+import cn from 'classnames';
+import { MobileMenu } from '../../shared-components';
 
 function NavItem({ href, text }) {
-  const router = useRouter()
-  const isActive = router.asPath === href
+  const router = useRouter();
+  const isActive = router.asPath === href;
 
   return (
     <NextLink href={href}>
@@ -22,15 +22,15 @@ function NavItem({ href, text }) {
         <span className="capsize">{text}</span>
       </a>
     </NextLink>
-  )
+  );
 }
 
 export default function AppHeader() {
-  const [mounted, setMounted] = React.useState(false)
-  const { resolvedTheme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   // After mounting, we have access to the theme
-  React.useEffect(() => setMounted(true), [])
+  React.useEffect(() => setMounted(true), []);
 
   return (
     <nav className="flex items-center justify-between w-full relative max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pt-8 pb-8 sm:pb-16  text-gray-900 bg-gray-50  dark:bg-gray-900 bg-opacity-60 dark:text-gray-100">
@@ -87,5 +87,5 @@ export default function AppHeader() {
         )}
       </button>
     </nav>
-  )
+  );
 }

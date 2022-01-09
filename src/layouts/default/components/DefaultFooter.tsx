@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 
 const ExternalLink = ({ href, children }) => (
   <a
@@ -9,7 +9,7 @@ const ExternalLink = ({ href, children }) => (
   >
     {children}
   </a>
-)
+);
 
 export default function AppFooter() {
   return (
@@ -18,22 +18,32 @@ export default function AppFooter() {
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
           <Link href="/">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">Home</a>
+            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+              Home
+            </a>
           </Link>
           <Link href="/about">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">About</a>
+            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+              About
+            </a>
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
-          <ExternalLink href="https://twitter.com/miraklasiaf">Twitter</ExternalLink>
-          <ExternalLink href="https://github.com/miraklasiaf">GitHub</ExternalLink>
+          <ExternalLink href="https://twitter.com/miraklasiaf">
+            Twitter
+          </ExternalLink>
+          <ExternalLink href="https://github.com/miraklasiaf">
+            GitHub
+          </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
           <Link href="/uses">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">Uses</a>
+            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
+              Uses
+            </a>
           </Link>
         </div>
       </div>
     </footer>
-  )
+  );
 }

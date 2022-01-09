@@ -1,16 +1,16 @@
-import Link from 'next/link'
-import useSWR from 'swr'
-import { fetcher } from '@mira/lib/fetcher'
+import Link from 'next/link';
+import useSWR from 'swr';
+import { fetcher } from '@mira/lib/fetcher';
 
 interface AppBlogCardProps {
-  title: string
-  description: string
-  slug: string
+  title: string;
+  description: string;
+  slug: string;
 }
 
 const AppBlogCard = ({ title, description, slug }: AppBlogCardProps) => {
-  const { data } = useSWR(`/api/views/${slug}`, fetcher)
-  const views = data?.total
+  const { data } = useSWR(`/api/views/${slug}`, fetcher);
+  const views = data?.total;
 
   return (
     <Link href={`/blog/${slug}`}>
@@ -28,7 +28,7 @@ const AppBlogCard = ({ title, description, slug }: AppBlogCardProps) => {
         </div>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default AppBlogCard
+export default AppBlogCard;
