@@ -1,4 +1,9 @@
-import { AppPage, AppGithubStars, AppWebsiteViews } from '@mira/core';
+import {
+  AppPage,
+  AppGithubStars,
+  AppWebsiteViews,
+  AppTopTracks
+} from '@mira/core';
 
 export default function DashboardPage() {
   return (
@@ -22,6 +27,15 @@ export default function DashboardPage() {
           <AppWebsiteViews />
           <AppGithubStars />
         </div>
+
+        <h2 className="font-bold text-3xl tracking-tight mb-4 mt-16 text-black dark:text-white">
+          Top Tracks
+        </h2>
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Curious what I'm currently jamming to? Here's my top tracks on Spotify
+          updated daily.
+        </p>
+        <AppTopTracks />
       </div>
     </AppPage>
   );
