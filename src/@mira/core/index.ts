@@ -1,9 +1,11 @@
 export { default as AppPage } from './AppPage';
 export { default as AppBlogCard } from './AppBlogCard';
 export { default as AppProjectCard } from './AppProjectCard';
+export { default as AppNowPlaying } from './AppNowPlaying';
 export { default as AppWebsiteViews } from './AppWebsiteViews';
 export { default as AppGithubStars } from './AppGithubStars';
 export { default as AppMdx } from './AppMdx';
+export { default as AppTopTracks } from './AppTopTracks';
 export { default as AppViewCounter } from './AppViewCounter';
 export { default as FeaturedBlogCard } from './FeaturedBlogCard';
 export { default as FeaturedProjectCard } from './FeaturedProjectCard';

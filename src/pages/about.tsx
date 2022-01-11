@@ -1,4 +1,4 @@
-import { AppPage } from '@mira/core';
+import { AppPage, AppTopTracks } from '@mira/core';
 
 export default function AboutPage() {
   return (
@@ -26,6 +26,12 @@ export default function AboutPage() {
             friends and family.
           </p>
         </div>
+        <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Curious what I'm currently jamming to? Here's my top tracks on Spotify
+          updated daily.
+        </p>
+        <AppTopTracks />
       </div>
     </AppPage>
   );
