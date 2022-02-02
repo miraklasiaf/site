@@ -32,18 +32,15 @@ class MyDocument extends NextDocument {
             href="/static/favicon/apple-touch-icon.png"
             sizes="180x180"
           />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/static/favicon/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/static/favicon/favicon-16x16.png"
-          />
+          {[16, 32].map((size) => (
+            <link
+              key={size}
+              rel="icon"
+              type="image/png"
+              sizes={`${size}x${size}`}
+              href={`/static/favicon/favicon-${size}x${size}.png`}
+            />
+          ))}
           <meta
             name="google-site-verification"
             content={process.env.GOOGLE_SITE_VERIFICATION}

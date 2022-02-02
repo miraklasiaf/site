@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import useDelayedRender from 'use-delayed-render';
 import { useState, useEffect } from 'react';
-import styles from 'styles/mobile-menu.module.css';
+import styles from './style.module.css';
 
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
