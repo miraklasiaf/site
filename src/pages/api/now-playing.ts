@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { getNowPlaying } from '@mira/lib/spotify';
 
 export default async function handler(_: NextApiRequest, res: NextApiResponse) {

@@ -1,7 +1,7 @@
-import useSWR from 'swr';
+import AppMetricCard from './AppMetricCard';
 import config from '@mira/config';
 import { fetcher } from '@mira/lib/fetcher';
-import AppMetricCard from './AppMetricCard';
+import useSWR from 'swr';
 
 export default function AppWebsiteViews() {
   const { data } = useSWR('/api/views', fetcher);

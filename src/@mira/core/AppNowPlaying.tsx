@@ -1,7 +1,8 @@
-import useSWR from 'swr';
 import * as React from 'react';
+
 import { animate } from 'motion';
 import { fetcher } from '@mira/lib/fetcher';
+import useSWR from 'swr';
 
 function AnimatedBars() {
   React.useEffect(() => {

@@ -1,5 +1,5 @@
-import useSWR from 'swr';
 import { fetcher } from '@mira/lib/fetcher';
+import useSWR from 'swr';
 
 interface Song {
   songUrl: string;

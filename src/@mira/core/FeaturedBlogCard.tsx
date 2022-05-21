@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import useSWR from 'swr';
 import cn from 'classnames';
 import { fetcher } from '@mira/lib/fetcher';
+import useSWR from 'swr';
 
 export default function FeaturedBlogCard({ title, slug, gradient }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);

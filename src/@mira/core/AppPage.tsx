@@ -1,8 +1,9 @@
 import * as React from 'react';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import config from '@mira/config';
+
 import { Default } from 'layouts';
+import Head from 'next/head';
+import config from '@mira/config';
+import { useRouter } from 'next/router';
 
 interface PageProps {
   title: string;

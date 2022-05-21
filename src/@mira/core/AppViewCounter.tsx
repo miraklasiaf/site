@@ -1,6 +1,6 @@
+import { fetcher } from '@mira/lib/fetcher';
 import { useEffect } from 'react';
 import useSWR from 'swr';
-import { fetcher } from '@mira/lib/fetcher';
 
 export default function AppViewCounter({ slug }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);

@@ -1,5 +1,6 @@
-import { ThemeProvider } from 'next-themes';
 import '../styles/global.css';
+
+import { ThemeProvider } from 'next-themes';
 
 const App = ({ Component, pageProps }) => {
   return (

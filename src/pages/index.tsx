@@ -1,6 +1,7 @@
+import { AppPage, FeaturedBlogCard, FeaturedProjectCard } from '@mira/core';
+
 import Image from 'next/image';
 import Link from 'next/link';
-import { AppPage, FeaturedBlogCard, FeaturedProjectCard } from '@mira/core';
 
 export default function HomePage() {
   return (

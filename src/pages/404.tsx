@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { AppPage } from '@mira/core';
+import Link from 'next/link';
 
 export default function Error() {
   return (

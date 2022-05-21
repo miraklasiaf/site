@@ -1,7 +1,8 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { allOtherPages } from '.contentlayer/data';
+import { AppMdx, AppPage } from '@mira/core';
+
 import type { OtherPage } from '.contentlayer/types';
-import { AppPage, AppMdx } from '@mira/core';
+import { allOtherPages } from '.contentlayer/data';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
 export default function UsesPage({ body: { code } }: OtherPage) {
   const Component = useMDXComponent(code);

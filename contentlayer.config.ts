@@ -3,6 +3,7 @@ import {
   defineDocumentType,
   makeSource
 } from 'contentlayer/source-files';
+
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';

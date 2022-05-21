@@ -1,6 +1,6 @@
-import useSWR from 'swr';
 import AppMetricCard from './AppMetricCard';
 import { fetcher } from '@mira/lib/fetcher';
+import useSWR from 'swr';
 
 export default function AppGithubStars() {
   const { data } = useSWR('/api/github', fetcher);

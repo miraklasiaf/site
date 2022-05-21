@@ -1,8 +1,8 @@
 import {
-  AppPage,
   AppGithubStars,
-  AppWebsiteViews,
-  AppTopTracks
+  AppPage,
+  AppTopTracks,
+  AppWebsiteViews
 } from '@mira/core';
 
 export default function DashboardPage() {
