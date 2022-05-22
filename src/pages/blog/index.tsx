@@ -1,8 +1,10 @@
 import * as React from 'react';
-import { AppPage, AppBlogCard } from '@mira/core';
+
+import { AppBlogCard, AppPage } from '@mira/core';
+
 import { InferGetStaticPropsType } from 'next';
+import { allBlogs } from '../../../.contentlayer/generated';
 import { pick } from '@mira/lib/utils';
-import { allBlogs } from '.contentlayer/data';
 
 export default function BlogPage({
   posts

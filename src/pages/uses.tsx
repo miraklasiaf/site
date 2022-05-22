@@ -1,10 +1,9 @@
 import { AppMdx, AppPage } from '@mira/core';
+import { Post, allPosts } from '../../.contentlayer/generated';
 
-import type { OtherPage } from '.contentlayer/types';
-import { allOtherPages } from '.contentlayer/data';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-export default function UsesPage({ body: { code } }: OtherPage) {
+export default function UsesPage({ body: { code } }: Post) {
   const Component = useMDXComponent(code);
 
   return (
@@ -28,7 +27,7 @@ export default function UsesPage({ body: { code } }: OtherPage) {
 }
 
 export async function getStaticProps() {
-  const uses = allOtherPages.find((page) => page.slug === 'uses')!;
+  const uses = allPosts.find((page) => page.slug === 'uses')!;
 
   return { props: uses };
 }

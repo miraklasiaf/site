@@ -1,10 +1,10 @@
+import { AppMdx, AppPage, AppViewCounter } from '@mira/core';
+import { Blog, allBlogs } from '../../../.contentlayer/generated';
+import { format, parseISO } from 'date-fns';
+
 import Image from 'next/image';
-import { parseISO, format } from 'date-fns';
-import { useMDXComponent } from 'next-contentlayer/hooks';
-import { AppPage, AppViewCounter, AppMdx } from '@mira/core';
 import config from '@mira/config';
-import { allBlogs } from '.contentlayer/data';
-import type { Blog } from '.contentlayer/types';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
 const editUrl = (slug: string) =>
   `${config.githubRepositoryUrl}/edit/main/data/blog/${slug}.mdx`;

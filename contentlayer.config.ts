@@ -26,7 +26,7 @@ const computedFields: ComputedFields = {
 const Blog = defineDocumentType(() => ({
   name: 'Blog',
   filePathPattern: 'blog/*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
     description: { type: 'string', required: true },
@@ -36,10 +36,10 @@ const Blog = defineDocumentType(() => ({
   computedFields
 }));
 
-const OtherPage = defineDocumentType(() => ({
-  name: 'OtherPage',
+const Post = defineDocumentType(() => ({
+  name: 'Post',
   filePathPattern: '*.mdx',
-  bodyType: 'mdx',
+  contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true }
   },
@@ -48,7 +48,7 @@ const OtherPage = defineDocumentType(() => ({
 
 const contentLayerConfig = makeSource({
   contentDirPath: 'src/@content',
-  documentTypes: [Blog, OtherPage],
+  documentTypes: [Blog, Post],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -64,7 +64,8 @@ const contentLayerConfig = makeSource({
         }
       ]
     ]
-  }
+  },
+  disableImportAliasWarning: true
 });
 
 export default contentLayerConfig;
