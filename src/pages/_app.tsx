@@ -1,11 +1,16 @@
 import '../styles/global.css';
 
 import { ThemeProvider } from 'next-themes';
+import { Inter } from '@next/font/google';
+
+const interVariable = Inter();
 
 const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class">
-      <Component {...pageProps} />
+      <main className={interVariable.className}>
+        <Component {...pageProps} />
+      </main>
     </ThemeProvider>
   );
 };

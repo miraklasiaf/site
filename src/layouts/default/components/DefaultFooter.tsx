@@ -19,15 +19,17 @@ export default function AppFooter() {
       <AppNowPlaying />
       <div className="w-full max-w-2xl grid grid-cols-1 gap-4 pb-16 sm:grid-cols-3">
         <div className="flex flex-col space-y-4">
-          <Link href="/">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
-              Home
-            </a>
+          <Link
+            href="/"
+            className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition"
+          >
+            Home
           </Link>
-          <Link href="/about">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
-              About
-            </a>
+          <Link
+            href="/about"
+            className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition"
+          >
+            About
           </Link>
         </div>
         <div className="flex flex-col space-y-4">
@@ -39,10 +41,11 @@ export default function AppFooter() {
           </ExternalLink>
         </div>
         <div className="flex flex-col space-y-4">
-          <Link href="/uses">
-            <a className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition">
-              Uses
-            </a>
+          <Link
+            href="/uses"
+            className="text-gray-500 dark:text-gray-400 hover:text-gray-600 transition"
+          >
+            Uses
           </Link>
         </div>
       </div>
