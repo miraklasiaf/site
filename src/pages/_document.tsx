@@ -19,13 +19,6 @@ export default function Document() {
           color="#5bbad5"
         />
         <link
-          rel="preload"
-          href="/static/fonts/inter-var-latin.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
           rel="apple-touch-icon"
           href="/static/favicon/apple-touch-icon.png"
           sizes="180x180"
