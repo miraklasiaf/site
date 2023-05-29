@@ -1,7 +1,8 @@
 const { spacing, fontFamily } = require('tailwindcss/defaultTheme');
 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.tsx'],
+  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './content/**/*.mdx'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -87,6 +88,9 @@ module.exports = {
   },
   variants: {
     typography: ['dark']
+  },
+  future: {
+    hoverOnlyWhenSupported: true
   },
   plugins: [require('@tailwindcss/typography')]
 };

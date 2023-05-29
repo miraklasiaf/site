@@ -2,35 +2,32 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "build": "next build",
-    "postbuild": "set NODE_OPTIONS='--experimental-json-modules' node ./scripts/generate-rss.mjs && node ./scripts/generate-sitemap.mjs",
     "dev": "next dev",
-    "start": "next start",
-    "lint": "next lint"
+    "build": "next build",
+    "start": "next start"
   },
   "dependencies": {
-    "@next/font": "^13.0.2",
     "@prisma/client": "^4.5.0",
-    "@tailwindcss/typography": "^0.5.7",
-    "classnames": "^2.3.2",
-    "contentlayer": "^0.2.5",
+    "clsx": "^1.2.1",
+    "contentlayer": "^0.2.9",
     "date-fns": "^2.29.3",
     "motion": "^10.14.3",
-    "next": "^13.0.2",
-    "next-contentlayer": "^0.2.5",
+    "next": "^13.4.3",
+    "next-contentlayer": "^0.2.9",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "^1.3.0",
-    "tailwindcss": "^3.2.1",
     "use-delayed-render": "^0.0.7"
   },
   "devDependencies": {
-    "@types/react": "^18.0.24",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/node": "^20.2.3",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.26.0",
     "eslint-config-next": "^13.0.1",
-    "globby": "^13.1.2",
     "postcss": "^8.4.18",
     "prettier": "^2.7.1",
     "prisma": "^4.5.0",
@@ -41,7 +38,7 @@
     "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
-    "rss": "^1.2.2",
-    "typescript": "^4.8.4"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.9.4"
   }
 }

@@ -1,17 +1,30 @@
 const { withContentlayer } = require('next-contentlayer');
 
 module.exports = withContentlayer({
-  reactStrictMode: true,
-  experimental: {
-    fontLoaders: [
-      { loader: '@next/font/google', options: { subsets: ['latin'] } }
-    ]
-  },
-  async headers() {
+  headers() {
     return [
       {
         source: '/(.*)',
         headers: securityHeaders
+      }
+    ];
+  },
+  async redirects() {
+    return [
+      {
+        source: '/wp-admin',
+        destination: 'https://www.youtube.com/watch?v=2ZIpFytCSVc',
+        permanent: true
+      },
+      {
+        source: '/wp-login.php',
+        destination: 'https://www.youtube.com/watch?v=2ZIpFytCSVc',
+        permanent: true
+      },
+      {
+        source: '/.env',
+        destination: 'https://www.youtube.com/watch?v=2ZIpFytCSVc',
+        permanent: true
       }
     ];
   }
