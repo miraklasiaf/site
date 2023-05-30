@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { fetcher } from '../lib/fetcher';
 import useSWR from 'swr';
 
-//TODO: use server component
 export default function FeaturedBlogCard({ title, slug, gradient }) {
   const { data } = useSWR(`/api/views/${slug}`, fetcher);
   const views = data?.total;
