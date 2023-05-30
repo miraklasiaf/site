@@ -1,9 +1,13 @@
 'use client';
 
 import * as React from 'react';
+import BlogCard from 'components/blog-card';
 
-export default function BlogList() {
+export default function BlogList({ posts }) {
   const [searchValue, setSearchValue] = React.useState('');
+  const filteredBlogPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   return (
     <>
@@ -35,22 +39,22 @@ export default function BlogList() {
           <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
             Most Popular
           </h3>
-          {/* <AppBlogCard
+          <BlogCard
             title="Hello World!"
             slug="hello-world"
             description="Finally, I was able to create my own blog"
-          /> */}
+          />
         </>
       )}
       <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
         All Posts
       </h3>
-      {/* {!filteredBlogPosts.length && (
+      {!filteredBlogPosts.length && (
         <p className="mb-4 text-gray-600 dark:text-gray-400">No posts found.</p>
       )}
       {filteredBlogPosts.map((post) => (
-        <AppBlogCard key={post.title} {...post} />
-      ))} */}
+        <BlogCard key={post.title} {...post} />
+      ))}
     </>
   );
 }

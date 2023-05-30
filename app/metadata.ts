@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     default: 'Faisal Karim',
     template: '%s / Faisal Karim'
   },
-  description: 'Fullstack web developer.',
+  description: 'Full stack web developer.',
   openGraph: {
     title: 'Faisal Karim',
     description: 'Fullstack web developer.',

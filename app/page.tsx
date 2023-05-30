@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import FeaturedBlogCard from '../../components/featured-blog-card';
-import FeaturedProjectCard from '../../components/featured-project-card';
+import FeaturedBlogCard from '../components/featured-blog-card';
+import FeaturedProjectCard from '../components/featured-project-card';
 
 export default function HomePage() {
   return (

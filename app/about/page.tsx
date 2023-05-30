@@ -16,7 +16,7 @@ export default function AboutPage() {
           <a href="https://smitsu.com" target="_blank" rel="noopener noreferrer">
             SMITSU
           </a>
-          &nbsp;as a Software Engineer.
+          &nbsp;as a Full Stack Web Developer.
         </p>
         <p>
           I grew up in small-town Batam and went to Riau University at Pekanbaru,

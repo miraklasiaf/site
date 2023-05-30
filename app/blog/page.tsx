@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
+import { allBlogs } from 'contentlayer/generated';
+import BlogList from '../../components/blog-list';
 
 export const metadata: Metadata = {
-  title: 'Blog'
+  title: 'Blog',
+  description: 'Thoughts on the programming, tech, and my personal life'
 };
 
 export default function BlogPage() {
@@ -10,11 +13,12 @@ export default function BlogPage() {
       <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
         Blog
       </h1>
-      {/* <p className="mb-4 text-gray-600 dark:text-gray-400">
-        {`I've been writing online since 2020, mostly about web development.
-      In total, I've written ${posts.length} articles on this site.
-      Use the search below to filter by title.`}
-      </p> */}
+      <p className="mb-4 text-gray-600 dark:text-gray-400">
+        I've been writing online since 2020, mostly about web development. In total, I've
+        written {allBlogs.length} articles on this site. Use the search below to filter by
+        title.
+      </p>
+      <BlogList posts={allBlogs} />
     </div>
   );
 }

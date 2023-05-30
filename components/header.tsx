@@ -9,7 +9,7 @@ import clsx from 'clsx';
 
 function NavItem({ href, text }) {
   const pathname = usePathname() || '';
-  const isActive = pathname === href;
+  const isActive = href === '/' ? pathname === href : pathname.includes(href);
 
   return (
     <NextLink
