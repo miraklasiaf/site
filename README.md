@@ -11,8 +11,8 @@ This project is based on Lee Robinson's https://github.com/leerob/leerob.io
 ```bash
 $ git clone https://github.com/miraklasiaf/miraklasiaf.com.git
 $ cd miraklasiaf.com
-$ pnpm install
-$ pnpm dev
+$ bun install
+$ bun dev
 ```
 
 ## Built Using
