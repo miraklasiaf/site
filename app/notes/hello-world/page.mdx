@@ -1,16 +1,8 @@
----
-title: 'Hello World!'
-description: 'Finally, I was able to create my own blog'
-publishedAt: '2020-10-09'
-banner: '/static/images/hello-world/banner.jpg'
----
-
-<Image
-  alt={`Finally, I was able to create my own blog`}
-  src={`/static/images/hello-world/banner.jpg`}
-  width={1200}
-  height={800}
-  priority
-/>
+export const metadata = {
+  title: 'Hello, World!',
+  alternates: {
+    canonical: '/notes/hello-world'
+  }
+};
 
 Finally, I was able to create my own blog.
