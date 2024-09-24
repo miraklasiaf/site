@@ -1,7 +1,0 @@
-.env
-.github/
-.vscode/
-*.yaml
-/build
-/node_modules
-/public/build

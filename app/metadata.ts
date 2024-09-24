@@ -6,10 +6,10 @@ export const metadata: Metadata = {
     default: 'Faisal Karim',
     template: '%s / Faisal Karim'
   },
-  description: 'Full stack web developer.',
+  description: 'Software Engineer.',
   openGraph: {
     title: 'Faisal Karim',
-    description: 'Fullstack web developer.',
+    description: 'Software Engineer.',
     url: 'https://miraklasiaf.com',
     siteName: 'Faisal Karim',
     images: [
