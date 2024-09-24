@@ -1,6 +1,3 @@
-import { Link } from 'next-view-transitions';
-import React from 'react';
-
 function AnimatedName() {
   return (
     <h1 className="font-medium pt-12 transition-element">
@@ -18,7 +15,7 @@ function AnimatedName() {
           ))}
         </span>
         <span className="inline-block absolute left-0 top-0 transition-all duration-300 ease-in-out translate-y-full group-hover:translate-y-0">
-          {'leerob'.split('').map((letter, index) => (
+          {'miraklasiaf'.split('').map((letter, index) => (
             <span
               key={index}
               className="inline-block"
