@@ -21,9 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 function Footer() {
   const links = [
-    { name: '@miraklasiaf', url: 'https://x.com/miraklasiaf' },
-    { name: 'youtube', url: 'https://www.youtube.com/@miraklasiaf' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/miraklasiaf' },
+    { name: 'twitter', url: 'https://x.com/miraklasiaf' },
     { name: 'github', url: 'https://github.com/miraklasiaf' }
   ];
 
