@@ -2,26 +2,14 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://miraklasiaf.com'),
+  alternates: {
+    canonical: '/'
+  },
   title: {
     default: 'Faisal Karim',
     template: '%s / Faisal Karim'
   },
   description: 'Software Engineer.',
-  openGraph: {
-    title: 'Faisal Karim',
-    description: 'Software Engineer.',
-    url: 'https://miraklasiaf.com',
-    siteName: 'Faisal Karim',
-    images: [
-      {
-        url: 'https://miraklasiaf.com/og.jpg',
-        width: 1920,
-        height: 1080
-      }
-    ],
-    locale: 'en-US',
-    type: 'website'
-  },
   robots: {
     index: true,
     follow: true,
