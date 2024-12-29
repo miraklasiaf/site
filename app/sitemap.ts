@@ -9,18 +9,21 @@ async function getNoteSlugs(dir: string) {
   return entries
     .filter((entry) => entry.isFile() && entry.name === 'page.mdx')
     .map((entry) => {
-      const relativePath = path.relative(dir, path.join(entry.parentPath, entry.name));
+      const relativePath = path.relative(
+        dir,
+        path.join(entry.parentPath, entry.name)
+      );
       return path.dirname(relativePath);
     })
     .map((slug) => slug.replace(/\\/g, '/'));
 }
 
 export default async function sitemap() {
-  const notesDirectory = path.join(process.cwd(), 'app', 'notes');
+  const notesDirectory = path.join(process.cwd(), 'app', 'n');
   const slugs = await getNoteSlugs(notesDirectory);
 
   const notes = slugs.map((slug) => ({
-    url: `https://miraklasiaf.com/notes/${slug}`,
+    url: `https://miraklasiaf.com/n/${slug}`,
     lastModified: new Date().toISOString()
   }));
 

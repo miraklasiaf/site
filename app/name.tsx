@@ -1,4 +1,4 @@
-function AnimatedName() {
+export function Name() {
   return (
     <h1 className="font-medium pt-12 transition-element">
       <span className="sr-only">Faisal Karim</span>
@@ -27,16 +27,5 @@ function AnimatedName() {
         </span>
       </span>
     </h1>
-  );
-}
-
-export default function Home() {
-  return (
-    <>
-      <AnimatedName />
-      <div className="text-gray-800 space-y-4 leading-snug">
-        <p>I'm a software engineer based in Indonesia.</p>
-      </div>
-    </>
   );
 }

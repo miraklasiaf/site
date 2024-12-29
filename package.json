@@ -7,8 +7,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.1.2",
     "next": "^15.1.2",
     "next-view-transitions": "^0.3.4",

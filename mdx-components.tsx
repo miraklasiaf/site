@@ -1,7 +1,5 @@
 import React, { ComponentPropsWithoutRef } from 'react';
-
 import { Link } from 'next-view-transitions';
-import type { MDXComponents } from 'mdx/types';
 import { highlight } from 'sugar-high';
 
 type HeadingProps = ComponentPropsWithoutRef<'h1'>;
@@ -11,7 +9,7 @@ type ListItemProps = ComponentPropsWithoutRef<'li'>;
 type AnchorProps = ComponentPropsWithoutRef<'a'>;
 type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
-const components: MDXComponents = {
+const components = {
   h1: (props: HeadingProps) => (
     <h1 className="font-medium pt-12 mb-0 fade-in" {...props} />
   ),
@@ -22,7 +20,9 @@ const components: MDXComponents = {
     <h3 className="text-gray-800 font-medium mt-8 mb-3" {...props} />
   ),
   h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
-  p: (props: ParagraphProps) => <p className="text-gray-800 leading-snug" {...props} />,
+  p: (props: ParagraphProps) => (
+    <p className="text-gray-800 leading-snug" {...props} />
+  ),
   ol: (props: ListProps) => (
     <ol className="text-gray-800 list-decimal pl-5 space-y-2" {...props} />
   ),
@@ -96,9 +96,10 @@ const components: MDXComponents = {
   )
 };
 
-export function useMDXComponents(otherComponents: MDXComponents): MDXComponents {
-  return {
-    ...otherComponents,
-    ...components
-  };
+declare global {
+  type MDXProvidedComponents = typeof components;
+}
+
+export function useMDXComponents(): MDXProvidedComponents {
+  return components;
 }
