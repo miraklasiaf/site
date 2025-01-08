@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 
-async function getNoteSlugs(dir: string) {
+async function getSlugs(dir: string) {
   const entries = await fs.readdir(dir, {
     recursive: true,
     withFileTypes: true
@@ -20,10 +20,17 @@ async function getNoteSlugs(dir: string) {
 
 export default async function sitemap() {
   const notesDirectory = path.join(process.cwd(), 'app', 'n');
-  const slugs = await getNoteSlugs(notesDirectory);
+  const projectsDirectory = path.join(process.cwd(), 'app', 'p');
+  const noteSlugs = await getSlugs(notesDirectory);
+  const projectSlugs = await getSlugs(projectsDirectory);
 
-  const notes = slugs.map((slug) => ({
+  const notes = noteSlugs.map((slug) => ({
     url: `https://miraklasiaf.com/n/${slug}`,
+    lastModified: new Date().toISOString()
+  }));
+
+  const projects = projectSlugs.map((slug) => ({
+    url: `https://miraklasiaf.com/p/${slug}`,
     lastModified: new Date().toISOString()
   }));
 
@@ -32,5 +39,5 @@ export default async function sitemap() {
     lastModified: new Date().toISOString()
   }));
 
-  return [...routes, ...notes];
+  return [...routes, ...notes, ...projects];
 }

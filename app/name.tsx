@@ -3,7 +3,7 @@ export function Name() {
     <h1 className="font-medium pt-12 transition-element">
       <span className="sr-only">Faisal Karim</span>
       <span aria-hidden="true" className="block overflow-hidden group relative">
-        <span className="inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full">
+        <span className="inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full whitespace-nowrap">
           {'Faisal Karim'.split('').map((letter, index) => (
             <span
               key={index}
