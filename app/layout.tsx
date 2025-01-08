@@ -1,5 +1,6 @@
 import './global.css';
 import { Inter } from 'next/font/google';
+import { ViewTransitions } from 'next-view-transitions';
 
 export * from './metadata';
 
@@ -11,16 +12,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.className} [scrollbar-gutter:stable]`}>
-      <body className="antialiased tracking-tight">
-        <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-white text-gray-900">
-          <main className="max-w-[60ch] mx-auto w-full space-y-6">
-            {children}
-          </main>
-          <Footer />
-        </div>
-      </body>
-    </html>
+    <ViewTransitions>
+      <html
+        lang="en"
+        className={`${inter.className} [scrollbar-gutter:stable]`}
+      >
+        <body className="antialiased tracking-tight">
+          <div className="min-h-screen flex flex-col justify-between pt-0 md:pt-8 p-8 bg-white text-gray-900">
+            <main className="max-w-[60ch] mx-auto w-full space-y-6">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
 
