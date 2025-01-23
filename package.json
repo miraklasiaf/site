@@ -12,7 +12,10 @@
     "@hookform/resolvers": "^3.10.0",
     "@mui/icons-material": "^6.4.0",
     "@mui/material": "^6.4.0",
+    "@mui/x-date-pickers": "^7.24.0",
     "@next/mdx": "^15.1.5",
+    "date-fns": "^4.1.0",
+    "lodash": "^4.17.21",
     "next": "^15.1.5",
     "next-view-transitions": "^0.3.4",
     "react": "^19.0.0",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0-beta.9",
+    "@types/lodash": "^4.17.14",
     "@types/mdx": "^2.0.13",
     "@types/node": "^22.10.7",
     "@types/react": "^18.3.18",
