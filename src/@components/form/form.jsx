@@ -1,3 +1,5 @@
+'use client'
+
 import { FormProvider, useForm } from 'react-hook-form';
 
 export function Form(props) {

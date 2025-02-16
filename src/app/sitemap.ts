@@ -19,8 +19,8 @@ async function getSlugs(dir: string) {
 }
 
 export default async function sitemap() {
-  const notesDirectory = path.join(process.cwd(), 'app', 'n');
-  const projectsDirectory = path.join(process.cwd(), 'app', 'p');
+  const notesDirectory = path.join(process.cwd(), 'src', 'app', 'n');
+  const projectsDirectory = path.join(process.cwd(), 'src', 'app', 'p');
   const noteSlugs = await getSlugs(notesDirectory);
   const projectSlugs = await getSlugs(projectsDirectory);
 
