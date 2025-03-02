@@ -34,7 +34,6 @@ export function AppPanel(props: AppPanelProps) {
       <AppBar position="static" elevation={0}>
         <Toolbar
           variant="dense"
-          className="px-8"
           onClick={handleClick}
           sx={{
             cursor: collapsible ? 'pointer' : undefined
