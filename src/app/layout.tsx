@@ -19,6 +19,7 @@ export default function RootLayout({
         className={`${inter.className} [scrollbar-gutter:stable]`}
       >
         <head>
+          <meta name="google-adsense-account" content="ca-pub-7966864664516090" />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
