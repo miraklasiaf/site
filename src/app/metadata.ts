@@ -25,9 +25,6 @@ export const metadata: Metadata = {
     title: 'Faisal Karim',
     card: 'summary_large_image'
   },
-  icons: {
-    shortcut: '/static/favicon/favicon.ico'
-  },
   verification: {
     google: 'KfTyzAKabwlabC29C3S23xuqg6nq_fG94IRlnpFSNtI'
   }
