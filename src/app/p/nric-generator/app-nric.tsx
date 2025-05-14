@@ -1,40 +1,28 @@
-'use client';
+"use client";
 
-import React, { useState, useEffect } from 'react';
-import NRIC from './nric';
-import {
-  CardContent,
-  CardActions,
-  Button,
-  Grid2,
-  IconButton,
-  Snackbar,
-  Autocomplete,
-  TextField
-} from '@mui/material';
-import { AppPanel } from '@/@components';
-import { DatePicker } from '@mui/x-date-pickers';
-import { Controller, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
-import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import React, { useState, useEffect } from "react";
+import NRIC from "./nric";
+import { CardContent, CardActions, Button, Grid2, IconButton, Snackbar, Autocomplete, TextField } from "@mui/material";
+import { AppPanel } from "@/@components";
+import { DatePicker } from "@mui/x-date-pickers";
+import { Controller, useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 
 const defaultValues = {
   date: new Date(),
-  quantity: 1
+  quantity: 1,
 };
 
 const schema = z.object({
-  date: z.date().refine((val) => val !== null, 'Please fill in Date.'),
-  quantity: z
-    .number()
-    .min(1, 'Quantity must be at least 1')
-    .max(50, 'Quantity cannot exceed 50')
+  date: z.date().refine((val) => val !== null, "Please fill in Date."),
+  quantity: z.number().min(1, "Quantity must be at least 1").max(50, "Quantity cannot exceed 50"),
 });
 
 const quantities = Array.from({ length: 20 }, (_, index) => ({
   value: index + 1,
-  label: String(index + 1)
+  label: String(index + 1),
 }));
 
 export function AppNric() {
@@ -44,8 +32,8 @@ export function AppNric() {
 
   const { handleSubmit, control, formState, setValue } = useForm({
     defaultValues,
-    mode: 'all',
-    resolver: zodResolver(schema)
+    mode: "all",
+    resolver: zodResolver(schema),
   });
   const { errors } = formState;
 
@@ -57,14 +45,8 @@ export function AppNric() {
   const onSubmit = (data: any) => {
     const { date, quantity } = data;
 
-    const newNrics = Array.from(
-      { length: quantity },
-      () => NRIC.GenerateNric(date).value
-    );
-    const newFins = Array.from(
-      { length: quantity },
-      () => NRIC.GenerateFin(date).value
-    );
+    const newNrics = Array.from({ length: quantity }, () => NRIC.GenerateNric(date).value);
+    const newFins = Array.from({ length: quantity }, () => NRIC.GenerateFin(date).value);
     setNrics(newNrics);
     setFins(newFins);
   };
@@ -76,7 +58,7 @@ export function AppNric() {
         setOpenSnackbar(true);
         setTimeout(() => setOpenSnackbar(false), 2000);
       })
-      .catch((err) => console.error('Failed to copy: ', err));
+      .catch((err) => console.error("Failed to copy: ", err));
   };
 
   return (
@@ -96,17 +78,17 @@ export function AppNric() {
                         onChange={(newValue) => {
                           if (newValue) {
                             onChange(newValue);
-                            setValue('date', newValue);
+                            setValue("date", newValue);
                           }
                         }}
                         disableFuture
                         slotProps={{
                           textField: {
-                            label: 'Date',
+                            label: "Date",
                             error: !!errors.date,
                             helperText: errors?.date?.message,
-                            fullWidth: true
-                          }
+                            fullWidth: true,
+                          },
                         }}
                       />
                     )}
@@ -120,10 +102,7 @@ export function AppNric() {
                       <Autocomplete
                         options={quantities}
                         getOptionLabel={(option) => option.label}
-                        value={
-                          quantities.find((option) => option.value === value) ||
-                          undefined
-                        }
+                        value={quantities.find((option) => option.value === value) || undefined}
                         onChange={(_, newValue) => {
                           onChange(newValue ? newValue.value : 1);
                         }}
@@ -148,16 +127,12 @@ export function AppNric() {
                 paddingRight: 2,
                 paddingTop: 2,
                 paddingBottom: 2,
-                backgroundColor: '#f5f5f5'
+                backgroundColor: "#f5f5f5",
               }}
             >
               <Grid2 container>
                 <Grid2>
-                  <Button
-                    className="normal-case"
-                    variant="contained"
-                    type="submit"
-                  >
+                  <Button className="normal-case" variant="contained" type="submit">
                     Generate
                   </Button>
                 </Grid2>
@@ -167,16 +142,10 @@ export function AppNric() {
               <CardContent>
                 <Grid2 size={{ xs: 12 }}>
                   <Grid2 container spacing={2}>
-                    <Grid2
-                      size={{ xs: 6 }}
-                      className="border border-blue-200 rounded-md p-4"
-                    >
+                    <Grid2 size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
                       <p className="pb-2">NRIC:</p>
                       {nrics.map((nric, index) => (
-                        <div
-                          key={index}
-                          className="flex justify-between pb-2 last:pb-0"
-                        >
+                        <div key={index} className="flex justify-between pb-2 last:pb-0">
                           <span>{nric}</span>
                           <IconButton
                             aria-label={`Copy NRIC ${index + 1}`}
@@ -188,16 +157,10 @@ export function AppNric() {
                         </div>
                       ))}
                     </Grid2>
-                    <Grid2
-                      size={{ xs: 6 }}
-                      className="border border-blue-200 rounded-md p-4"
-                    >
+                    <Grid2 size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
                       <p className="pb-2">FIN:</p>
                       {fins.map((fin, index) => (
-                        <div
-                          key={index}
-                          className="flex justify-between pb-2 last:pb-0"
-                        >
+                        <div key={index} className="flex justify-between pb-2 last:pb-0">
                           <span>{fin}</span>
                           <IconButton
                             aria-label={`Copy FIN ${index + 1}`}
@@ -219,7 +182,7 @@ export function AppNric() {
       <Snackbar
         open={openSnackbar}
         message="Copied to clipboard!"
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
       />
     </Grid2>
   );
