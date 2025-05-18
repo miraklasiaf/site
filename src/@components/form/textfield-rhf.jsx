@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { useController } from 'react-hook-form';
 import { TextField } from '@mui/material';
@@ -8,17 +8,17 @@ export function TextFieldRHF(props) {
   const { name, control, ...rest } = props;
   const {
     field,
-    fieldState: { error }
+    fieldState: { error },
   } = useController({
     name,
     control,
     disabled: rest.disabled,
-    rules: { required: rest.required }
+    rules: { required: rest.required },
   });
 
   const { value, onChange } = useTransform({
     value: field.value,
-    onChange: field.onChange
+    onChange: field.onChange,
   });
 
   return (

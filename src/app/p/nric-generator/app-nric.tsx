@@ -1,14 +1,23 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import NRIC from "./nric";
-import { CardContent, CardActions, Button, Grid2, IconButton, Snackbar, Autocomplete, TextField } from "@mui/material";
-import { AppPanel } from "@/@components";
-import { DatePicker } from "@mui/x-date-pickers";
-import { Controller, useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
+import React, { useState, useEffect } from 'react';
+import NRIC from './nric';
+import {
+  CardContent,
+  CardActions,
+  Button,
+  Grid,
+  IconButton,
+  Snackbar,
+  Autocomplete,
+  TextField,
+} from '@mui/material';
+import { AppPanel } from '@/@components';
+import { DatePicker } from '@mui/x-date-pickers';
+import { Controller, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
+import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 
 const defaultValues = {
   date: new Date(),
@@ -16,8 +25,8 @@ const defaultValues = {
 };
 
 const schema = z.object({
-  date: z.date().refine((val) => val !== null, "Please fill in Date."),
-  quantity: z.number().min(1, "Quantity must be at least 1").max(50, "Quantity cannot exceed 50"),
+  date: z.date().refine((val) => val !== null, 'Please fill in Date.'),
+  quantity: z.number().min(1, 'Quantity must be at least 1').max(50, 'Quantity cannot exceed 50'),
 });
 
 const quantities = Array.from({ length: 20 }, (_, index) => ({
@@ -32,7 +41,7 @@ export function AppNric() {
 
   const { handleSubmit, control, formState, setValue } = useForm({
     defaultValues,
-    mode: "all",
+    mode: 'all',
     resolver: zodResolver(schema),
   });
   const { errors } = formState;
@@ -58,17 +67,17 @@ export function AppNric() {
         setOpenSnackbar(true);
         setTimeout(() => setOpenSnackbar(false), 2000);
       })
-      .catch((err) => console.error("Failed to copy: ", err));
+      .catch((err) => console.error('Failed to copy: ', err));
   };
 
   return (
-    <Grid2 container>
-      <Grid2 size={{ xs: 12 }}>
+    <Grid container>
+      <Grid size={{ xs: 12 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <AppPanel panelTitle="Singapore NRIC Generator" iconName="list">
             <CardContent>
-              <Grid2 container spacing={2}>
-                <Grid2 size={{ xs: 6 }}>
+              <Grid container spacing={2}>
+                <Grid size={{ xs: 6 }}>
                   <Controller
                     name="date"
                     control={control}
@@ -78,13 +87,13 @@ export function AppNric() {
                         onChange={(newValue) => {
                           if (newValue) {
                             onChange(newValue);
-                            setValue("date", newValue);
+                            setValue('date', newValue);
                           }
                         }}
                         disableFuture
                         slotProps={{
                           textField: {
-                            label: "Date",
+                            label: 'Date',
                             error: !!errors.date,
                             helperText: errors?.date?.message,
                             fullWidth: true,
@@ -93,8 +102,8 @@ export function AppNric() {
                       />
                     )}
                   />
-                </Grid2>
-                <Grid2 size={{ xs: 6 }}>
+                </Grid>
+                <Grid size={{ xs: 6 }}>
                   <Controller
                     name="quantity"
                     control={control}
@@ -118,8 +127,8 @@ export function AppNric() {
                       />
                     )}
                   />
-                </Grid2>
-              </Grid2>
+                </Grid>
+              </Grid>
             </CardContent>
             <CardActions
               sx={{
@@ -127,22 +136,22 @@ export function AppNric() {
                 paddingRight: 2,
                 paddingTop: 2,
                 paddingBottom: 2,
-                backgroundColor: "#f5f5f5",
+                backgroundColor: '#f5f5f5',
               }}
             >
-              <Grid2 container>
-                <Grid2>
+              <Grid container>
+                <Grid>
                   <Button className="normal-case" variant="contained" type="submit">
                     Generate
                   </Button>
-                </Grid2>
-              </Grid2>
+                </Grid>
+              </Grid>
             </CardActions>
             {nrics.length > 0 && (
               <CardContent>
-                <Grid2 size={{ xs: 12 }}>
-                  <Grid2 container spacing={2}>
-                    <Grid2 size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
+                <Grid size={{ xs: 12 }}>
+                  <Grid container spacing={2}>
+                    <Grid size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
                       <p className="pb-2">NRIC:</p>
                       {nrics.map((nric, index) => (
                         <div key={index} className="flex justify-between pb-2 last:pb-0">
@@ -156,8 +165,8 @@ export function AppNric() {
                           </IconButton>
                         </div>
                       ))}
-                    </Grid2>
-                    <Grid2 size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
+                    </Grid>
+                    <Grid size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
                       <p className="pb-2">FIN:</p>
                       {fins.map((fin, index) => (
                         <div key={index} className="flex justify-between pb-2 last:pb-0">
@@ -171,19 +180,19 @@ export function AppNric() {
                           </IconButton>
                         </div>
                       ))}
-                    </Grid2>
-                  </Grid2>
-                </Grid2>
+                    </Grid>
+                  </Grid>
+                </Grid>
               </CardContent>
             )}
           </AppPanel>
         </form>
-      </Grid2>
+      </Grid>
       <Snackbar
         open={openSnackbar}
         message="Copied to clipboard!"
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       />
-    </Grid2>
+    </Grid>
   );
 }

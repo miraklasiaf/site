@@ -1,28 +1,15 @@
-'use client'
+'use client';
 
 import { FormProvider, useForm } from 'react-hook-form';
 
 export function Form(props) {
-  const {
-    handleSubmit,
-    children,
-    FormProps,
-    formContext,
-    onSuccess,
-    onError,
-    ...useFormProps
-  } = props;
+  const { handleSubmit, children, FormProps, formContext, onSuccess, onError, ...useFormProps } =
+    props;
   if (!formContext) {
-    return (
-      <FormWithoutContext
-        {...{ onSuccess, onError, FormProps, children, ...useFormProps }}
-      />
-    );
+    return <FormWithoutContext {...{ onSuccess, onError, FormProps, children, ...useFormProps }} />;
   }
   if (typeof onSuccess === 'function' && typeof handleSubmit === 'function') {
-    console.warn(
-      'Property `onSuccess` will be ignored because handleSubmit is provided'
-    );
+    console.warn('Property `onSuccess` will be ignored because handleSubmit is provided');
   }
   return (
     <FormProvider {...formContext}>
@@ -33,8 +20,8 @@ export function Form(props) {
           handleSubmit
             ? handleSubmit
             : onSuccess
-            ? formContext.handleSubmit(onSuccess, onError)
-            : () => console.log('submit handler `onSuccess` is missing')
+              ? formContext.handleSubmit(onSuccess, onError)
+              : () => console.log('submit handler `onSuccess` is missing')
         }
       >
         {children}
@@ -52,9 +39,7 @@ function FormWithoutContext(props) {
     <FormProvider {...methods}>
       <form
         onSubmit={handleSubmit(
-          onSuccess
-            ? onSuccess
-            : () => console.log('submit handler `onSuccess` is missing'),
+          onSuccess ? onSuccess : () => console.log('submit handler `onSuccess` is missing'),
           onError
         )}
         noValidate

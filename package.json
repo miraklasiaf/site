@@ -4,35 +4,34 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
-    "@hookform/resolvers": "^3.10.0",
-    "@mui/icons-material": "^6.4.8",
-    "@mui/material": "^6.4.8",
-    "@mui/x-date-pickers": "^7.28.0",
-    "@next/mdx": "^15.2.4",
+    "@hookform/resolvers": "^5.0.1",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "@mui/x-date-pickers": "^8.3.1",
+    "@next/mdx": "^15.3.2",
     "date-fns": "^4.1.0",
-    "lodash": "^4.17.21",
-    "next": "^15.2.4",
-    "next-view-transitions": "^0.3.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.54.2",
-    "sugar-high": "^0.7.5",
-    "zod": "^3.24.2"
+    "next": "^15.3.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-hook-form": "^7.56.4",
+    "sugar-high": "^0.9.3",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.15",
-    "@types/lodash": "^4.17.16",
+    "@tailwindcss/postcss": "^4.1.7",
     "@types/mdx": "^2.0.13",
-    "@types/node": "^22.13.13",
-    "@types/react": "^18.3.20",
-    "@types/react-dom": "^18.3.5",
+    "@types/node": "^22.15.18",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
     "postcss": "^8.5.3",
-    "tailwindcss": "^4.0.15",
-    "typescript": "^5.8.2"
+    "prettier": "^3.5.3",
+    "tailwindcss": "^4.1.7",
+    "typescript": "^5.8.3"
   }
 }

@@ -3,11 +3,11 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   metadataBase: new URL('https://miraklasiaf.com'),
   alternates: {
-    canonical: '/'
+    canonical: '/',
   },
   title: {
     default: 'Faisal Karim',
-    template: '%s / Faisal Karim'
+    template: '%s / Faisal Karim',
   },
   description: 'Software Engineer.',
   robots: {
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1
-    }
+      'max-snippet': -1,
+    },
   },
   twitter: {
     title: 'Faisal Karim',
-    card: 'summary_large_image'
+    card: 'summary_large_image',
   },
   verification: {
-    google: 'KfTyzAKabwlabC29C3S23xuqg6nq_fG94IRlnpFSNtI'
-  }
+    google: 'KfTyzAKabwlabC29C3S23xuqg6nq_fG94IRlnpFSNtI',
+  },
 };

@@ -14,6 +14,6 @@ export function useTransform(options) {
 
   return {
     value,
-    onChange
+    onChange,
   };
 }

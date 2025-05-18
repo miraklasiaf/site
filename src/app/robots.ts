@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/private/'
+      disallow: '/private/',
     },
-    sitemap: 'https://miraklasiaf.com/sitemap.xml'
+    sitemap: 'https://miraklasiaf.com/sitemap.xml',
   };
 }

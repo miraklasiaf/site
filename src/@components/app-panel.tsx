@@ -1,14 +1,7 @@
 'use client';
 
 import { ReactNode, useState } from 'react';
-import {
-  AppBar,
-  Card,
-  Collapse,
-  Toolbar,
-  Typography,
-  Icon
-} from '@mui/material';
+import { AppBar, Card, Collapse, Toolbar, Typography, Icon } from '@mui/material';
 
 type AppPanelProps = {
   panelTitle: string;
@@ -36,7 +29,7 @@ export function AppPanel(props: AppPanelProps) {
           variant="dense"
           onClick={handleClick}
           sx={{
-            cursor: collapsible ? 'pointer' : undefined
+            cursor: collapsible ? 'pointer' : undefined,
           }}
         >
           <Icon className="text-16 mr-4">{iconName}</Icon>

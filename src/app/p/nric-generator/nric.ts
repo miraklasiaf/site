@@ -49,10 +49,7 @@ export default class NRIC {
     let { isValidFormat, prefix, checksum } = this;
     let digits = this.digits;
 
-    return (
-      isValidFormat &&
-      checksum === NRIC.#getChecksum(prefix as Prefix, digits as string)
-    );
+    return isValidFormat && checksum === NRIC.#getChecksum(prefix as Prefix, digits as string);
   }
 
   static GenerateNric(date: Date | null = null): NRIC {
@@ -79,15 +76,14 @@ export default class NRIC {
       return this.#PREFIX_FOREIGNER_2000;
     }
 
-    return date < new Date('2000-01-01')
-      ? this.#PREFIX_CITIZEN_1900
-      : this.#PREFIX_CITIZEN_2000;
+    return date < new Date('2000-01-01') ? this.#PREFIX_CITIZEN_1900 : this.#PREFIX_CITIZEN_2000;
   }
   static #getDigits(date: Date, isForeigner: boolean): string {
     if (date < new Date(this.#CUTOFF_DATE)) {
-      return String(
-        Math.floor(Math.random() * 1000000) + (isForeigner ? 2000000 : 0)
-      ).padStart(7, '0');
+      return String(Math.floor(Math.random() * 1000000) + (isForeigner ? 2000000 : 0)).padStart(
+        7,
+        '0'
+      );
     }
 
     let digits =
@@ -117,10 +113,7 @@ export default class NRIC {
   }
   static #getOffset(prefix: Prefix): number {
     let offset = 0;
-    if (
-      [this.#PREFIX_CITIZEN_2000, this.#PREFIX_FOREIGNER_2000].includes(prefix)
-    )
-      offset = 4;
+    if ([this.#PREFIX_CITIZEN_2000, this.#PREFIX_FOREIGNER_2000].includes(prefix)) offset = 4;
     if (prefix === this.#PREFIX_FOREIGNER_2022) {
       offset = 3;
     }
@@ -131,7 +124,7 @@ export default class NRIC {
     let checksums = {
       ST: ['J', 'Z', 'I', 'H', 'G', 'F', 'E', 'D', 'C', 'B', 'A'],
       FG: ['X', 'W', 'U', 'T', 'R', 'Q', 'P', 'N', 'M', 'L', 'K'],
-      M: ['K', 'L', 'J', 'N', 'P', 'Q', 'R', 'T', 'U', 'W', 'X']
+      M: ['K', 'L', 'J', 'N', 'P', 'Q', 'R', 'T', 'U', 'W', 'X'],
     };
 
     let key = Object.keys(checksums).filter((v) => v.includes(prefix));
@@ -148,8 +141,7 @@ export default class NRIC {
     let maxTimestamp = Date.now();
 
     let randomTimestamp =
-      Math.floor(Math.random() * (maxTimestamp - minTimestamp + 1)) +
-      minTimestamp;
+      Math.floor(Math.random() * (maxTimestamp - minTimestamp + 1)) + minTimestamp;
 
     return new Date(randomTimestamp);
   }
