@@ -1,0 +1,85 @@
+import { AnimatedName } from '@/@components';
+import Image from 'next/image';
+import step1 from './step-1.png';
+import step2 from './step-2.png';
+import step3 from './step-3.png';
+import step4 from './step-4.png';
+
+export const metadata = {
+  title: 'How to Get uBlock Origin Working on Chrome v140',
+  description:
+    'A step-by-step guide to install and enable uBlock Origin on Chrome despite Manifest V2 restrictions.',
+  alternates: {
+    canonical: '/install-ublock-origin-chrome'
+  }
+};
+
+# How to Get uBlock Origin Working on Chrome v140
+
+<AnimatedName />
+
+Google Chrome v140 has introduced stricter rules for extensions, particularly around Manifest V2. This has broken compatibility with some popular extensions, including **uBlock Origin**, which still relies on Manifest V2 for certain functionality.
+
+Fortunately, there's a workaround that allows you to keep using uBlock Origin on Chrome v140. In this guide, I'll walk you through the step-by-step process.
+
+---
+
+## Step 1: Download the Stable Chromium Release of uBlock Origin
+
+1. Head over to the official [uBlock Origin GitHub releases page](https://github.com/gorhill/uBlock).
+2. Download the latest stable `chromium.zip` package.
+
+<Image alt="step 1" src={step1.src} width={1200} height={800} />
+
+3. Extract the contents of the ZIP file to a folder.
+   - Make sure you know where the root folder is, as we'll need it later.
+
+---
+
+## Step 2: Enable Required Chrome Flags
+
+1. Open a new tab and go to:
+   ```
+   chrome://flags
+   ```
+2. In the search bar, look for these flags and enable them:
+   - **Temporarily unexpire M139 flags.**
+   - **Allow legacy extension manifest versions.**
+3. After enabling each one, click **Relaunch** to restart Chrome.
+
+<Image alt="step 2" src={step2.src} width={1200} height={800} />
+
+---
+
+## Step 3: Load uBlock Origin as an Unpacked Extension
+
+1. Open a new tab and go to:
+   ```
+   chrome://extensions
+   ```
+2. Toggle on **Developer mode** (top-right corner).
+3. Click **Load unpacked**.
+4. Select the folder where you extracted the `chromium.zip` earlier.
+
+<Image alt="step 3" src={step3.src} width={1200} height={800} />
+
+5. Toggle the switch to **enable** uBlock Origin.
+
+<Image alt="step 4" src={step4.src} width={1200} height={800} />
+
+You should now see the familiar **uBlock Origin shield icon** in your Chrome toolbar.
+
+---
+
+## Step 4: Confirm It's Working
+
+- Visit a website with ads or trackers and ensure that uBlock Origin is blocking content as expected.
+- Click on the extension icon to verify the filter lists are loaded.
+
+---
+
+## Final Thoughts
+
+This method is a **temporary workaround**. Chrome will eventually remove the “legacy manifest” flags, at which point uBlock Origin will need to be fully adapted to Manifest V3 (or users may need to switch to Chromium-based browsers that still support V2).
+
+For now, though, these steps let you keep using one of the most powerful ad and tracker blockers available.
