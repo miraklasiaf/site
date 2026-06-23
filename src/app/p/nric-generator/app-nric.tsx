@@ -22,7 +22,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const defaultValues = {
   date: new Date(),
-  quantity: 1,
+  quantity: 10,
 };
 
 const schema = z.object({
