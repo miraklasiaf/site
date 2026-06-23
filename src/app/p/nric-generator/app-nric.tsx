@@ -1,23 +1,24 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import NRIC from './nric';
 import {
-  CardContent,
-  CardActions,
+  Autocomplete,
   Button,
+  CardActions,
+  CardContent,
   Grid,
   IconButton,
   Snackbar,
-  Autocomplete,
   TextField,
 } from '@mui/material';
-import { AppPanel } from '@/@components';
-import { DatePicker } from '@mui/x-date-pickers';
 import { Controller, useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { z } from 'zod';
+import React, { useEffect, useState } from 'react';
+
+import { AppPanel } from '@/@components';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
+import { DatePicker } from '@mui/x-date-pickers';
+import NRIC from './nric';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 const defaultValues = {
   date: new Date(),
@@ -113,7 +114,7 @@ export function AppNric() {
                         getOptionLabel={(option) => option.label}
                         value={quantities.find((option) => option.value === value) || undefined}
                         onChange={(_, newValue) => {
-                          onChange(newValue ? newValue.value : 1);
+                          onChange(newValue ? newValue.value : 10);
                         }}
                         disableClearable
                         renderInput={(params) => (
