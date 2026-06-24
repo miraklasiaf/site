@@ -1,4 +1,4 @@
-import { Prefix, Checksum } from './types';
+import { Checksum, Prefix } from './types';
 
 export default class NRIC {
   static #PREFIX_CITIZEN_1900 = 'S';

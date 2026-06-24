@@ -22,7 +22,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const defaultValues = {
   date: new Date(),
-  quantity: 10,
+  quantity: 5,
 };
 
 const schema = z.object({
@@ -48,13 +48,15 @@ export function AppNric() {
   const { errors } = formState;
 
   useEffect(() => {
-    setNrics([NRIC.GenerateNric(defaultValues.date).value]);
-    setFins([NRIC.GenerateFin(defaultValues.date).value]);
+    const { date, quantity } = defaultValues;
+    const newNrics = Array.from({ length: quantity }, () => NRIC.GenerateNric(date).value);
+    const newFins = Array.from({ length: quantity }, () => NRIC.GenerateFin(date).value);
+    setNrics(newNrics);
+    setFins(newFins);
   }, []);
 
   const onSubmit = (data: any) => {
     const { date, quantity } = data;
-
     const newNrics = Array.from({ length: quantity }, () => NRIC.GenerateNric(date).value);
     const newFins = Array.from({ length: quantity }, () => NRIC.GenerateFin(date).value);
     setNrics(newNrics);
@@ -114,7 +116,7 @@ export function AppNric() {
                         getOptionLabel={(option) => option.label}
                         value={quantities.find((option) => option.value === value) || undefined}
                         onChange={(_, newValue) => {
-                          onChange(newValue ? newValue.value : 10);
+                          onChange(newValue ? newValue.value : 5);
                         }}
                         disableClearable
                         renderInput={(params) => (
