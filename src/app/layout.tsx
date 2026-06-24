@@ -2,7 +2,7 @@ import './global.css';
 
 import { App } from './app';
 import { Inter } from 'next/font/google';
-import { unstable_ViewTransition as ViewTransition } from 'react';
+import { ViewTransition } from 'react';
 
 export * from './metadata';
 
