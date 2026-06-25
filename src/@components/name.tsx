@@ -1,9 +1,12 @@
 export function Name() {
   return (
-    <h1 className="font-medium pt-12 transition-element">
+    <h1 className="transition-element pt-12 font-medium">
       <span className="sr-only">Faisal Karim</span>
-      <span aria-hidden="true" className="block overflow-hidden group relative">
-        <span className="inline-block transition-all duration-300 ease-in-out group-hover:-translate-y-full whitespace-nowrap">
+      <span
+        aria-hidden="true"
+        className="group relative block overflow-hidden"
+      >
+        <span className="inline-block whitespace-nowrap transition-all duration-300 ease-in-out group-hover:-translate-y-full">
           {'Faisal Karim'.split('').map((letter, index) => (
             <span
               key={index}
@@ -14,7 +17,7 @@ export function Name() {
             </span>
           ))}
         </span>
-        <span className="inline-block absolute left-0 top-0 transition-all duration-300 ease-in-out translate-y-full group-hover:translate-y-0">
+        <span className="absolute top-0 left-0 inline-block translate-y-full transition-all duration-300 ease-in-out group-hover:translate-y-0">
           {'miraklasiaf'.split('').map((letter, index) => (
             <span
               key={index}

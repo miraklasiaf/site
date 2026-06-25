@@ -8,7 +8,7 @@ import {
   Grid,
   IconButton,
   Snackbar,
-  TextField,
+  TextField
 } from '@mui/material';
 import { Controller, useForm } from 'react-hook-form';
 import React, { useEffect, useState } from 'react';
@@ -22,17 +22,20 @@ import { zodResolver } from '@hookform/resolvers/zod';
 
 const defaultValues = {
   date: new Date(),
-  quantity: 5,
+  quantity: 5
 };
 
 const schema = z.object({
   date: z.date().refine((val) => val !== null, 'Please fill in Date.'),
-  quantity: z.number().min(1, 'Quantity must be at least 1').max(50, 'Quantity cannot exceed 50'),
+  quantity: z
+    .number()
+    .min(1, 'Quantity must be at least 1')
+    .max(50, 'Quantity cannot exceed 50')
 });
 
 const quantities = Array.from({ length: 20 }, (_, index) => ({
   value: index + 1,
-  label: String(index + 1),
+  label: String(index + 1)
 }));
 
 export function AppNric() {
@@ -43,21 +46,27 @@ export function AppNric() {
   const { handleSubmit, control, formState, setValue } = useForm({
     defaultValues,
     mode: 'all',
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema)
   });
   const { errors } = formState;
 
   useEffect(() => {
     const { date, quantity } = defaultValues;
-    const newNrics = Array.from({ length: quantity }, () => NRIC.GenerateNric(date).value);
+    const newNrics = Array.from(
+      { length: quantity },
+      () => NRIC.GenerateNric(date).value
+    );
     const newFins = Array.from({ length: quantity }, () => NRIC.GenerateFin(date).value);
     setNrics(newNrics);
     setFins(newFins);
   }, []);
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data) => {
     const { date, quantity } = data;
-    const newNrics = Array.from({ length: quantity }, () => NRIC.GenerateNric(date).value);
+    const newNrics = Array.from(
+      { length: quantity },
+      () => NRIC.GenerateNric(date).value
+    );
     const newFins = Array.from({ length: quantity }, () => NRIC.GenerateFin(date).value);
     setNrics(newNrics);
     setFins(newFins);
@@ -77,9 +86,15 @@ export function AppNric() {
     <Grid container>
       <Grid size={{ xs: 12 }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <AppPanel panelTitle="Singapore NRIC Generator" iconName="list">
+          <AppPanel
+            panelTitle="Singapore NRIC Generator"
+            iconName="list"
+          >
             <CardContent>
-              <Grid container spacing={2}>
+              <Grid
+                container
+                spacing={2}
+              >
                 <Grid size={{ xs: 6 }}>
                   <Controller
                     name="date"
@@ -99,8 +114,8 @@ export function AppNric() {
                             label: 'Date',
                             error: !!errors.date,
                             helperText: errors?.date?.message,
-                            fullWidth: true,
-                          },
+                            fullWidth: true
+                          }
                         }}
                       />
                     )}
@@ -114,7 +129,9 @@ export function AppNric() {
                       <Autocomplete
                         options={quantities}
                         getOptionLabel={(option) => option.label}
-                        value={quantities.find((option) => option.value === value) || undefined}
+                        value={
+                          quantities.find((option) => option.value === value) || undefined
+                        }
                         onChange={(_, newValue) => {
                           onChange(newValue ? newValue.value : 5);
                         }}
@@ -139,12 +156,16 @@ export function AppNric() {
                 paddingRight: 2,
                 paddingTop: 2,
                 paddingBottom: 2,
-                backgroundColor: '#f5f5f5',
+                backgroundColor: '#f5f5f5'
               }}
             >
               <Grid container>
                 <Grid>
-                  <Button className="normal-case" variant="contained" type="submit">
+                  <Button
+                    className="normal-case"
+                    variant="contained"
+                    type="submit"
+                  >
                     Generate
                   </Button>
                 </Grid>
@@ -153,11 +174,20 @@ export function AppNric() {
             {nrics.length > 0 && (
               <CardContent>
                 <Grid size={{ xs: 12 }}>
-                  <Grid container spacing={2}>
-                    <Grid size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
+                  <Grid
+                    container
+                    spacing={2}
+                  >
+                    <Grid
+                      size={{ xs: 6 }}
+                      className="rounded-md border border-blue-200 p-4"
+                    >
                       <p className="pb-2">NRIC:</p>
                       {nrics.map((nric, index) => (
-                        <div key={index} className="flex justify-between pb-2 last:pb-0">
+                        <div
+                          key={index}
+                          className="flex justify-between pb-2 last:pb-0"
+                        >
                           <span>{nric}</span>
                           <IconButton
                             aria-label={`Copy NRIC ${index + 1}`}
@@ -169,10 +199,16 @@ export function AppNric() {
                         </div>
                       ))}
                     </Grid>
-                    <Grid size={{ xs: 6 }} className="border border-blue-200 rounded-md p-4">
+                    <Grid
+                      size={{ xs: 6 }}
+                      className="rounded-md border border-blue-200 p-4"
+                    >
                       <p className="pb-2">FIN:</p>
                       {fins.map((fin, index) => (
-                        <div key={index} className="flex justify-between pb-2 last:pb-0">
+                        <div
+                          key={index}
+                          className="flex justify-between pb-2 last:pb-0"
+                        >
                           <span>{fin}</span>
                           <IconButton
                             aria-label={`Copy FIN ${index + 1}`}

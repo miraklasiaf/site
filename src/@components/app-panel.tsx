@@ -1,7 +1,7 @@
 'use client';
 
+import { AppBar, Card, Collapse, Icon, Toolbar, Typography } from '@mui/material';
 import { ReactNode, useState } from 'react';
-import { AppBar, Card, Collapse, Toolbar, Typography, Icon } from '@mui/material';
 
 type AppPanelProps = {
   panelTitle: string;
@@ -19,21 +19,29 @@ export function AppPanel(props: AppPanelProps) {
     if (!collapsible) {
       return;
     }
+
     setExpanded(!expanded);
   };
 
   return (
     <Card>
-      <AppBar position="static" elevation={0}>
+      <AppBar
+        position="static"
+        elevation={0}
+      >
         <Toolbar
           variant="dense"
           onClick={handleClick}
           sx={{
-            cursor: collapsible ? 'pointer' : undefined,
+            cursor: collapsible ? 'pointer' : undefined
           }}
         >
           <Icon className="text-16 mr-4">{iconName}</Icon>
-          <Typography variant="subtitle1" color="inherit" className="flex-1">
+          <Typography
+            variant="subtitle1"
+            color="inherit"
+            className="flex-1"
+          >
             {panelTitle}
           </Typography>
         </Toolbar>

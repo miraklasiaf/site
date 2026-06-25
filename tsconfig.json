@@ -1,42 +1,49 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "incremental": true,
+    "baseUrl": "./",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "declaration": true,
+    "target": "esnext",
+    "lib": ["dom", "dom.iterable", "es2020", "scripthost"],
     "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      },
       {
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+    "allowJs": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "incremental": true
   },
+  "exclude": ["node_modules"],
   "include": [
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/global.d.ts",
+    "tailwind.config.ts",
     "next-env.d.ts",
-    "**/*.mdx",
-    "**/*.ts",
-    "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
+    "next.config.mjs",
+    "next.config.ts",
+    "build/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "mdx-components.tsx"
   ]
 }

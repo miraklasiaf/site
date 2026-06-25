@@ -4,7 +4,10 @@ import { ViewTransition } from 'react';
 export function AnimatedName() {
   return (
     <ViewTransition>
-      <Link href="/" className="flex mb-8 font-medium text-gray-400 fade-in">
+      <Link
+        href="/"
+        className="fade-in mb-8 flex font-medium text-gray-400"
+      >
         Faisal Karim
       </Link>
     </ViewTransition>

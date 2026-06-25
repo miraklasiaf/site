@@ -5,7 +5,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
+    "lint": "eslint ./src --config ./eslint.config.mjs",
+    "lint:fix": "eslint --fix ./src --config ./eslint.config.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -24,14 +25,38 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.3.1",
-    "@types/mdx": "^2.0.14",
-    "@types/node": "^26.0.0",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "postcss": "^8.5.15",
-    "prettier": "^3.8.4",
-    "tailwindcss": "^4.3.1",
-    "typescript": "^6.0.3"
+    "@eslint/eslintrc": "3.3.3",
+    "@eslint/js": "9.39.2",
+    "@hookform/devtools": "4.4.0",
+    "@tailwindcss/aspect-ratio": "0.4.2",
+    "@tailwindcss/typography": "0.5.19",
+    "@types/autosuggest-highlight": "3.2.3",
+    "@types/lodash": "4.17.23",
+    "@types/marked": "4.3.2",
+    "@types/node": "25.2.2",
+    "@types/prismjs": "1.26.5",
+    "@types/qs": "6.14.0",
+    "@types/react": "19.2.13",
+    "@types/react-autosuggest": "10.1.11",
+    "@types/react-dom": "19.2.3",
+    "@types/styled-components": "5.1.36",
+    "@types/stylis": "4.2.7",
+    "@typescript-eslint/eslint-plugin": "8.54.0",
+    "autoprefixer": "10.4.24",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.1.6",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "7.0.1",
+    "eslint-plugin-react-refresh": "0.5.0",
+    "eslint-plugin-unused-imports": "4.3.0",
+    "prettier": "3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2",
+    "promise": "8.3.0",
+    "tailwindcss": "4.1.18",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.54.0",
+    "typescript-plugin-css-modules": "5.2.0"
   }
 }

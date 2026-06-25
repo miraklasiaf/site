@@ -12,7 +12,10 @@ export function App(props: AppProps) {
   const { children } = props;
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={enGB}>
+    <LocalizationProvider
+      dateAdapter={AdapterDateFns}
+      adapterLocale={enGB}
+    >
       {children}
     </LocalizationProvider>
   );
