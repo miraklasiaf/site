@@ -1,10 +1,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-family-sans: 'Inter', sans-serif;
+  --font-family-sans: 'STIX Two Text', sans-serif;
 }
 
 :root {
+  --text-copy: #171717;
   --sh-class: #7aa2f7;
   --sh-sign: #89ddff;
   --sh-string: #9ece6a;
@@ -15,11 +16,14 @@
   --sh-entity: #e0af68;
 }
 
-html {
-  min-width: 360px;
-}
-
 body {
+  font-family: var(--font-stix-two-text);
+  background-color: var(--bg);
+  color: var(--text-copy);
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
 }
 
@@ -28,6 +32,31 @@ h2,
 h3,
 h4 {
   text-wrap: balance;
+}
+
+.text-copy {
+  color: var(--text-copy);
+  font-size: 17px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  position: relative;
+  padding-left: 1rem;
+  padding-right: .25rem;
+}
+
+li::before {
+  content: "■";
+  color: #9ca3af;
+  font-size: .5em;
+  position: absolute;
+  top: .25rem;
+  left: .25rem;
 }
 
 pre {
