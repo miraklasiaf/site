@@ -13,7 +13,7 @@ import {
 import { Controller, useForm } from 'react-hook-form';
 import React, { useEffect, useState } from 'react';
 
-import { AppPanel } from '@/@components';
+import { AppPanel } from '@/components';
 import ContentCopyOutlinedIcon from '@mui/icons-material/ContentCopyOutlined';
 import { DatePicker } from '@mui/x-date-pickers';
 import NRIC from './nric';
