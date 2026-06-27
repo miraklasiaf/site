@@ -43,19 +43,19 @@ const components = {
   ),
   ol: (props: ListProps) => (
     <ol
-      className="list-decimal space-y-2 pl-5 text-gray-800"
+      className="list-decimal space-y-2 pl-4 text-gray-800"
       {...props}
     />
   ),
   ul: (props: ListProps) => (
     <ul
-      className="text-copy space-y-1 pl-0"
+      className="list-disc space-y-1 pl-4 text-gray-800"
       {...props}
     />
   ),
   li: (props: ListItemProps) => (
     <li
-      className="relative pl-4"
+      className="relative pl-0"
       {...props}
     />
   ),

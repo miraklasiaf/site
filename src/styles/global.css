@@ -39,26 +39,6 @@ h4 {
   font-size: 17px;
 }
 
-ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-li {
-  position: relative;
-  padding-left: 1rem;
-  padding-right: .25rem;
-}
-
-li::before {
-  content: "■";
-  color: #9ca3af;
-  font-size: .5em;
-  position: absolute;
-  top: .25rem;
-  left: .25rem;
-}
-
 pre {
   background-color: #16161e;
   border-radius: 0.5rem;
